@@ -5,6 +5,7 @@ import {
   FormGroup,
 } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Input, PasswordInput } from '../../components';
 import { AuthWrapper } from '../../core-ui';
 
@@ -14,7 +15,10 @@ const Login = () => {
       <form>
         <Input label='Email' placeholder='Enter your email address' />
         <PasswordInput />
-        <FormControl component='fieldset' sx={{ width: '1r00%', mt: 1, mb: 1 }}>
+        <FormControl
+          component='fieldset'
+          sx={{ width: '100%', mt: 1, mb: 1, fontSize: '0.6rem' }}
+        >
           <FormGroup>
             <FormControlLabel
               label='Keep me Logged in'
@@ -24,6 +28,34 @@ const Login = () => {
         </FormControl>
         <Button type='submit' label='Login' fullwidth='true' />
       </form>
+      <div className='bottom-center'>
+        <p>or continue with</p>
+        <a href='#google-login'>
+          <i className='bi bi-google' />
+        </a>
+        <a href='#facebook-login'>
+          <i className='bi bi-facebook' />
+        </a>
+        <a href='#linkedin-login'>
+          <i className='bi bi-linkedin' />
+        </a>
+
+        <p>
+          Want to create organization?
+          <Link
+            className='nav-link'
+            style={{
+              padding: '0',
+              background: 'transparent',
+              color: 'blue',
+              marginLeft: '0.6rem',
+            }}
+            to='/signup'
+          >
+            Click here
+          </Link>
+        </p>
+      </div>
     </AuthWrapper>
   );
 };
