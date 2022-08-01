@@ -1,7 +1,7 @@
 import { FormHelperText } from '@mui/material';
 import React from 'react';
 
-import { InputBox, InputField, InputLabel } from './styles';
+import { InputBox, InputField, InputLabel } from '../styles';
 
 interface InputProps {
   label?: string;

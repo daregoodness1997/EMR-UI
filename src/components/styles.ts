@@ -1,15 +1,15 @@
 import styled from 'styled-components';
+import BaseButton from './Buttons/BaseButton';
 
 export const InputField = styled.input`
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0.4rem 1rem;
-  width: 100%;
+  padding: 1.1rem 2rem;
   height: 100%;
+  width: 100%;
   border-radius: 4px;
   border: 1.5px solid #eee;
-  width: 100%;
 
   &:focus {
     border: 2px solid #0364ff;
@@ -25,7 +25,7 @@ export const InputField = styled.input`
   &:not(placeholder-shown).&:not(:focus) + label {
     top: -0.5rem;
     left: 0.8rem;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 500;
     z-index: 10;
   }
@@ -33,14 +33,14 @@ export const InputField = styled.input`
 
 export const InputBox = styled.div`
   position: relative;
-  height: 48px;
+  height: 52px;
   width: 100%;
   margin: 0.75rem 0;
   text-align: left;
 
   & i {
     position: absolute;
-    right: 0.1rem;
+    right: 0.6rem;
     top: 0.6rem;
     font-size: 22px;
     padding: 0.25rem;
@@ -55,4 +55,40 @@ export const InputLabel = styled.label`
   padding: 0 0.25rem;
   background-color: #fff;
   transition: 0.4s;
+`;
+
+// Button
+
+export const Button = styled(BaseButton)`
+  width: ${props => (props.fullwidth ? '100%' : 'auto')};
+  color: ${props => (props.color ? props.color : '#FFF')};
+  background: ${props => (props.background ? props.background : '#0364FF')};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  padding: 1.5rem 0.6rem;
+  margin: 0 0.2rem;
+  border: 0;
+  font-size: 80%;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  height: 40px;
+
+  &:focus {
+    outline: 1px solid #eee;
+  }
+
+  & i {
+    padding-right: 10px;
+  }
+
+  @media (max-width: 768px) {
+    & i {
+      display: none;
+    }
+  }
 `;

@@ -7,8 +7,7 @@ export const PageWrapper = styled.div`
 export const AuthContainer = styled.div`
   width: 65%;
   height: 100vh;
-  padding-top: 4%;
-  padding-bottom: 4%;
+  padding: 4% 1rem;
   background: #fff;
   display: flex;
   align-items: center;
@@ -22,7 +21,7 @@ export const AuthContainer = styled.div`
 
   & .aside-container {
     height: calc(100vh - 16%);
-    padding: 0 1rem;
+    padding: 10% 1rem;
   }
 
   & h2 {
@@ -35,6 +34,10 @@ export const AuthContainer = styled.div`
     @media (max-width: 400px) {
       width: 350px;
     }
+  }
+
+  & form {
+    text-align: left;
   }
 
   & .bottom-center {
@@ -76,7 +79,7 @@ export const SideBanner = styled.div`
   justify-content: center;
   overflow-y: hidden;
   position: relative;
-  padding-top: 10rem;
+  padding-top: 6rem;
 
   & .fixed {
     width: 100%;
