@@ -1,6 +1,7 @@
 import Accordion from './Accordion';
-import Autocomplete from './Autocomplete';
-import Input from './Input';
-import PasswordInput from './PasswordInput';
+import Autocomplete from './Inputs/Autocomplete';
+import Input from './Inputs/Input';
+import PasswordInput from './Inputs/PasswordInput';
+import Button from './Buttons/Button';
 
-export { Accordion, Autocomplete, Input, PasswordInput };
+export { Accordion, Autocomplete, Button, Input, PasswordInput };

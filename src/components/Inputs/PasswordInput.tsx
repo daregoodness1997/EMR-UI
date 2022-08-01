@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { InputBox, InputField, InputLabel } from './styles';
+import { InputBox, InputField, InputLabel } from '../styles';
 
 interface PasswordInputProps {
   label?: string;
@@ -23,7 +23,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
   };
 
   return (
-    <div style={{ margin: '2rem 0' }}>
+    <div>
       <InputBox>
         <InputField
           className='form__input'
