@@ -6,7 +6,6 @@ import {
   FormHelperText,
   TextField,
 } from '@mui/material';
-import { Controller } from 'react-hook-form';
 import { DateFormats } from '../../pages/app/Constants';
 import { toAPIDate } from '../../pages/app/DateUtils';
 import { InputType } from '../../pages/app/schema/utils';
@@ -48,156 +47,96 @@ const DynamicInput = (props: DynamicInputProps) => {
 
   if (inputType === InputType.TEXT) {
     return (
-      <Controller
-        name={name}
-        control={control}
-        render={({ field: { ref: _re, ...field } }) => (
-          <Input
-            {...field}
-            label={label}
-            disabled={readonly}
-            errorText={errors[name]?.message}
-            defaultValue={data[name] || ''}
-          />
-        )}
+      <Input
+        label={label}
+        disabled={readonly}
+        errorText={errors[name]?.message}
+        defaultValue={data[name] || ''}
       />
     );
   }
 
   if (inputType === InputType.NUMBER) {
     return (
-      <Controller
-        name={name}
-        control={control}
-        render={({ field: { ref: _re, ...field } }) => (
-          <Input
-            {...field}
-            label={label}
-            disabled={readonly}
-            errorText={errors[name]?.message}
-            type='number'
-            defaultValue={data[name]}
-          />
-        )}
+      <Input
+        label={label}
+        disabled={readonly}
+        errorText={errors[name]?.message}
+        type='number'
+        defaultValue={data[name]}
       />
     );
   }
 
   if (inputType === InputType.EMAIL) {
     return (
-      <Controller
-        name={name}
-        control={control}
-        render={({ field: { ref: _re, ...field } }) => (
-          <Input
-            {...field}
-            label={label}
-            disabled={readonly}
-            errorText={errors[name]?.message}
-            type='email'
-            defaultValue={data[name]}
-          />
-        )}
+      <Input
+        label={label}
+        disabled={readonly}
+        errorText={errors[name]?.message}
+        type='email'
+        defaultValue={data[name]}
       />
     );
   }
 
   if (inputType === InputType.TEXT_AREA) {
     return (
-      <Controller
-        name={name}
-        control={control}
-        render={({ field: { ref: _re, value: __, ...field } }) => (
-          <Textarea
-            {...field}
-            label={label}
-            disabled={readonly}
-            errorText={errors[name]?.message}
-            defaultValue={data[name]}
-          />
-        )}
+      <Textarea
+        label={label}
+        disabled={readonly}
+        errorText={errors[name]?.message}
+        defaultValue={data[name]}
       />
     );
   }
 
   if (inputType === InputType.SELECT_RADIO) {
     return (
-      <Controller
-        name={name}
-        control={control}
-        render={({ field: { ref: _re, ...field } }) => (
-          <Radio
-            {...field}
-            title={label}
-            disabled={readonly}
-            options={options}
-            defaultValue={data[name]}
-          />
-        )}
+      <Radio
+        name={label}
+        title={label}
+        disabled={readonly}
+        options={options}
+        defaultValue={data[name]}
       />
     );
   }
 
   if (inputType === InputType.SELECT_CHECKBOX) {
     return (
-      <Controller
-        control={control}
-        name={name}
-        render={({ field }) => (
-          <Checkbox
-            {...field}
-            label={label}
-            disabled={readonly}
-            defaultValue={data[name]}
-            options={options}
-            errorText={errors[name]?.message}
-          />
-        )}
+      <Checkbox
+        label={label}
+        disabled={readonly}
+        defaultValue={data[name]}
+        options={options}
+        errorText={errors[name]?.message}
       />
     );
   }
 
   if (inputType === InputType.BOOLEAN_CHECK) {
     return (
-      <Controller
-        control={control}
-        name={name}
-        render={({ field }) => (
-          <FormControlLabel
-            defaultValue={defaultValue}
-            control={
-              <Checkbox
-                label={label}
-                options={options}
-                name={field.name}
-                onChange={() => null}
-                disabled={readonly}
-              />
-            }
-            label={label}
-          />
-        )}
+      <Checkbox
+        label={label}
+        options={options}
+        name={label}
+        onChange={() => null}
+        disabled={readonly}
       />
     );
   }
 
   if (inputType === InputType.SELECT_LIST) {
     return (
-      <Controller
-        control={control}
-        name={name}
-        render={({ field: { ref: _re, ...field } }) => (
-          <Select
-            {...field}
-            label={label}
-            options={options}
-            errorText={errors[name]?.message}
-            defaultValue={
-              defaultValue !== undefined ? defaultValue : data[name] || ''
-            }
-            disabled={readonly}
-          />
-        )}
+      <Select
+        label={label}
+        options={options}
+        errorText={errors[name]?.message}
+        defaultValue={
+          defaultValue !== undefined ? defaultValue : data[name] || ''
+        }
+        disabled={readonly}
       />
     );
   }
@@ -205,64 +144,48 @@ const DynamicInput = (props: DynamicInputProps) => {
   if (inputType === InputType.DATETIME) {
     return (
       <FormControl disabled={readonly} style={{ width: '100%' }}>
-        <Controller
-          name={name}
-          control={control}
-          render={({ field: { ref: _, ...field } }) => (
-            <>
-              <DateTimePicker
-                {...field}
-                label={label}
-                onChange={(value: any) =>
-                  field.onChange({ target: { value: toAPIDate(value) } })
-                }
-                inputFormat={DateFormats.CONTROL_DATE_TIME}
-                renderInput={(params: any) => (
-                  <TextField
-                    {...params}
-                    disabled={readonly}
-                    error={errors[name]?.message}
-                  />
-                )}
-              />
-              {errors[name] && (
-                <FormHelperText error>{errors[name].message}</FormHelperText>
-              )}
-            </>
+        <DateTimePicker
+          label={label}
+          //   onChange={(value: any) =>
+          //     field.onChange({ target: { value: toAPIDate(value) } })
+          //   }
+          inputFormat={DateFormats.CONTROL_DATE_TIME}
+          renderInput={(params: any) => (
+            <TextField
+              {...params}
+              disabled={readonly}
+              error={errors[name]?.message}
+            />
           )}
         />
+        {errors[name] && (
+          <FormHelperText error>{errors[name].message}</FormHelperText>
+        )}
       </FormControl>
     );
   }
 
   if (inputType === InputType.DATE) {
     return (
-      <Controller
-        name={name}
-        control={control}
-        render={({ field }) => (
-          <>
-            <DatePicker
-              {...field}
-              label={label}
-              onChange={(value: any) =>
-                field.onChange({ target: { value: toAPIDate(value) } })
-              }
-              inputFormat={DateFormats.CONTROL_DATE}
-              renderInput={(params: any) => (
-                <TextField
-                  {...params}
-                  disabled={readonly}
-                  error={!!errors[name]?.message}
-                />
-              )}
+      <>
+        <DatePicker
+          label={label}
+          //   onChange={(value: any) =>
+          //     field.onChange({ target: { value: toAPIDate(value) } })
+          //   }
+          inputFormat={DateFormats.CONTROL_DATE}
+          renderInput={(params: any) => (
+            <TextField
+              {...params}
+              disabled={readonly}
+              error={!!errors[name]?.message}
             />
-            {errors[name]?.message && (
-              <FormHelperText error>{errors[name]?.message}</FormHelperText>
-            )}
-          </>
+          )}
+        />
+        {errors[name]?.message && (
+          <FormHelperText error>{errors[name]?.message}</FormHelperText>
         )}
-      />
+      </>
     );
   }
 

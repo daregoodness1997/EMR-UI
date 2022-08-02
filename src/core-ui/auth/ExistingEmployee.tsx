@@ -16,6 +16,7 @@ function ExistingAdminEmployee() {
           name='organizationEmail'
           label='Organization Email'
           control={control}
+          options={[]}
         />
 
         <Button type='submit' label='Send Invitation' fullwidth='true' />

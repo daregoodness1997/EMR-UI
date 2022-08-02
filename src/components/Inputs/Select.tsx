@@ -25,7 +25,10 @@ const Select: React.FC<SelectProps> = ({
   readonly,
 }) => {
   return (
-    <FormControl disabled={readonly} style={{ width: '100%' }}>
+    <FormControl
+      disabled={readonly}
+      style={{ width: '100%', margin: '0 0 0.75rem ' }}
+    >
       <InputLabel id='demo-simple-select-autowidth-label'>{label}</InputLabel>
       <CustomSelect
         labelId='demo-simple-select-autowidth-label'
@@ -34,7 +37,7 @@ const Select: React.FC<SelectProps> = ({
         name={name}
         defaultValue={defaultValue || ''}
         onChange={onChange}
-        sx={{ background: 'white' }}
+        sx={{ background: 'white', border: '1px solid #eee' }}
       >
         <MenuItem value='' sx={{ width: '100%' }}>
           <em>None</em>

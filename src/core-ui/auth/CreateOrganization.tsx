@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack } from '@mui/material';
+import { Stack, Box } from '@mui/material';
 import DynamicInput from '../../components/Inputs/DynamicInput';
 interface CreateOrganizationProps {
   control?: any;
@@ -13,18 +13,20 @@ const CreateOrganization: React.FC<CreateOrganizationProps> = ({
   errors,
 }) => {
   return (
-    <Stack spacing={3} sx={{ width: '100%', mt: 4, mb: 4 }}>
-      {schema.map((data, i) => (
-        <DynamicInput
-          key={i}
-          {...data}
-          defaultValue=''
-          label={data.description}
-          name={data.key}
-          control={control}
-          errors={errors}
-        />
-      ))}
+    <Stack sx={{ width: '100%' }}>
+      <Box sx={{ mt: 3 }}>
+        {schema.map((data, i) => (
+          <DynamicInput
+            key={i}
+            {...data}
+            defaultValue=''
+            label={data.description}
+            name={data.key}
+            control={control}
+            errors={errors}
+          />
+        ))}
+      </Box>
     </Stack>
   );
 };
