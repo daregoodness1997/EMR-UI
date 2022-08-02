@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Box, Step, StepButton, Stepper } from '@mui/material';
 import { AuthWrapper } from '../../core-ui';
+import CreateOrganization from '../../core-ui/auth/CreateOrganization';
+import {
+  getOrganisationSchema,
+  getOrganisationContactSchema,
+} from '../app/schema/ModelSchema';
+import SelectModule from '../../core-ui/auth/SelectModule';
 
 const steps = ['Organization', 'Contact ', 'Modules', 'Admin'];
 
@@ -28,7 +34,16 @@ const OrganizationSignup = () => {
         ))}
       </Stepper>
       <form>
-        
+        {activeStep === STEP_ORGANISATION && (
+          <CreateOrganization schema={getOrganisationSchema()} />
+        )}
+        {activeStep === STEP_ADDRESS && (
+          <CreateOrganization schema={getOrganisationContactSchema({})} />
+        )}
+        {activeStep === STEP_MODULES && <SelectModule />}
+        {activeStep === STEP_EMPLOYEE && (
+          <AddAdmin adminEmployee={createdAdminEmployee} />
+        )}
       </form>
     </AuthWrapper>
   );
