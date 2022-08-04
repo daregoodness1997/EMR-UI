@@ -20,7 +20,6 @@ const STEP_EMPLOYEE = 3;
 
 const OrganizationSignup = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [createdFacility, setCreatedFacility] = useState<any>();
 
   const handleStep = (step: number) => () => {
     setActiveStep(step);
@@ -29,11 +28,11 @@ const OrganizationSignup = () => {
     setActiveStep(activeStep > STEP_ORGANISATION ? activeStep - 1 : activeStep);
   };
 
-  const handleNext = () => {
-    const newActiveStep =
-      activeStep < STEP_EMPLOYEE ? activeStep + 1 : activeStep;
-    setActiveStep(newActiveStep);
-  };
+  // const handleNext = () => {
+  //   const newActiveStep =
+  //     activeStep < STEP_EMPLOYEE ? activeStep + 1 : activeStep;
+  //   setActiveStep(newActiveStep);
+  // };
   return (
     <AuthWrapper paragraph='Signup here as an organization'>
       <Stepper nonLinear activeStep={activeStep}>
@@ -67,7 +66,7 @@ const OrganizationSignup = () => {
             gap: 10,
           }}
         >
-          {activeStep > STEP_ORGANISATION && !createdFacility ? (
+          {activeStep > STEP_ORGANISATION ? (
             <Button
               color='inherit'
               disabled={activeStep === STEP_ORGANISATION}

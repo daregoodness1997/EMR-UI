@@ -1,13 +1,7 @@
 import DatePicker from '@mui/lab/DatePicker';
 import DateTimePicker from '@mui/lab/DateTimePicker';
-import {
-  FormControl,
-  FormControlLabel,
-  FormHelperText,
-  TextField,
-} from '@mui/material';
+import { FormControl, FormHelperText, TextField } from '@mui/material';
 import { DateFormats } from '../../pages/app/Constants';
-import { toAPIDate } from '../../pages/app/DateUtils';
 import { InputType } from '../../pages/app/schema/utils';
 import Checkbox from './Checkbox';
 import Input from './Input';
@@ -21,7 +15,6 @@ interface DynamicInputProps {
   name: string;
   data?: any;
   options: any[];
-  control?: any;
   errors?: any;
   readonly?: boolean;
   defaultValue?: any;
@@ -34,7 +27,6 @@ const DynamicInput = (props: DynamicInputProps) => {
     name,
     data = {},
     options,
-    control,
     errors = {},
     readonly,
     defaultValue,

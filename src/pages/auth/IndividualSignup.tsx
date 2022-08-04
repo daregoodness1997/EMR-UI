@@ -10,6 +10,8 @@ const IndividualSignup = () => {
     email: { message: '' },
     phoneNumber: { message: '' },
   });
+
+  console.log(setErrors);
   return (
     <AuthWrapper paragraph='Create an account as an Individual'>
       <form>

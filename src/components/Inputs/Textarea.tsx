@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import React, { TextareaHTMLAttributes, useRef } from 'react';
 import { TextareaField } from '../styles';
 
@@ -7,10 +8,10 @@ interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 }
 
 const Textarea: React.FC<TextareaProps> = ({ label, ...props }) => (
-  <div>
+  <Box>
     <label>{label}</label>
     <TextareaField ref={useRef()} {...props} />
-  </div>
+  </Box>
 );
 
 export default Textarea;
