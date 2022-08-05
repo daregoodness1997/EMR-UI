@@ -92,3 +92,33 @@ export const Button = styled(BaseButton)`
     }
   }
 `;
+
+// Textarea
+
+export const TextareaField = styled.textarea<any>`
+  padding: 0.9rem;
+  width: 100%;
+  height: 120px;
+  border-radius: 4px;
+  border: 1.5px solid
+    ${({ theme, errorText }) => (!errorText ? theme.grayTwo : 'red')};
+  width: 100%;
+`;
+
+export const LayoutWrapper = styled.div`
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+`;
+
+export const LayoutContent = styled.div`
+  width: 100%;
+  /* height: 100vh; */
+  overflow: hidden;
+
+  .layout {
+    height: 100%;
+  }
+`;

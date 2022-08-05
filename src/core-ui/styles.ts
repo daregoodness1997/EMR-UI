@@ -121,3 +121,375 @@ export const InnerWrapper = styled.div`
     height: 2.4rem;
   }
 `;
+
+// Menu
+
+export const Lists = styled.ul`
+  padding: 0;
+  margin: 0;
+
+  &.sub-menu {
+    color: #333;
+    margin-left: 20px;
+    border-left: 1px dashed rgb(255, 255, 255);
+    box-sizing: border-box;
+    padding-left: 30px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in;
+  }
+  &.sub-menu.active {
+    max-height: 400px;
+  }
+`;
+
+export const ListItem = styled.li`
+  list-style: none;
+  padding: 0.8rem;
+`;
+
+export const MenuList = styled.div`
+  &.menu-item {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 15px !important;
+    color: red;
+    display: block;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.8rem;
+  }
+  &.menu-item.active {
+    background: rgb(0, 45, 92);
+    border-radius: 5px;
+    color: #fff;
+  }
+
+  &.menu-item .menu-label {
+    display: flex;
+    justify-content: space-between;
+
+    & span {
+      font-size: 18px !important;
+      /* font-size: 18px; */
+    }
+  }
+
+  &.menu-item .menu-icon {
+    display: inline-block;
+    width: 40px;
+    font-size: 20px;
+    text-align: center;
+  }
+`;
+
+// SideNav
+export const MainMenu = styled.div`
+  &.main-menu {
+    margin: 1rem 0;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  &.main-menu::-webkit-scrollbar {
+    display: none;
+  }
+   {
+  }
+
+  &.main-menu .menu-item {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  &.main-menu .menu-item.active {
+    background: rgb(3, 100, 255);
+    border-radius: 5px;
+    color: #fff;
+  }
+`;
+
+export const Sidemenu = styled.div`
+&.hide{
+    left: -300px;
+    width: 0;
+    padding: 0;
+
+    @media (max-width: 768px) {
+    left: 0;
+    width: 300px;
+    padding: 2rem 1.5rem ;
+
+  }
+  
+  }
+&.side-menu
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  background:rgb(0, 45, 92);
+  color: rgb(255, 255, 255);
+  width: 300px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 2rem 1.5rem ;
+  transition: width 0.2s ease-in;
+
+  @media (max-width: 768px) {
+    left: -300px;
+    width:0;
+    padding:0;
+  }
+
+  
+
+  &.side-menu.inactive {
+    width: 80px;
+  }
+`;
+
+export const TopSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & h1 {
+    color: rgb(51, 51, 51);
+    font-size: 20px;
+  }
+`;
+
+// PageWrapper
+export const DashboardPageWrapper = styled.div`
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow-y: hidden;
+  padding: 0.6rem 1rem;
+  transition: width 2s, height 4s;
+  animation: divanimation 0.6s;
+  -webkit-animation: divanimation 0.6s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  /* zoom: 85%; */
+
+  @media (max-width: 400px) {
+    overflow-y: auto;
+  }
+
+  & span {
+    display: inline-block;
+  }
+
+  &.attend-wrapper {
+    display: flex;
+  }
+
+  &.p-1 {
+    padding: 0.2rem;
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+
+    & .attend-small {
+      flex: 1;
+      width: 100% !important;
+    }
+    &.attend-large {
+      flex: 1;
+      width: 100%;
+    }
+  }
+`;
+
+// TopMenu
+export const TopMenuWrapper = styled.div`
+  background: rgb(250, 250, 250);
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.4rem;
+
+  & .breadcrumb {
+    @media (max-width: 400px) {
+      display: none;
+    }
+  }
+`;
+
+export const Profile = styled.div`
+  display: flex;
+  align-items: center;
+
+  & span,
+  & i {
+    margin-right: 20px;
+  }
+
+  & .profile-item{
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 400px) {
+    & .location-selector{
+      width:240px;
+    }
+
+    & span {
+      display:none;
+    }
+  
+
+`;
+
+/* Global */
+export const GridWrapper = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  grid-gap: 2rem;
+  margin-top: 3.2rem;
+  overflow-y: auto;
+  animation: divanimation 0.6s;
+  -webkit-animation: divanimation 0.6s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  &.subgrid {
+    margin-top: 1rem;
+  }
+
+  &.top {
+    align-items: start;
+  }
+
+  &.two-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.four-columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &.five-columns {
+    grid-template-columns: 2fr 1fr 0.5fr 0.8fr 0.1fr;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  & label {
+    display: block;
+    font-size: 16px;
+    font-weight: regular;
+    color: #03045e;
+    margin-bottom: 0.5rem;
+  }
+  & p {
+    background: #fff;
+    padding: 0 0.4rem;
+    line-height: 50px;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid #d2d2d2;
+    font-weight: bold;
+    font-size: 16px;
+    color: #03045e;
+    overflow: hidden;
+  }
+`;
+
+export const LocationCardWrapper = styled.div`
+  margin: 10px 0;
+  border: 0.6px solid #ebebeb;
+  background: #fafafa;
+  padding: 16px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background: #eee;
+  }
+`;
+
+export const LocationWrapper = styled.div`
+  width: 240px;
+  margin-right: 10px;
+  position: relative;
+  z-index: 1000;
+
+  @media (max-width: 400px) {
+    width: 400px !important;
+  }
+  & button {
+    @media (max-width: 400px) {
+      width: 200px !important;
+    }
+  }
+`;
+
+export const FlexBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  animation: divanimation 0.6s;
+  -webkit-animation: divanimation 0.6s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+
+  & img {
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+  }
+
+  @media (max-width: 400px) {
+  }
+
+  &.between {
+    justify-content: space-between;
+  }
+
+  &.row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  & .text {
+    /* text-align: center; */
+    width: 100%;
+    padding: 0.4rem 1rem;
+  }
+
+  &.left {
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  &.align-left {
+    align-items: flex-start;
+  }
+`;
+
+export const Avatar = styled.img`
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+`;

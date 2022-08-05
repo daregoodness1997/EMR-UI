@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import React, { useState } from 'react';
 import { InputBox, InputField, InputLabel } from '../styles';
 
@@ -23,7 +24,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
   };
 
   return (
-    <div>
+    <Box>
       <InputBox>
         <InputField
           className='form__input'
@@ -45,7 +46,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
       </InputBox>
 
       {errors && <p>e{errors}</p>}
-    </div>
+    </Box>
   );
 };
 
