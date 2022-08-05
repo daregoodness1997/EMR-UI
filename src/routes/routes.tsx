@@ -17,9 +17,9 @@ const AppRoutes = () => {
         <Route path='/organization-signup' element={<OrganizationSignup />} />
         <Route path='/app' element={<PrivateOutlet />}>
           <Route index element={<Overview />} />
+          <Route path='/app/clients' element={<Clients />} />
           <Route path='/app/clients/dashboard' element={<ClientDashboard />} />
-          <Route path='/app/clients/clients' element={<Clients />} />
-          <Route path='/app/clients/clients/:id' element={<ClientDetails />} />
+          <Route path='/app/clients/:id' element={<ClientDetails />} />
         </Route>
       </Routes>
     </>
