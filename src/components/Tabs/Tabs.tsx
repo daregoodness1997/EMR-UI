@@ -19,7 +19,7 @@ export const StyledTabs = styled((props: StyledTabsProps) => (
     display: 'flex',
     justifyContent: 'center',
     backgroundColor: '#f8f8f8',
-    border: '0px',
+    border: '0px !important',
     width: '100%',
   },
   '& .MuiTabs-indicatorSpan': {
@@ -39,7 +39,7 @@ export const StyledTab = styled((props: StyledTabProps) => (
 ))(({ theme }) => ({
   textTransform: 'uppercase',
   fontWeight: theme.typography.fontWeightRegular,
-  fontSize: theme.typography.pxToRem(15),
+  fontSize: theme.typography.pxToRem(10),
   marginRight: theme.spacing(1),
   width: '31%',
   padding: 10,
