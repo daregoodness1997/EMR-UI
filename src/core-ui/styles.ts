@@ -616,3 +616,41 @@ export const DashboardBox = styled.div`
     width: 100%;
   }
 `;
+
+export const TableMenu = styled.div`
+  width: 100%;
+  height: 60px;
+  margin: 0rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .inner-table {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 400px) {
+      width: 100%;
+    }
+
+    & input {
+      margin-right: 1rem;
+    }
+    & span {
+      margin-left: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    height: auto;
+    & button {
+      width: 100%;
+      margin: 10px 0 6px;
+    }
+  }
+`;

@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-import ClientDetails from '../@modules/client/ClientDashboard';
+import ClientDashboard from '../@modules/client/ClientDashboard';
+import ClientDetails from '../@modules/client/ClientDetails';
 import Clients from '../@modules/client/Clients';
 import Overview from '../pages/app/Overview';
 import PrivateOutlet from '../pages/app/PrivateOutlet';
@@ -17,6 +18,7 @@ const AppRoutes = () => {
         <Route path='/app' element={<PrivateOutlet />}>
           <Route index element={<Overview />} />
           <Route path='/app/clients' element={<Clients />} />
+          <Route path='/app/clients/dashboard' element={<ClientDashboard />} />
           <Route path='/app/clients/:id' element={<ClientDetails />} />
         </Route>
       </Routes>
