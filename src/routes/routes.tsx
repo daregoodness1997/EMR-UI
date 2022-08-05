@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import ClientDetails from '../@modules/client/ClientDashboard';
+import Clients from '../@modules/client/Clients';
 import Overview from '../pages/app/Overview';
 import PrivateOutlet from '../pages/app/PrivateOutlet';
 import IndividualSignup from '../pages/auth/IndividualSignup';
@@ -14,6 +16,8 @@ const AppRoutes = () => {
         <Route path='/organization-signup' element={<OrganizationSignup />} />
         <Route path='/app' element={<PrivateOutlet />}>
           <Route index element={<Overview />} />
+          <Route path='/app/clients' element={<Clients />} />
+          <Route path='/app/clients/:id' element={<ClientDetails />} />
         </Route>
       </Routes>
     </>

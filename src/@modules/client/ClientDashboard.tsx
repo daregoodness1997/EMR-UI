@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ClientDashboard = () => {
-  return <div>ClientDashboard</div>;
+const ClientDetails = () => {
+  return <div>ClientDetails</div>;
 };
 
-export default ClientDashboard;
+export default ClientDetails;
