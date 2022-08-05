@@ -73,6 +73,11 @@ p {
   margin:0.6rem 0;
   font-size:0.9rem
 }
+ 
+a{
+  text-decoration:none;
+  color: black
+ }
 
 
 /* text editor*/

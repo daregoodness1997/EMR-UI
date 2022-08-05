@@ -11,7 +11,10 @@ interface DashboardTopMenuProps {
   handleClick?: () => void;
 }
 
-const defaultList = [{ code: 'NG', label: '', location: '' }];
+const defaultList = [
+  { code: 'NG', label: 'Agege', location: 'Agege' },
+  { code: 'NG', label: 'Ikeja', location: 'Agege' },
+];
 
 const DashboardTopMenu: React.FC<DashboardTopMenuProps> = ({
   isOpen,
@@ -65,11 +68,11 @@ const DashboardTopMenu: React.FC<DashboardTopMenuProps> = ({
           }
         </div>
 
-        <div className='profile-item'>
+        <Box className='profile-item'>
           <i className='bi bi-bell-fill' />
           {/* <Avatar src="/img_avatar.png" alt="" /> */}
           <ProfileMenu />
-        </div>
+        </Box>
       </Profile>
     </TopMenuWrapper>
   );
