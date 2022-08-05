@@ -4,14 +4,19 @@ import {
   FormControlLabel,
   FormGroup,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Input, PasswordInput } from '../../components';
 import { AuthWrapper } from '../../core-ui';
 
 const Login = () => {
+  let navigate = useNavigate();
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    navigate('/app', { replace: true });
+  };
   return (
     <AuthWrapper paragraph='Login here as an organization'>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Input label='Email' placeholder='Enter your email address' />
         <PasswordInput />
         <FormControl
