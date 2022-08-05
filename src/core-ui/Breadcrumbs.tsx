@@ -16,6 +16,8 @@ function Breadcrumbs() {
         const last = index === pathnames.length - 1;
         const to = `/${pathnames.slice(0, index + 1).join('/')}`;
 
+        console.log(name);
+
         return last ? (
           <Typography
             color='text.primary'
@@ -27,11 +29,24 @@ function Breadcrumbs() {
               whiteSpace: 'nowrap',
             }}
           >
-            {name} <i className='bi bi-chevron-right'></i>
+            {name}
             {/* Pass breadcrumb context  */}
           </Typography>
         ) : (
-          <Link to={to}>{to}</Link>
+          <Typography
+            color='text.primary'
+            key={to}
+            style={{
+              textDecoration: 'none',
+              textTransform: 'capitalize',
+              fontWeight: 'medium',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            <Link to={to} key={to}>
+              {name}
+            </Link>
+          </Typography>
         );
       })}
     </MUIBreadcrumbs>

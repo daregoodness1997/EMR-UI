@@ -122,3 +122,39 @@ export const LayoutContent = styled.div`
     height: 100%;
   }
 `;
+
+export const StartCardContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  width: 100%;
+  margin: 0 10px 10px 0;
+
+  .inner-section {
+    background: '#33415C';
+    padding: 8px;
+    border-radius: 16px;
+    color: #000;
+    display: flex;
+    align-items: center;
+
+    .icon-container {
+      margin-right: 24px;
+
+      i {
+        font-size: 32px;
+      }
+    }
+    @media (max-width: 400px) {
+      padding: 10px;
+    }
+  }
+  .percent-container {
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: #c2f5df;
+  }
+`;

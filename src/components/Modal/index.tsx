@@ -14,7 +14,7 @@ const style = {
   height: '80%',
   maxHeight: '100%',
   bgcolor: '#fff',
-  boxShadow: 24,
+  boxShadow: 40,
   p: 4,
   borderRadius: '6px',
   minWidth: '350px !important',
@@ -32,7 +32,11 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
       BackdropProps={{
         timeout: 500,
       }}
-      sx={{ width: '100%', display: 'grid', placeItems: 'center ' }}
+      sx={{
+        width: '100%',
+        display: 'grid',
+        placeItems: 'center ',
+      }}
     >
       <Fade in={open}>
         <Box sx={style}>

@@ -20,9 +20,12 @@ const Dashboard: React.FC<DashboardProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   return (
     <LayoutWrapper>
-      <DashboardSideMenu />
+      <DashboardSideMenu isOpen={isOpen} />
       <LayoutContent>
-        <DashboardTopMenu />
+        <DashboardTopMenu
+          isOpen={isOpen}
+          handleClick={() => setIsOpen(!isOpen)}
+        />
         <Box className='layout__content-main'>
           {children}
           <Outlet />

@@ -19,7 +19,7 @@ import MenuPopover from './MenuPopover';
 
 interface ListItemStyleProps {
   children?: React.ReactNode;
-  onClick: (e: any) => void;
+  onClick: (e: React.MouseEvent) => void;
 }
 
 export const ListItemStyle = styled((props: ListItemStyleProps) => (
@@ -72,6 +72,8 @@ const ProfileMenu = () => {
           src={account.photoURL}
           alt={account.displayName}
           sx={{ bgcolor: 'orange' }}
+          ref={anchorRef}
+          onClick={handleOpen}
         />
       </IconButton>
 
