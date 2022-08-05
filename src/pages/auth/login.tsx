@@ -4,7 +4,6 @@ import {
   FormControlLabel,
   FormGroup,
 } from '@mui/material';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Input, PasswordInput } from '../../components';
 import { AuthWrapper } from '../../core-ui';
