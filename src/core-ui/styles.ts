@@ -527,3 +527,92 @@ export const StartCardWapper = styled.div`
     flex-direction: column;
   }
 `;
+
+// Status Batch
+export const StatusBatchWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: medium;
+  margin-right: 32px;
+
+  & span.batch {
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    margin-right: 6px;
+
+    &.cancelled {
+      border: 3px solid #ed0423;
+    }
+    &.confirmed {
+      border: 3px solid #34d1bf;
+    }
+    &.attended {
+      border: 3px solid #0496ff;
+    }
+    &.absent {
+      border: 3px solid #6665dd;
+    }
+    &.rescheduled {
+      border: 3px solid #f17105;
+    }
+  }
+`;
+
+export const DashboardContainer = styled.div`
+  display: flex;
+  height: 65vh;
+  overflow-y: hidden;
+
+  @media (max-width: 400px) {
+    height: auto;
+    overflow-y: auto;
+    flex-direction: column;
+  }
+`;
+
+export const DashboardBox = styled.div`
+  padding: 16px;
+  padding-top: 0;
+  background: #f8f8f8;
+  border-radius: 8px;
+  margin: 12px 20px 10px 0;
+  width: 33%;
+  height: 100%;
+  overflow-y: auto;
+  positions: relative;
+  &.lg {
+    width: 66%;
+    background: white;
+    padding: 0;
+
+    .container {
+      background: #f8f8f8;
+      padding: 10px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+    }
+    @media (max-width: 400px) {
+      width: 100%;
+    }
+  }
+  & header {
+    position: sticky;
+    top: 0;
+    background: #f8f8f8;
+    z-index: 10;
+    padding: 10px;
+
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 16px 0 32px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+`;
