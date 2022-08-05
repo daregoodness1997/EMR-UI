@@ -493,3 +493,37 @@ export const Avatar = styled.img`
   object-fit: cover;
   border-radius: 50%;
 `;
+
+export const SingleBox = styled.div`
+  width: 8px;
+  height: 12px;
+  background-color: #e4eaf0;
+  border-radius: 8px;
+  margin-bottom: 4px;
+
+  &.cancelled {
+    background: #ed0423;
+  }
+  &.confirmed {
+    background: #34d1bf;
+  }
+  &.attended {
+    background: #0496ff;
+  }
+  &.absent {
+    background: #6665dd;
+  }
+  &.rescheduled {
+    background: #f17105;
+  }
+`;
+
+export const StartCardWapper = styled.div`
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
+`;
