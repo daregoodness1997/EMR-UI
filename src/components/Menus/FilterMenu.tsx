@@ -21,6 +21,8 @@ import { FILTER_OPTIONS } from '../../Constants';
 import { Link } from 'react-router-dom';
 import MenuPopover from '../../core-ui/MenuPopover';
 import Checkbox from '../Inputs/Checkbox';
+import SearchInput from '../Inputs/SearchInput';
+import Input from '../Inputs/Input';
 
 interface ListItemStyleProps {
   children?: React.ReactNode;
@@ -58,8 +60,9 @@ const FilterMenu = () => {
         ref={anchorRef}
         onClick={handleOpen}
         sx={{
-          p: 1,
+          padding: '0.5rem 1.2rem',
           borderRadius: 2,
+          border: '1px solid #CDD2D7',
         }}
       >
         <Typography variant='body1'>Filter by</Typography>
@@ -91,7 +94,8 @@ const FilterMenu = () => {
             >
               <ClickAwayListener onClickAway={handleClose}>
                 <Stack sx={{ p: 1 }}>
-                  <ListItemStyle> Search Input</ListItemStyle>
+                  {/* <SearchInput /> */}
+                  <Input sx={{ width: '100%', height: '36px' }} />
                   {FILTER_OPTIONS.map(option => (
                     <ListItemStyle key={option.label} onClick={handleOpen}>
                       <List sx={{ display: 'flex', alignItems: 'center' }}>

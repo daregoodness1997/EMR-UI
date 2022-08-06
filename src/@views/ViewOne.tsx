@@ -1,5 +1,6 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
+import { Button, Input } from '../components';
 import FilterMenu from '../components/Menus/FilterMenu';
 import { DashboardPageWrapper, PageHeaderMenu } from '../core-ui/styles';
 
@@ -14,11 +15,19 @@ const ViewOne: React.FC<ViewOneProps> = ({ title }) => {
   return (
     <DashboardPageWrapper>
       <Typography variant='h2'>{title}</Typography>
-      <PageHeaderMenu>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Stack>
+          <Input sx={{ width: '320px' }} />
           <FilterMenu />
-        </Box>
-      </PageHeaderMenu>
+        </Stack>
+        <Button>Add {title}</Button>
+      </Box>
     </DashboardPageWrapper>
   );
 };
