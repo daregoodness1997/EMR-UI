@@ -309,14 +309,15 @@ export const DashboardPageWrapper = styled.div`
 
 // TopMenu
 export const TopMenuWrapper = styled.div`
-  background: rgb(250, 250, 250);
+  background: rgba(250, 250, 250, 0.8);
   width: 100%;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1.4rem;
-
+  backdrop-filter: blur(60px);
+  webkit-backdrop-filter: blur(60px);
   & .breadcrumb {
     @media (max-width: 400px) {
       display: none;
@@ -630,6 +631,40 @@ export const TableMenu = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    @media (max-width: 400px) {
+      width: 100%;
+    }
+
+    & input {
+      margin-right: 1rem;
+    }
+    & span {
+      margin-left: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    height: auto;
+    & button {
+      width: 100%;
+      margin: 10px 0 6px;
+    }
+  }
+`;
+
+export const PageHeaderMenu = styled.div`
+  width: 100%;
+  height: 60px;
+  margin: 0rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .inner-page-header {
     @media (max-width: 400px) {
       width: 100%;
     }

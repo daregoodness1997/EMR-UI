@@ -32,6 +32,12 @@ const account = {
   role: 'Instructor',
 };
 
+const FILTER_OPTIONS = [
+  { label: 'None' },
+  { label: 'Description' },
+  { label: 'Date' },
+];
+
 export {
   MENU_OPTIONS,
   DRAWER_WIDTH,
@@ -39,4 +45,5 @@ export {
   APPBAR_DESKTOP,
   APP_OPTIONS,
   account,
+  FILTER_OPTIONS,
 };
