@@ -1,6 +1,6 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Input, Stack, Typography } from '@mui/material';
 import React from 'react';
-import { Button, Input } from '../components';
+import { Button } from '../components';
 import FilterMenu from '../components/Menus/FilterMenu';
 import { DashboardPageWrapper, PageHeaderMenu } from '../core-ui/styles';
 
@@ -22,12 +22,26 @@ const ViewOne: React.FC<ViewOneProps> = ({ title }) => {
           justifyContent: 'space-between',
         }}
       >
-        <Stack>
-          <Input sx={{ width: '320px' }} />
-          <FilterMenu />
-        </Stack>
+        <Box sx={{ display: 'flex', margin: '24px 0' }}>
+          <Box>
+            <input
+              style={{
+                width: '320px',
+                padding: '0.75rem 1.2rem',
+                borderRadius: '4px',
+                border: '1.5px solid #eee',
+                marginRight: '10px',
+              }}
+            />
+          </Box>
+          <Box>
+            <FilterMenu />
+          </Box>
+        </Box>
         <Button>Add {title}</Button>
       </Box>
+
+      
     </DashboardPageWrapper>
   );
 };

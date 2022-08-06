@@ -55,7 +55,7 @@ const FilterMenu = () => {
     console.log('hello');
   };
   return (
-    <>
+    <Box>
       <IconButton
         ref={anchorRef}
         onClick={handleOpen}
@@ -112,7 +112,7 @@ const FilterMenu = () => {
           </Grow>
         )}
       </Popper>
-    </>
+    </Box>
   );
 };
 
