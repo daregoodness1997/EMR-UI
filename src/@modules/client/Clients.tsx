@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import ViewOne from '../../@views/ViewOne';
 import {
   DashboardPageWrapper,
@@ -13,9 +14,16 @@ interface ClientsProps {
   title?: string;
 }
 
-console.log(clientsList);
-
 const Clients: React.FC<ClientsProps> = ({ title }) => {
+  let navigate = useNavigate();
+  const handleCreateClient = () => {
+    navigate('/app/clients/create-client');
+    console.log('client create');
+  };
+
+  const handleRowClicked = (row: any, event: any) => {
+    navigate(`/app/clients/${row.firstname}`);
+  };
   return (
     <>
       <ViewOne
@@ -23,6 +31,8 @@ const Clients: React.FC<ClientsProps> = ({ title }) => {
         columns={ClientMiniSchema}
         data={clientsList}
         tableTitle='Clients'
+        handleCreate={handleCreateClient}
+        onRowClicked={handleRowClicked}
       />
     </>
   );

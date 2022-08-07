@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import ClientDashboard from '../@modules/client/ClientDashboard';
 import ClientDetails from '../@modules/client/ClientDetails';
 import Clients from '../@modules/client/Clients';
+import CreateClient from '../@modules/client/CreateClient';
 import Overview from '../pages/app/Overview';
 import PrivateOutlet from '../pages/app/PrivateOutlet';
 import IndividualSignup from '../pages/auth/IndividualSignup';
@@ -19,6 +20,7 @@ const AppRoutes = () => {
           <Route index element={<Overview />} />
           <Route path='/app/clients' element={<Clients />} />
           <Route path='/app/clients/dashboard' element={<ClientDashboard />} />
+          <Route path='/app/clients/create-client' element={<CreateClient />} />
           <Route path='/app/clients/:id' element={<ClientDetails />} />
         </Route>
       </Routes>

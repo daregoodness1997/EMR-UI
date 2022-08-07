@@ -2,14 +2,11 @@ import React, { useRef, useState } from 'react';
 // import { Link as RouterLink } from 'react-router-dom';
 
 // @mui
-import { alpha, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import {
   Box,
-  Divider,
   Typography,
   Stack,
-  MenuItem,
-  Avatar,
   IconButton,
   ListItemButton,
   List,
@@ -18,10 +15,7 @@ import {
   ClickAwayListener,
 } from '@mui/material';
 import { FILTER_OPTIONS } from '../../Constants';
-import { Link } from 'react-router-dom';
-import MenuPopover from '../../core-ui/MenuPopover';
-import Checkbox from '../Inputs/Checkbox';
-import SearchInput from '../Inputs/SearchInput';
+
 import Input from '../Inputs/Input';
 
 interface ListItemStyleProps {
@@ -44,7 +38,7 @@ export const ListItemStyle = styled((props: ListItemStyleProps) => (
 const FilterMenu = () => {
   const anchorRef = useRef(null);
 
-  const [open, setOpen] = useState<any>(null);
+  const [open, setOpen] = useState<any>(false);
 
   const handleOpen = (event: React.MouseEvent) => {
     setOpen(event.currentTarget);

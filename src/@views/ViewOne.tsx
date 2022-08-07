@@ -1,4 +1,4 @@
-import { Box, Input, Stack, Typography } from '@mui/material';
+import { Box, Input, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { Button } from '../components';
 import FilterMenu from '../components/Menus/FilterMenu';
@@ -32,29 +32,43 @@ const ViewOne: React.FC<ViewOneProps> = ({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          flexDirection: { lg: 'row', xs: 'column' },
         }}
       >
-        <Box sx={{ display: 'flex', margin: '24px 0' }}>
-          <Box>
-            <input
-              style={{
-                width: '320px',
-                padding: '0.75rem 1.2rem',
-                borderRadius: '4px',
-                border: '1.5px solid #eee',
-                marginRight: '10px',
-              }}
-            />
-          </Box>
-          <Box>
-            <FilterMenu />
-          </Box>
+        <Box
+          sx={{
+            display: 'flex',
+            margin: { xs: '10px 0', lg: '24px 0' },
+            width: { xs: '100%' },
+          }}
+        >
+          <TextField
+            variant='outlined'
+            size='small'
+            sx={{
+              width: { lg: '320px', xs: '220px' },
+              // height: '40px',
+              borderRadius: '4px',
+              marginRight: '10px',
+            }}
+          />
+          <FilterMenu />
         </Box>
-        <Button>Add {title}</Button>
+        <Button
+          sx={{ width: { xs: '100%', lg: 'auto' } }}
+          onClick={handleCreate}
+        >
+          Add {title}
+        </Button>
       </Box>
 
       <Box sx={{ height: `calc(100vh - 90px)`, overflowY: 'scroll' }}>
-        <Table title={tableTitle} columns={columns} data={data} />
+        <Table
+          title={tableTitle}
+          columns={columns}
+          data={data}
+          onRowClicked={onRowClicked}
+        />
       </Box>
     </DashboardPageWrapper>
   );

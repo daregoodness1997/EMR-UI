@@ -90,6 +90,7 @@ export const Button = styled(BaseButton)`
     & i {
       display: none;
     }
+    width: 100%;
   }
 `;
 
