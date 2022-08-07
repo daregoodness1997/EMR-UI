@@ -22,7 +22,7 @@ const Clients: React.FC<ClientsProps> = ({ title }) => {
   };
 
   const handleRowClicked = (row: any, event: any) => {
-    navigate(`/app/clients/${row.firstname}`);
+    navigate(`/app/clients/${row.id}`);
   };
   return (
     <>

@@ -33,6 +33,7 @@ const ViewOne: React.FC<ViewOneProps> = ({
           alignItems: 'center',
           justifyContent: 'space-between',
           flexDirection: { lg: 'row', xs: 'column' },
+          zIndex: 100,
         }}
       >
         <Box
@@ -63,12 +64,7 @@ const ViewOne: React.FC<ViewOneProps> = ({
       </Box>
 
       <Box sx={{ height: `calc(100vh - 90px)`, overflowY: 'scroll' }}>
-        <Table
-          title={tableTitle}
-          columns={columns}
-          data={data}
-          onRowClicked={onRowClicked}
-        />
+        <Table columns={columns} data={data} onRowClicked={onRowClicked} />
       </Box>
     </DashboardPageWrapper>
   );

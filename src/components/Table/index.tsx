@@ -3,7 +3,7 @@ import DataTable from 'react-data-table-component';
 import { customStyles } from './styles';
 
 interface TableProps {
-  title: string;
+  title?: string;
   columns: any;
   data: any;
   pointerOnHover?: boolean;
