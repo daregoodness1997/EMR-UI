@@ -143,4 +143,15 @@ const ClientMiniSchema = [
     inputType: InputType.TEXT,
   },
 ];
+
+const AppointmentSchema = [
+  {
+    name: 'S/N',
+    key: 'sn',
+    selector: (row: any) => row.sn,
+    description: 'SN',
+    sortable: true,
+    inputType: InputType.HIDDEN,
+  },
+];
 export { ClientMiniSchema };

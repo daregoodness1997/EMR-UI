@@ -2,11 +2,22 @@ import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 import ChartCard from './ChartCard';
 
-const BarChart = () => {
+interface HorizontalBarProps {
+  stacked?: boolean;
+}
+const HorizontalBar: React.FC<HorizontalBarProps> = ({ stacked }) => {
   const state = {
     series: [
       {
         name: 'Inflation',
+        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
+      },
+      {
+        name: 'Striking Calf',
+        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
+      },
+      {
+        name: 'High Way',
         data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
       },
     ],
@@ -14,6 +25,7 @@ const BarChart = () => {
       chart: {
         toolbar: { show: false },
         zoom: { enabled: false },
+        stacked: true,
       },
       // States
       states: {
@@ -67,8 +79,10 @@ const BarChart = () => {
       plotOptions: {
         // Bar
         bar: {
-          columnWidth: '80%',
+          columnWidth: '100%',
+          rowWidth: '100%',
           borderRadius: 4,
+          horizontal: true,
         },
       },
     },
@@ -79,10 +93,10 @@ const BarChart = () => {
         options={state.options}
         series={state.series}
         type='bar'
-        height={350}
+        height={500}
       />
     </ChartCard>
   );
 };
 
-export default BarChart;
+export default HorizontalBar;

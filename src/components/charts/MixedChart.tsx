@@ -1,19 +1,31 @@
 import React from 'react';
-import ReactApexChart from 'react-apexcharts';
+import Chart from 'react-apexcharts';
 import ChartCard from './ChartCard';
 
-const BarChart = () => {
+const MixedChart = () => {
   const state = {
     series: [
       {
-        name: 'Inflation',
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
+        name: 'TEAM A',
+        type: 'column',
+        data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
+      },
+      {
+        name: 'TEAM B',
+        type: 'area',
+        data: [0, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
+      },
+      {
+        name: 'TEAM C',
+        type: 'line',
+        data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
       },
     ],
     options: {
       chart: {
         toolbar: { show: false },
         zoom: { enabled: false },
+        curve: 'smooth',
       },
       // States
       states: {
@@ -32,13 +44,14 @@ const BarChart = () => {
       },
       // Fill
       fill: {
-        opacity: 1,
+        opacity: [0.85, 0.25, 1],
         gradient: {
+          inverseColors: false,
+          shade: 'light',
           type: 'vertical',
-          shadeIntensity: 0,
-          opacityFrom: 0.4,
-          opacityTo: 0,
-          stops: [0, 100],
+          opacityFrom: 0.85,
+          opacityTo: 0.55,
+          stops: [0, 100, 100, 100],
         },
       },
 
@@ -63,26 +76,36 @@ const BarChart = () => {
         x: {
           show: false,
         },
+        y: {
+          formatter: function (y: number) {
+            if (typeof y !== 'undefined') {
+              return y.toFixed(0) + ' points';
+            }
+            return y;
+          },
+        },
       }, // plotOptions
       plotOptions: {
         // Bar
         bar: {
-          columnWidth: '80%',
+          columnWidth: '100%',
+          rowWidth: '100%',
           borderRadius: 4,
         },
       },
+      //   curve
     },
   };
   return (
     <ChartCard>
-      <ReactApexChart
+      <Chart
         options={state.options}
         series={state.series}
-        type='bar'
-        height={350}
+        type='line'
+        height={500}
       />
     </ChartCard>
   );
 };
 
-export default BarChart;
+export default MixedChart;

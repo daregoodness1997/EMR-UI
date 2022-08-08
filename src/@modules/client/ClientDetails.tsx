@@ -2,7 +2,6 @@ import { Box, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DetailView from '../../@views/DetailView';
-import { Input } from '../../components';
 import DynamicInput from '../../components/Inputs/DynamicInput';
 import { clientsList } from '../../utils/data';
 import { ClientMiniSchema } from '../../utils/schema';
@@ -43,10 +42,21 @@ const ClientDetails = () => {
     setIsEditing(true);
   };
 
+  const returnInputType = (idx: any) => {
+    if (ClientMiniSchema[idx]) return ClientMiniSchema[idx].inputType;
+
+    return 'TEXT';
+  };
+  const returnOptions = (idx: any) => {
+    if (ClientMiniSchema[idx]) return ClientMiniSchema[idx].options;
+
+    return null;
+  };
+
   return (
     <DetailView title={`${details[0].firstname}`} onEdit={handleEditing}>
       {keys.map((key, idx) => {
-        console.log('key', ClientMiniSchema[idx]);
+        // console.log('key', ClientMiniSchema[idx]);
 
         if (isEditing && key !== 'id')
           return (
@@ -56,15 +66,15 @@ const ClientDetails = () => {
                 label={renderLabel(key)}
                 name={key}
                 value={details[0][key]}
-                inputType={'TEXT' || `${ClientMiniSchema[idx].inputType}`}
-                options={[] || ClientMiniSchema[idx]}
+                inputType={`${returnInputType(idx)}`}
+                options={returnOptions(idx) || []}
               />
             </>
           );
         return (
           <Box>
             <label>{renderLabel(key)}</label>
-            <Typography variant='body2'>{details[0][key]}</Typography>
+            <Typography variant='body2'>{`${details[0][key]}`}</Typography>
           </Box>
         );
       })}

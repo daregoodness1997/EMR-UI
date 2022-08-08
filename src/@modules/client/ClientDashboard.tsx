@@ -4,7 +4,16 @@ import { NavLink } from 'react-router-dom';
 import AppointmentCard from '../../@sections/AppointmentCard';
 import AppointmentGrid from '../../@sections/AppointmentGrid';
 import StatCard from '../../@sections/StatCard';
+import AreaChart from '../../components/charts/AreaChart';
+import BarChart from '../../components/charts/BarChart';
+import BubbleChart from '../../components/charts/BurbleChart';
+import CircleChart from '../../components/charts/CircleChart';
+import ColumnChart from '../../components/charts/ColumnChart';
+import HorizontalBar from '../../components/charts/HorizontalBar';
+import LineChart from '../../components/charts/LineChart';
+import MixedChart from '../../components/charts/MixedChart';
 import PieChart from '../../components/charts/PieChat';
+import PolarAreaChart from '../../components/charts/PolarAreaChart';
 import TabPanel from '../../components/Tabs/TabPanel';
 import { StyledTab, StyledTabs } from '../../components/Tabs/Tabs';
 import StatusBatch from '../../core-ui/Grid/StatusBatch';
@@ -120,6 +129,15 @@ const ClientDashboard = () => {
               </header>
               <PieChart />
             </div>
+            <AreaChart />
+            <LineChart />
+            <BarChart />
+            <ColumnChart />
+            <HorizontalBar />
+            <MixedChart />
+            <PolarAreaChart />
+            <CircleChart />
+            <BubbleChart />
           </DashboardBox>
         </DashboardContainer>
       </Box>

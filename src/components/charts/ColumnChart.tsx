@@ -1,17 +1,12 @@
 import { Box } from '@mui/material';
 import React, { useState } from 'react';
 import Chart from 'react-apexcharts';
+import { chartoptions } from '../../utils/chartoptions';
+import ChartCard from './ChartCard';
 
 const ColumnChart = () => {
   const state = {
-    options: {
-      plotOptions: {
-        bar: {
-          horizontal: false,
-          borderRadius: 10,
-        },
-      },
-    },
+    options: chartoptions,
     series: [
       {
         name: 'PRODUCT A',
@@ -32,14 +27,14 @@ const ColumnChart = () => {
     ],
   };
   return (
-    <Box>
+    <ChartCard>
       <Chart
         options={state.options}
         series={state.series}
         type='bar'
-        width='340'
+        height='340'
       />
-    </Box>
+    </ChartCard>
   );
 };
 

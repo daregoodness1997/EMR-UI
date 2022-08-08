@@ -3,15 +3,15 @@ import Chart from 'react-apexcharts';
 import React from 'react';
 import ChartCard from './ChartCard';
 import { chartoptions } from '../../utils/chartoptions';
-interface LineChartProps {
+interface AreaChartProps {
   title?: string;
   subheader?: string;
   series?: { name: string; data: [] }[];
 }
 
-const LineChart: React.FC<LineChartProps> = ({
-  title = 'Line Chart',
-  subheader = 'Sample Line Chart',
+const AreaChart: React.FC<AreaChartProps> = ({
+  title = 'Area Chart',
+  subheader = 'Sample Area Chart',
   series,
 }) => {
   const state = {
@@ -32,11 +32,11 @@ const LineChart: React.FC<LineChartProps> = ({
       <Chart
         options={state.options}
         series={state.series}
-        type='line'
+        type='area'
         height={350}
       />
     </ChartCard>
   );
 };
 
-export default LineChart;
+export default AreaChart;
