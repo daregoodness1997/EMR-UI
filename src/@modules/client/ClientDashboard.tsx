@@ -6,7 +6,7 @@ import AppointmentGrid from '../../@sections/AppointmentGrid';
 import StatCard from '../../@sections/StatCard';
 import AreaChart from '../../components/charts/AreaChart';
 import BarChart from '../../components/charts/BarChart';
-import BubbleChart from '../../components/charts/BurbleChart';
+import BubbleChart from '../../components/charts/BubbleChart';
 import CircleChart from '../../components/charts/CircleChart';
 import ColumnChart from '../../components/charts/ColumnChart';
 import HorizontalBar from '../../components/charts/HorizontalBar';
