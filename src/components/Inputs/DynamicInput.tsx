@@ -12,12 +12,13 @@ import Textarea from './Textarea';
 interface DynamicInputProps {
   inputType: any;
   label: string;
-  name: string;
+  name: any;
   data?: any;
   options: any[];
   errors?: any;
   readonly?: boolean;
   defaultValue?: any;
+  value?: any;
 }
 
 const DynamicInput = (props: DynamicInputProps) => {
@@ -30,6 +31,7 @@ const DynamicInput = (props: DynamicInputProps) => {
     errors = {},
     readonly,
     defaultValue,
+    value,
   } = props;
   if (inputType === InputType.HIDDEN && data[name]) {
     return <input type='hidden' defaultValue={defaultValue} />;
@@ -44,6 +46,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         disabled={readonly}
         errorText={errors[name]?.message}
         defaultValue={data[name] || ''}
+        value={value}
       />
     );
   }

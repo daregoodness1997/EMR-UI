@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DetailView from '../../@views/DetailView';
 import { Input } from '../../components';
+import DynamicInput from '../../components/Inputs/DynamicInput';
 import { clientsList } from '../../utils/data';
+import { ClientMiniSchema } from '../../utils/schema';
 
 const ClientDetails = () => {
   const { id } = useParams();
@@ -40,16 +42,24 @@ const ClientDetails = () => {
   const handleEditing = () => {
     setIsEditing(true);
   };
+
   return (
     <DetailView title={`${details[0].firstname}`} onEdit={handleEditing}>
-      {keys.map(key => {
-        if (isEditing)
+      {keys.map((key, idx) => {
+        console.log('key', ClientMiniSchema[idx]);
+
+        if (isEditing && key !== 'id')
           return (
-            <Input
-              label={renderLabel(key)}
-              name={key}
-              value={details[0][key]}
-            />
+            <>
+              <DynamicInput
+                key={idx}
+                label={renderLabel(key)}
+                name={key}
+                value={details[0][key]}
+                inputType={'TEXT' || `${ClientMiniSchema[idx].inputType}`}
+                options={[] || ClientMiniSchema[idx]}
+              />
+            </>
           );
         return (
           <Box>

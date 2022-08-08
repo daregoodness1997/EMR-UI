@@ -23,4 +23,22 @@ const clientsList = [...Array(100)].map((_, index) => ({
   status: sample(['active', 'inactive']),
 }));
 
+const appointmentList = [...Array(100)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  clientId: faker.datatype.uuid(),
+  location: faker.address.country(),
+  employee: faker.name.findName(),
+  start_time: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
+  appointmentClass: sample(['On-site', 'Telemedicine', 'Home Visit']),
+  appointmentType: sample(['New', 'Type B', 'Follow up', 'Annual Checkup']),
+  appointmentStatus: sample([
+    'Scheduled',
+    'Confirmed',
+    'Checked In',
+    'Vitals Taken',
+    'With Nurse',
+    'With Doctor',
+  ]),
+  appointmentReason: faker.lorem.text(),
+}));
 export { clientsList };
