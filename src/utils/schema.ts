@@ -154,4 +154,4 @@ const AppointmentSchema = [
     inputType: InputType.HIDDEN,
   },
 ];
-export { ClientMiniSchema };
+export { ClientMiniSchema, AppointmentSchema };

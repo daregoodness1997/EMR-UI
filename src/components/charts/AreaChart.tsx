@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import Chart from 'react-apexcharts';
 import React from 'react';
 import ChartCard from './ChartCard';
