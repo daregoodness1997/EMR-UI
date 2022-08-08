@@ -309,14 +309,15 @@ export const DashboardPageWrapper = styled.div`
 
 // TopMenu
 export const TopMenuWrapper = styled.div`
-  background: rgb(250, 250, 250);
+  background: rgba(250, 250, 250, 0.8);
   width: 100%;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 1.4rem;
-
+  backdrop-filter: blur(60px);
+  webkit-backdrop-filter: blur(60px);
   & .breadcrumb {
     @media (max-width: 400px) {
       display: none;
@@ -652,5 +653,92 @@ export const TableMenu = styled.div`
       width: 100%;
       margin: 10px 0 6px;
     }
+  }
+`;
+
+export const PageHeaderMenu = styled.div`
+  width: 100%;
+  height: 60px;
+  margin: 0rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .inner-page-header {
+    @media (max-width: 400px) {
+      width: 100%;
+    }
+
+    & input {
+      margin-right: 1rem;
+    }
+    & span {
+      margin-left: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    height: auto;
+    & button {
+      width: 100%;
+      margin: 10px 0 6px;
+    }
+  }
+`;
+
+export const SearchBox = styled.div`
+  position: relative;
+  width: 42px;
+  transition: 0.4s;
+
+  /* @media (max-width: 768px) {
+    &:active {
+      width: 200px;
+    }
+  } */
+
+  &.auto-search {
+    width: 100%;
+    margin: 10px 0;
+  }
+  &.auto-search input {
+    padding-left: 40px;
+  }
+  &.auto-search:active,
+  &.auto-search:hover,
+  &.auto-search:active input {
+    width: 100%;
+  }
+  &:hover,
+  &:active {
+    width: 12rem;
+  }
+  &:hover input,
+  &:active input {
+    width: 100%;
+  }
+
+  & i {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: ${({ theme }) => theme.grayTwo};
+    transition: 0.4s;
+  }
+
+  &:hover i {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &.auto-search:hover i {
+    opacity: 1;
+    z-index: 3;
   }
 `;

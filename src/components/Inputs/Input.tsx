@@ -1,4 +1,4 @@
-import { FormHelperText } from '@mui/material';
+import { Box, FormHelperText } from '@mui/material';
 import React from 'react';
 
 import { InputBox, InputField, InputLabel } from '../styles';
@@ -8,7 +8,7 @@ interface InputProps {
   inputId?: string;
   errors?: boolean;
   errorText?: string;
-  onChange?: () => void;
+  onChange?: (e: any) => void;
   onKeyDown?: () => void;
   helperText?: string;
   name?: string;
@@ -19,6 +19,7 @@ interface InputProps {
   size?: 'small' | 'medium';
   disabled?: boolean;
   inputRef?: any;
+  sx?: {};
 }
 
 const Input: React.FC<InputProps> = ({
@@ -30,10 +31,12 @@ const Input: React.FC<InputProps> = ({
   onChange,
   onKeyDown,
   placeholder,
+  sx,
+  value,
   // size = 'medium',
   disabled = false,
 }) => (
-  <div>
+  <Box>
     <InputBox>
       <InputField
         className='form__input'
@@ -43,13 +46,15 @@ const Input: React.FC<InputProps> = ({
         onKeyDown={onKeyDown}
         placeholder={placeholder}
         disabled={disabled}
+        style={sx}
+        value={value}
       />
       <InputLabel className='form__label' htmlFor={name}>
         {label}
       </InputLabel>
     </InputBox>
     {errorText && <FormHelperText error>{errorText}</FormHelperText>}
-  </div>
+  </Box>
 );
 
 export default Input;
