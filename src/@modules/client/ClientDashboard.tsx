@@ -78,13 +78,11 @@ const ClientDashboard = () => {
                 <NavLink to='app/clients/appointments'>View All</NavLink>
               </Box>
 
-              <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <StyledTabs value={value} onChange={handleChange}>
-                  <StyledTab label='This Month' {...a11yProps(0)} />
-                  <StyledTab label='This Week' {...a11yProps(1)} />
-                  <StyledTab label='Today' {...a11yProps(2)} />
-                </StyledTabs>
-              </Box>
+              <StyledTabs value={value} onChange={handleChange}>
+                <StyledTab label='This Month' {...a11yProps(0)} />
+                <StyledTab label='This Week' {...a11yProps(1)} />
+                <StyledTab label='Today' {...a11yProps(2)} />
+              </StyledTabs>
             </header>
             <TabPanel value={value} index={0}>
               <AppointmentCard />
