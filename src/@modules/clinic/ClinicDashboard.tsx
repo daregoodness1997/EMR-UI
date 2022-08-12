@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 import ViewCard from '../../@sections/ViewCard';
@@ -45,6 +45,10 @@ const ClinicDashboard = () => {
           >
             <Box sx={{ width: '100%', p: 2 }}>
               <HorizontalBar title='Patient Distribution' />
+              <Stack direction='row'>
+                <ViewCard count={40} title='Out Patients' />
+                <ViewCard count={16} title='In Patients' />
+              </Stack>
             </Box>
             <Box sx={{ width: '100%', p: 2 }}>
               <AreaChart />

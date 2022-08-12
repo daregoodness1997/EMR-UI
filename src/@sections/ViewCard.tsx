@@ -13,7 +13,7 @@ const ViewCard: React.FC<ViewCardProps> = ({ title, count }) => {
         background: '#f9f9f9',
         boxShadow: '0',
         borderRadius: 4,
-        width: { lg: '700px', xs: '100%' },
+        width: { xs: '100%' },
         textAlign: 'center',
         mr: 2,
       }}

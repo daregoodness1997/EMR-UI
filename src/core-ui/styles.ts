@@ -269,7 +269,7 @@ export const DashboardPageWrapper = styled.div`
   width: 100%;
   height: calc(100vh - 60px);
   overflow-y: hidden;
-  padding: 0.6rem 1rem;
+  padding: 2.2rem;
   transition: width 2s, height 4s;
   animation: divanimation 0.6s;
   -webkit-animation: divanimation 0.6s;
@@ -279,6 +279,7 @@ export const DashboardPageWrapper = styled.div`
 
   @media (max-width: 400px) {
     overflow-y: auto;
+    padding: 0.8rem;
   }
 
   & span {
