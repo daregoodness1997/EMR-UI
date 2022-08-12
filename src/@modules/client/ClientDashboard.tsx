@@ -44,10 +44,10 @@ const ClientDashboard = () => {
             }}
           >
             <Box sx={{ width: '100%', p: 2 }}>
-              <Card sx={{ height: '300px', boxShadow: '0' }}>
+              <Card sx={{ boxShadow: '0' }}>
                 <AreaChart height={200} title='Trends' />
               </Card>
-              <Card sx={{ height: '600px', boxShadow: '0' }}>
+              <Card sx={{ boxShadow: '0' }}>
                 <AreaChart height={200} title='New Clients' />
               </Card>
             </Box>
