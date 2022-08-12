@@ -1,4 +1,3 @@
-import { Card, CardHeader } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 interface ChartCardProps {

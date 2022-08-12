@@ -1,9 +1,9 @@
-import { Box, Input, Stack, TextField, Typography } from '@mui/material';
+import { Box, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { Button } from '../components';
 import FilterMenu from '../components/Menus/FilterMenu';
 import Table from '../components/Table';
-import { DashboardPageWrapper, PageHeaderMenu } from '../core-ui/styles';
+import { DashboardPageWrapper } from '../core-ui/styles';
 
 interface ViewOneProps {
   title?: string;

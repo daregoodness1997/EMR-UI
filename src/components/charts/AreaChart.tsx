@@ -1,6 +1,5 @@
 import React from 'react';
 import ChartCard from './ChartCard';
-import Chart from 'react-apexcharts';
 import { chartoptions } from '../../utils/chartoptions';
 import { areaSeries } from '../../utils/mock_chart_data';
 import ReactApexChart from 'react-apexcharts';

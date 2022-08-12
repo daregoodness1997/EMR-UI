@@ -1,12 +1,6 @@
-import { Box, Typography } from '@mui/material';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ViewOne from '../../@views/ViewOne';
-import {
-  DashboardPageWrapper,
-  PageHeaderMenu,
-  PageWrapper,
-} from '../../core-ui/styles';
 import { clientsList } from '../../utils/data';
 import { ClientMiniSchema } from '../../utils/schema';
 
