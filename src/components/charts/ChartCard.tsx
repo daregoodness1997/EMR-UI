@@ -22,9 +22,10 @@ const ChartCard: React.FC<ChartCardProps> = ({
         width: '100%',
         borderRadius: 2,
         mb: 2,
+        p: 0,
       }}
     >
-      <Box sx={{ width: '100%', mt: 2 }}>{children}</Box>
+      <Box sx={{ width: '100%', mt: 2, p: 0 }}>{children}</Box>
     </Box>
   );
 };

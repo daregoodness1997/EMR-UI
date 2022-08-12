@@ -32,7 +32,7 @@ const ViewOne: React.FC<ViewOneProps> = ({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          flexDirection: { lg: 'row', xs: 'column' },
+          flexDirection: { lg: 'row', sm: 'row', xs: 'column' },
           zIndex: 100,
         }}
       >

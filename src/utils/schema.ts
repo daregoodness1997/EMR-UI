@@ -2,6 +2,15 @@ import { InputType } from '../pages/app/schema/utils';
 
 const ClientMiniSchema = [
   {
+    name: 'S/N',
+    key: 's/n',
+    description: 'ID',
+    selector: (row: any) => row.id,
+    sortable: true,
+    required: true,
+    inputType: null,
+  },
+  {
     name: 'First Name',
     key: 'firstname',
     description: 'First Name',
