@@ -7,6 +7,7 @@ import AreaChart from '../../components/charts/AreaChart';
 import BarChart from '../../components/charts/BarChart';
 import BubbleChart from '../../components/charts/BubbleChart';
 import CircleChart from '../../components/charts/CircleChart';
+import PieChart from '../../components/charts/PieChat';
 
 import {
   DashboardContainer,

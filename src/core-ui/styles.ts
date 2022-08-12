@@ -564,7 +564,7 @@ export const StatusBatchWrapper = styled.div`
 export const DashboardContainer = styled.div`
   display: flex;
   height: 65vh;
-  overflow-y: hidden;
+  overflow-y: auto;
 
   @media (max-width: 400px) {
     height: auto;

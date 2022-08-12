@@ -1,6 +1,6 @@
-import { Box } from '@mui/material';
 import React from 'react';
 import Chart from 'react-apexcharts';
+import { pieChartSeries } from '../../utils/mock_chart_data';
 import ChartCard from './ChartCard';
 interface PieChartProps {
   type?:
@@ -22,9 +22,14 @@ interface PieChartProps {
     | 'rangeBar'
     | undefined;
   title?: string;
+  series?: { data: any[]; labels: any[] };
 }
 
-const PieChart: React.FC<PieChartProps> = ({ type = 'donut', title }) => {
+const PieChart: React.FC<PieChartProps> = ({
+  type = 'donut',
+  title,
+  series = pieChartSeries,
+}) => {
   const state = {
     options: {
       plotOptions: {
@@ -35,8 +40,8 @@ const PieChart: React.FC<PieChartProps> = ({ type = 'donut', title }) => {
         },
       },
     },
-    data: [44, 55, 41, 17, 15],
-    labels: ['A', 'B', 'C', 'D', 'E'],
+    data: series.data,
+    labels: series.labels,
   };
   return (
     <ChartCard title={title}>

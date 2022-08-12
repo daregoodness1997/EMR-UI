@@ -1,10 +1,18 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
+import { polaChartSeries } from '../../utils/mock_chart_data';
 import ChartCard from './ChartCard';
+interface PolarAreaChartProps {
+  title?: string;
+  series?: { data: any[]; labels: any[] };
+}
 
-const PolarAreaChart = () => {
+const PolarAreaChart: React.FC<PolarAreaChartProps> = ({
+  title,
+  series = polaChartSeries,
+}) => {
   const state = {
-    series: [14, 23, 21, 17, 15, 10, 12, 17, 21],
+    series: series.data,
     options: {
       chart: {
         toolbar: { show: false },
@@ -18,7 +26,7 @@ const PolarAreaChart = () => {
           },
         },
       },
-      labels: ['Cricket', 'Tommy'],
+      labels: series.labels,
     },
   };
   return (

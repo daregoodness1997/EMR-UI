@@ -1,28 +1,20 @@
 import ReactApexChart from 'react-apexcharts';
 import { chartoptions } from '../../utils/chartoptions';
+import { columnSeries } from '../../utils/mock_chart_data';
 import ChartCard from './ChartCard';
 
-const ColumnChart = () => {
+interface ColumnChartProps {
+  title?: string;
+  series?: { name: string; data: [] }[];
+}
+
+const ColumnChart: React.FC<ColumnChartProps> = ({
+  title,
+  series = columnSeries,
+}) => {
   const state = {
     options: chartoptions,
-    series: [
-      {
-        name: 'PRODUCT A',
-        data: [44, 55, 41, 67, 22, 43],
-      },
-      {
-        name: 'PRODUCT B',
-        data: [13, 23, 20, 8, 13, 27],
-      },
-      {
-        name: 'PRODUCT C',
-        data: [11, 17, 15, 15, 21, 14],
-      },
-      {
-        name: 'PRODUCT D',
-        data: [21, 7, 25, 13, 22, 8],
-      },
-    ],
+    series: series,
   };
   return (
     <ChartCard>
