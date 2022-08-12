@@ -2,11 +2,10 @@ import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 import ViewCard from '../../@sections/ViewCard';
-import { Button } from '../../components';
 import AreaChart from '../../components/charts/AreaChart';
-import BarChart from '../../components/charts/BarChart';
 import BubbleChart from '../../components/charts/BubbleChart';
-import CircleChart from '../../components/charts/CircleChart';
+import HorizontalBar from '../../components/charts/HorizontalBar';
+import PieChart from '../../components/charts/PieChat';
 
 import {
   DashboardContainer,
@@ -14,7 +13,7 @@ import {
   StartCardWapper,
 } from '../../core-ui/styles';
 
-const ClientDashboard = () => {
+const ClinicDashboard = () => {
   return (
     <DashboardPageWrapper>
       <Box>
@@ -32,6 +31,7 @@ const ClientDashboard = () => {
           <ViewCard count={40} title='Total Clients' />
           <ViewCard count={16} title='Upcoming Appointments' />
           <ViewCard count={56} title='Total New Clients' />
+          <ViewCard count={56} title={`Doctor's on Duty`} />
         </StartCardWapper>
 
         <DashboardContainer>
@@ -44,30 +44,18 @@ const ClientDashboard = () => {
             }}
           >
             <Box sx={{ width: '100%', p: 2 }}>
-              <AreaChart height={200} title='Trends' />
-              <AreaChart height={200} title='New Clients' />
-            </Box>
-            <Box sx={{ width: '100%', p: 2 }}>
-              <BarChart title='Payment Mode' />
-              <BubbleChart />
-            </Box>
-            <Box sx={{ width: '100%', p: 2 }}>
-              <Typography sx={{ fontWeight: 'bold', fontSize: '22px' }}>
-                Gender
-              </Typography>
-              <Typography variant='body2'>Total Client by Gender</Typography>
-
-              <Stack
-                direction='row'
-                spacing={0.4}
-                sx={{ mt: 4 }}
-                justifyContent='center'
-              >
-                <Button>Male</Button>
-                <Button>Female</Button>
-                <Button>Others</Button>
+              <HorizontalBar title='Patient Distribution' />
+              <Stack direction='row'>
+                <ViewCard count={40} title='Out Patients' />
+                <ViewCard count={16} title='In Patients' />
               </Stack>
-              <CircleChart />
+            </Box>
+            <Box sx={{ width: '100%', p: 2 }}>
+              <AreaChart />
+              <PieChart donutSize={0} />
+            </Box>
+            <Box sx={{ width: '100%', p: 2 }}>
+              <BubbleChart />
             </Box>
           </Box>
         </DashboardContainer>
@@ -76,4 +64,4 @@ const ClientDashboard = () => {
   );
 };
 
-export default ClientDashboard;
+export default ClinicDashboard;

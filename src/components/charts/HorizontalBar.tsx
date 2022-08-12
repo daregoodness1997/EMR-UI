@@ -1,26 +1,20 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
+import { horizontalSeries } from '../../utils/mock_chart_data';
 import ChartCard from './ChartCard';
 
 interface HorizontalBarProps {
+  title?: string;
+  series?: { name: string; data: [] }[];
   stacked?: boolean;
 }
-const HorizontalBar: React.FC<HorizontalBarProps> = ({ stacked }) => {
+const HorizontalBar: React.FC<HorizontalBarProps> = ({
+  title,
+  series = horizontalSeries,
+  stacked,
+}) => {
   const state = {
-    series: [
-      {
-        name: 'Inflation',
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
-      },
-      {
-        name: 'Striking Calf',
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
-      },
-      {
-        name: 'High Way',
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
-      },
-    ],
+    series: series,
     options: {
       chart: {
         toolbar: { show: false },
@@ -88,12 +82,13 @@ const HorizontalBar: React.FC<HorizontalBarProps> = ({ stacked }) => {
     },
   };
   return (
-    <ChartCard>
+    <ChartCard title={title}>
       <ReactApexChart
         options={state.options}
         series={state.series}
         type='bar'
         height={500}
+        width={450}
       />
     </ChartCard>
   );

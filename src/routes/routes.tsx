@@ -5,6 +5,7 @@ import ClientDashboard from '../@modules/client/ClientDashboard';
 import ClientDetails from '../@modules/client/ClientDetails';
 import Clients from '../@modules/client/Clients';
 import CreateClient from '../@modules/client/CreateClient';
+import ClinicDashboard from '../@modules/clinic/ClinicDashboard';
 import Overview from '../pages/app/Overview';
 import PrivateOutlet from '../pages/app/PrivateOutlet';
 import IndividualSignup from '../pages/auth/IndividualSignup';
@@ -29,6 +30,7 @@ const AppRoutes = () => {
             element={<AppointmentDetail />}
           />
           <Route path='/app/clients/:id' element={<ClientDetails />} />
+          <Route path='/app/clinic' element={<ClinicDashboard />} />
         </Route>
       </Routes>
     </>

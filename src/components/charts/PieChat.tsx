@@ -1,6 +1,7 @@
-import { Box } from '@mui/material';
 import React from 'react';
 import Chart from 'react-apexcharts';
+import { pieChartSeries } from '../../utils/mock_chart_data';
+import ChartCard from './ChartCard';
 interface PieChartProps {
   type?:
     | 'area'
@@ -20,31 +21,39 @@ interface PieChartProps {
     | 'polarArea'
     | 'rangeBar'
     | undefined;
+  title?: string;
+  series?: { data: any[]; labels: any[] };
+  donutSize?: number;
 }
 
-const PieChart: React.FC<PieChartProps> = ({ type = 'donut' }) => {
+const PieChart: React.FC<PieChartProps> = ({
+  type = 'donut',
+  title,
+  series = pieChartSeries,
+  donutSize = 45,
+}) => {
   const state = {
     options: {
       plotOptions: {
         pie: {
           donut: {
-            size: '45%',
+            size: `${donutSize}%`,
           },
         },
       },
     },
-    data: [44, 55, 41, 17, 15],
-    labels: ['A', 'B', 'C', 'D', 'E'],
+    data: series.data,
+    labels: series.labels,
   };
   return (
-    <Box>
+    <ChartCard title={title}>
       <Chart
         options={state.options}
         series={state.data}
         type={type}
-        width='340'
+        width={340}
       />
-    </Box>
+    </ChartCard>
   );
 };
 

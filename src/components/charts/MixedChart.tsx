@@ -1,26 +1,19 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
+import { mixedSeries } from '../../utils/mock_chart_data';
 import ChartCard from './ChartCard';
 
-const MixedChart = () => {
+interface MixedChartProps {
+  title?: string;
+  series?: { name: string; data: [] }[];
+}
+
+const MixedChart: React.FC<MixedChartProps> = ({
+  title,
+  series = mixedSeries,
+}) => {
   const state = {
-    series: [
-      {
-        name: 'TEAM A',
-        type: 'column',
-        data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
-      },
-      {
-        name: 'TEAM B',
-        type: 'area',
-        data: [0, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
-      },
-      {
-        name: 'TEAM C',
-        type: 'line',
-        data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
-      },
-    ],
+    series: series,
     options: {
       chart: {
         toolbar: { show: false },
@@ -97,12 +90,13 @@ const MixedChart = () => {
     },
   };
   return (
-    <ChartCard>
+    <ChartCard title={title}>
       <Chart
         options={state.options}
         series={state.series}
         type='line'
         height={500}
+        width={450}
       />
     </ChartCard>
   );

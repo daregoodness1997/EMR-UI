@@ -1,10 +1,19 @@
 import React from 'react';
-import Chart from 'react-apexcharts';
+import ReactApexChart from 'react-apexcharts';
+import { circleSeries } from '../../utils/mock_chart_data';
 import ChartCard from './ChartCard';
 
-const CircleChart = () => {
+interface CircleChartProps {
+  title?: string;
+  series?: any[];
+}
+
+const CircleChart: React.FC<CircleChartProps> = ({
+  title,
+  series = circleSeries,
+}) => {
   const state = {
-    series: [14, 23, 21, 17, 15, 10, 12, 17, 21],
+    series: series,
     options: {
       chart: {
         toolbar: { show: false },
@@ -14,12 +23,13 @@ const CircleChart = () => {
     },
   };
   return (
-    <ChartCard>
-      <Chart
+    <ChartCard title={title}>
+      <ReactApexChart
         options={state.options}
         series={state.series}
         type='donut'
         height={350}
+        width={450}
       />
     </ChartCard>
   );
