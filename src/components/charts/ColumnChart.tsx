@@ -30,7 +30,8 @@ const ColumnChart = () => {
         options={state.options}
         series={state.series}
         type='bar'
-        height='340'
+        height={340}
+        width={450}
       />
     </ChartCard>
   );

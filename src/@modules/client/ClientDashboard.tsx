@@ -44,20 +44,12 @@ const ClientDashboard = () => {
             }}
           >
             <Box sx={{ width: '100%', p: 2 }}>
-              <Card sx={{ boxShadow: '0' }}>
-                <AreaChart height={200} title='Trends' />
-              </Card>
-              <Card sx={{ boxShadow: '0' }}>
-                <AreaChart height={200} title='New Clients' />
-              </Card>
+              <AreaChart height={200} title='Trends' />
+              <AreaChart height={200} title='New Clients' />
             </Box>
             <Box sx={{ width: '100%', p: 2 }}>
-              <Card sx={{ height: '300px', boxShadow: '0' }}>
-                <BarChart title='Payment Mode' />
-              </Card>
-              <Card sx={{ height: '300px', boxShadow: '0' }}>
-                <BubbleChart />
-              </Card>
+              <BarChart title='Payment Mode' />
+              <BubbleChart />
             </Box>
             <Box sx={{ width: '100%', p: 2 }}>
               <Typography sx={{ fontWeight: 'bold', fontSize: '22px' }}>

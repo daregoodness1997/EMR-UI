@@ -67,6 +67,7 @@ const BubbleChart = () => {
         series={state.series}
         type='bubble'
         height={350}
+        width={450}
       />
     </ChartCard>
   );

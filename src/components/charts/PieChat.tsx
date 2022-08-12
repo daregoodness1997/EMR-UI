@@ -44,7 +44,7 @@ const PieChart: React.FC<PieChartProps> = ({ type = 'donut', title }) => {
         options={state.options}
         series={state.data}
         type={type}
-        width='340'
+        width={340}
       />
     </ChartCard>
   );

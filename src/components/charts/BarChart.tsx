@@ -84,6 +84,7 @@ const BarChart: React.FC<BarChartProps> = ({
         series={state.series}
         type='bar'
         height={200}
+        width={450}
       />
     </ChartCard>
   );

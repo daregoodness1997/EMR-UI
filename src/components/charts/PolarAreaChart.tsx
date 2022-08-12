@@ -28,6 +28,7 @@ const PolarAreaChart = () => {
         series={state.series}
         type='polarArea'
         height={350}
+        width={450}
       />
     </ChartCard>
   );

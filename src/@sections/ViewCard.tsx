@@ -9,7 +9,7 @@ const ViewCard: React.FC<ViewCardProps> = ({ title, count }) => {
   return (
     <Card
       sx={{
-        p: 8,
+        p: 6,
         background: '#f9f9f9',
         boxShadow: '0',
         borderRadius: 4,
