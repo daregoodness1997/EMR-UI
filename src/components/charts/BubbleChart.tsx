@@ -1,5 +1,5 @@
 import React from 'react';
-import Chart from 'react-apexcharts';
+import ReactApexChart from 'react-apexcharts';
 import ChartCard from './ChartCard';
 function generateData(baseval: any, count: any, yrange: any): any[] {
   var i = 0;
@@ -62,7 +62,7 @@ const BubbleChart = () => {
   };
   return (
     <ChartCard>
-      <Chart
+      <ReactApexChart
         options={state.options}
         series={state.series}
         type='bubble'

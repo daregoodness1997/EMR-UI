@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
+import { barChartSeries } from '../../utils/mock_chart_data';
 import ChartCard from './ChartCard';
 
 interface BarChartProps {
   title: string;
+  series?: { name: string; data: [] }[];
 }
 
-const BarChart: React.FC<BarChartProps> = ({ title }) => {
+const BarChart: React.FC<BarChartProps> = ({
+  title,
+  series = barChartSeries,
+}) => {
   const state = {
-    series: [
-      {
-        name: 'Inflation',
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
-      },
-    ],
+    series: series,
     options: {
       chart: {
         toolbar: { show: false },

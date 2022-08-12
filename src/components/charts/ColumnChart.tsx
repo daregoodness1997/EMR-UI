@@ -1,4 +1,4 @@
-import Chart from 'react-apexcharts';
+import ReactApexChart from 'react-apexcharts';
 import { chartoptions } from '../../utils/chartoptions';
 import ChartCard from './ChartCard';
 
@@ -26,7 +26,7 @@ const ColumnChart = () => {
   };
   return (
     <ChartCard>
-      <Chart
+      <ReactApexChart
         options={state.options}
         series={state.series}
         type='bar'

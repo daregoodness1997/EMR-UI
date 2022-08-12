@@ -1,43 +1,20 @@
-import { Box, Card, CardHeader, Stack, Typography } from '@mui/material';
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import AppointmentCard from '../../@sections/AppointmentCard';
-import AppointmentGrid from '../../@sections/AppointmentGrid';
-import StatCard from '../../@sections/StatCard';
+import { Box, Card, Stack, Typography } from '@mui/material';
+import React from 'react';
+
 import ViewCard from '../../@sections/ViewCard';
 import { Button } from '../../components';
 import AreaChart from '../../components/charts/AreaChart';
 import BarChart from '../../components/charts/BarChart';
 import BubbleChart from '../../components/charts/BubbleChart';
 import CircleChart from '../../components/charts/CircleChart';
-import ColumnChart from '../../components/charts/ColumnChart';
-import HorizontalBar from '../../components/charts/HorizontalBar';
-import LineChart from '../../components/charts/LineChart';
-import MixedChart from '../../components/charts/MixedChart';
-import PieChart from '../../components/charts/PieChat';
-import PolarAreaChart from '../../components/charts/PolarAreaChart';
-import TabPanel from '../../components/Tabs/TabPanel';
-import { StyledTab, StyledTabs } from '../../components/Tabs/Tabs';
-import StatusBatch from '../../core-ui/Grid/StatusBatch';
+
 import {
-  DashboardBox,
   DashboardContainer,
   DashboardPageWrapper,
   StartCardWapper,
 } from '../../core-ui/styles';
 
-const a11yProps = (index: number) => {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-};
-
 const ClientDashboard = () => {
-  const [value, setValue] = useState(0);
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
   return (
     <DashboardPageWrapper>
       <Box>
@@ -91,7 +68,7 @@ const ClientDashboard = () => {
               <Stack
                 direction='row'
                 spacing={0.4}
-                sx={{ mt: 4, width: '100%' }}
+                sx={{ mt: 4 }}
                 justifyContent='center'
               >
                 <Button>Male</Button>

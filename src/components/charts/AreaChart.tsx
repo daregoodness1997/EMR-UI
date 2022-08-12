@@ -1,7 +1,9 @@
-import Chart from 'react-apexcharts';
 import React from 'react';
 import ChartCard from './ChartCard';
 import { chartoptions } from '../../utils/chartoptions';
+import { areaSeries } from '../../utils/mock_chart_data';
+import ReactApexChart from 'react-apexcharts';
+
 interface AreaChartProps {
   title?: string;
   subheader?: string;
@@ -12,25 +14,16 @@ interface AreaChartProps {
 const AreaChart: React.FC<AreaChartProps> = ({
   title = 'Area Chart',
   subheader = 'Sample Area Chart',
-  series,
+  series = areaSeries,
   height = 200,
 }) => {
   const state = {
-    series: [
-      {
-        name: 'series1',
-        data: [31, 40, 28, 51, 42, 109, 100],
-      },
-      {
-        name: 'series2',
-        data: [11, 32, 45, 32, 34, 52, 41],
-      },
-    ],
+    series: series,
     options: chartoptions,
   };
   return (
     <ChartCard title={title}>
-      <Chart
+      <ReactApexChart
         options={state.options}
         series={state.series}
         type='area'
