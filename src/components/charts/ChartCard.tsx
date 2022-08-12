@@ -23,7 +23,7 @@ const ChartCard: React.FC<ChartCardProps> = ({
     >
       <CardHeader title={title} subheader={subheader} />
 
-      <Box sx={{ p: 3, pb: 1 }} dir='ltr'>
+      <Box sx={{ p: 1 }} dir='ltr'>
         {children}
       </Box>
     </Card>

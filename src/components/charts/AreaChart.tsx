@@ -28,7 +28,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
         series={state.series}
         type='area'
         height={height}
-        width={450}
+        width={500}
       />
     </ChartCard>
   );
