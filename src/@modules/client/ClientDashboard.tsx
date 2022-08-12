@@ -1,8 +1,7 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import React from 'react';
 
 import ViewCard from '../../@sections/ViewCard';
-import { Button } from '../../components';
 import AreaChart from '../../components/charts/AreaChart';
 import BarChart from '../../components/charts/BarChart';
 import BubbleChart from '../../components/charts/BubbleChart';
@@ -30,7 +29,7 @@ const ClientDashboard = () => {
 
         <StartCardWapper>
           <ViewCard count={40} title='Total Clients' />
-          <ViewCard count={16} title='Upcoming Appointments' />
+          <ViewCard count={16} title='Upcoming Appointments' hasFilter={true} />
           <ViewCard count={56} title='Total New Clients' />
         </StartCardWapper>
 
@@ -43,7 +42,7 @@ const ClientDashboard = () => {
               gridTemplateColumns: { lg: 'repeat(3, 1fr)', xs: '1fr' },
             }}
           >
-            <Box sx={{ width: '100%', pt: 2, pb: 2 }}>
+            <Box sx={{ width: '100%', p: 0, pt: 2, pb: 2 }}>
               <AreaChart height={200} title='Trends' />
               <AreaChart height={200} title='New Clients' />
             </Box>
