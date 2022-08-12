@@ -36,7 +36,7 @@ const PolarAreaChart: React.FC<PolarAreaChartProps> = ({
         series={state.series}
         type='polarArea'
         height={350}
-        width={450}
+        width={340}
       />
     </ChartCard>
   );

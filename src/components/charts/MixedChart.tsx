@@ -96,7 +96,7 @@ const MixedChart: React.FC<MixedChartProps> = ({
         series={state.series}
         type='line'
         height={500}
-        width={450}
+        width='100%'
       />
     </ChartCard>
   );

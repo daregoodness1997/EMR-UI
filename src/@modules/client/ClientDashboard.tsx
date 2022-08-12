@@ -43,21 +43,21 @@ const ClientDashboard = () => {
               gridTemplateColumns: { lg: 'repeat(3, 1fr)', xs: '1fr' },
             }}
           >
-            <Box sx={{ width: '100%', p: 2 }}>
+            <Box sx={{ width: '100%', pt: 2, pb: 2 }}>
               <AreaChart height={200} title='Trends' />
               <AreaChart height={200} title='New Clients' />
             </Box>
-            <Box sx={{ width: '100%', p: 2 }}>
+            <Box sx={{ width: '100%', pt: 2, pb: 2 }}>
               <BarChart title='Payment Mode' />
               <BubbleChart />
             </Box>
-            <Box sx={{ width: '100%', p: 2 }}>
+            <Box sx={{ width: '100%', pt: 2, pb: 2 }}>
               <Typography sx={{ fontWeight: 'bold', fontSize: '22px' }}>
                 Gender
               </Typography>
               <Typography variant='body2'>Total Client by Gender</Typography>
 
-              <Stack
+              {/* <Stack
                 direction='row'
                 spacing={0.4}
                 sx={{ mt: 4 }}
@@ -66,7 +66,7 @@ const ClientDashboard = () => {
                 <Button>Male</Button>
                 <Button>Female</Button>
                 <Button>Others</Button>
-              </Stack>
+              </Stack> */}
               <CircleChart />
             </Box>
           </Box>

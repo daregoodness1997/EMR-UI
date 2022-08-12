@@ -26,7 +26,7 @@ const LineChart: React.FC<LineChartProps> = ({
         series={state.series}
         type='line'
         height={350}
-        width={450}
+        width='100%'
       />
     </ChartCard>
   );

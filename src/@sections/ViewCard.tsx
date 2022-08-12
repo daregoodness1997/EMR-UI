@@ -16,6 +16,7 @@ const ViewCard: React.FC<ViewCardProps> = ({ title, count }) => {
         width: { xs: '100%' },
         textAlign: 'center',
         mr: 2,
+        mb: { xs: 2 },
       }}
     >
       <Typography variant='h1' sx={{ fontWeight: 'bold', fontSize: '55px' }}>
