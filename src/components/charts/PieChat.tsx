@@ -23,19 +23,21 @@ interface PieChartProps {
     | undefined;
   title?: string;
   series?: { data: any[]; labels: any[] };
+  donutSize?: number;
 }
 
 const PieChart: React.FC<PieChartProps> = ({
   type = 'donut',
   title,
   series = pieChartSeries,
+  donutSize = 45,
 }) => {
   const state = {
     options: {
       plotOptions: {
         pie: {
           donut: {
-            size: '45%',
+            size: `${donutSize}%`,
           },
         },
       },
