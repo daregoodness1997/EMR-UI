@@ -1,5 +1,6 @@
 import React from 'react';
 import ChartCard from './ChartCard';
+import Chart from 'react-apexcharts';
 import { chartoptions } from '../../utils/chartoptions';
 import { areaSeries } from '../../utils/mock_chart_data';
 import ReactApexChart from 'react-apexcharts';
@@ -28,7 +29,7 @@ const AreaChart: React.FC<AreaChartProps> = ({
         series={state.series}
         type='area'
         height={height}
-        width={500}
+        width='100%'
       />
     </ChartCard>
   );

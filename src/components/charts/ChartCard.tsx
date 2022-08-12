@@ -14,19 +14,18 @@ const ChartCard: React.FC<ChartCardProps> = ({
   ...other
 }) => {
   return (
-    <Card
+    <Box
       {...other}
       sx={{
         boxShadow: '4px 4px 20px rgba(255,255,255,0.08)',
-        backgroundColor: 'white',
+        backgroundColor: '#fdfdfd',
+        width: '100%',
+        borderRadius: 2,
+        mb: 2,
       }}
     >
-      <CardHeader title={title} subheader={subheader} />
-
-      <Box sx={{ p: 1 }} dir='ltr'>
-        {children}
-      </Box>
-    </Card>
+      <Box sx={{ width: '100%', mt: 2 }}>{children}</Box>
+    </Box>
   );
 };
 

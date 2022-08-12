@@ -88,7 +88,7 @@ const HorizontalBar: React.FC<HorizontalBarProps> = ({
         series={state.series}
         type='bar'
         height={500}
-        width={450}
+        width='100%'
       />
     </ChartCard>
   );

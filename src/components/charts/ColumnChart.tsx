@@ -23,7 +23,7 @@ const ColumnChart: React.FC<ColumnChartProps> = ({
         series={state.series}
         type='bar'
         height={340}
-        width={450}
+        width='100%'
       />
     </ChartCard>
   );

@@ -31,7 +31,7 @@ const BubbleChart: React.FC<BubbleChartProps> = ({
         series={state.series}
         type='bubble'
         height={350}
-        width={450}
+        width='100%'
       />
     </ChartCard>
   );
