@@ -2,7 +2,11 @@ import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 import ChartCard from './ChartCard';
 
-const BarChart = () => {
+interface BarChartProps {
+  title: string;
+}
+
+const BarChart: React.FC<BarChartProps> = ({ title }) => {
   const state = {
     series: [
       {
@@ -74,12 +78,12 @@ const BarChart = () => {
     },
   };
   return (
-    <ChartCard>
+    <ChartCard title={title}>
       <ReactApexChart
         options={state.options}
         series={state.series}
         type='bar'
-        height={350}
+        height={200}
       />
     </ChartCard>
   );

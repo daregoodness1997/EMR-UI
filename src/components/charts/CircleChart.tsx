@@ -2,7 +2,11 @@ import React from 'react';
 import Chart from 'react-apexcharts';
 import ChartCard from './ChartCard';
 
-const CircleChart = () => {
+interface CircleChartProps {
+  title?: string;
+}
+
+const CircleChart: React.FC<CircleChartProps> = ({ title }) => {
   const state = {
     series: [14, 23, 21, 17, 15, 10, 12, 17, 21],
     options: {
@@ -14,7 +18,7 @@ const CircleChart = () => {
     },
   };
   return (
-    <ChartCard>
+    <ChartCard title={title}>
       <Chart
         options={state.options}
         series={state.series}

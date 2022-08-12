@@ -1,9 +1,11 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Card, CardHeader, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import AppointmentCard from '../../@sections/AppointmentCard';
 import AppointmentGrid from '../../@sections/AppointmentGrid';
 import StatCard from '../../@sections/StatCard';
+import ViewCard from '../../@sections/ViewCard';
+import { Button } from '../../components';
 import AreaChart from '../../components/charts/AreaChart';
 import BarChart from '../../components/charts/BarChart';
 import BubbleChart from '../../components/charts/BubbleChart';
@@ -50,93 +52,55 @@ const ClientDashboard = () => {
         </Box>
 
         <StartCardWapper>
-          <StatCard
-            count={14}
-            name={'Appointments'}
-            icon={'bi bi-calendar'}
-            range={'month'}
-          />
-          <StatCard
-            count={14}
-            name={'New Clients'}
-            icon={'bi bi-calendar'}
-            range={'month'}
-          />
-          <StatCard
-            count={14}
-            name={'Total Number of Clients'}
-            icon={'bi bi-calendar'}
-            range={'month'}
-          />
+          <ViewCard count={40} title='Total Clients' />
+          <ViewCard count={16} title='Upcoming Appointments' />
+          <ViewCard count={56} title='Total New Clients' />
         </StartCardWapper>
 
         <DashboardContainer>
-          <DashboardBox>
-            <header>
-              <Box className='top-header'>
-                <h2>Appointment</h2>
-                <NavLink to='app/clients/appointments'>View All</NavLink>
-              </Box>
+          <Box
+            sx={{
+              display: 'grid',
+              width: '100%',
+              gridGap: '10px',
+              gridTemplateColumns: { lg: 'repeat(3, 1fr)', xs: '1fr' },
+            }}
+          >
+            <Box sx={{ width: '100%', p: 2 }}>
+              <Card sx={{ height: '300px', boxShadow: '0' }}>
+                <AreaChart height={200} title='Trends' />
+              </Card>
+              <Card sx={{ height: '600px', boxShadow: '0' }}>
+                <AreaChart height={200} title='New Clients' />
+              </Card>
+            </Box>
+            <Box sx={{ width: '100%', p: 2 }}>
+              <Card sx={{ height: '300px', boxShadow: '0' }}>
+                <BarChart title='Payment Mode' />
+              </Card>
+              <Card sx={{ height: '300px', boxShadow: '0' }}>
+                <BubbleChart />
+              </Card>
+            </Box>
+            <Box sx={{ width: '100%', p: 2 }}>
+              <Typography sx={{ fontWeight: 'bold', fontSize: '22px' }}>
+                Gender
+              </Typography>
+              <Typography variant='body2'>Total Client by Gender</Typography>
 
-              <StyledTabs value={value} onChange={handleChange}>
-                <StyledTab label='This Month' {...a11yProps(0)} />
-                <StyledTab label='This Week' {...a11yProps(1)} />
-                <StyledTab label='Today' {...a11yProps(2)} />
-              </StyledTabs>
-            </header>
-            <TabPanel value={value} index={0}>
-              <AppointmentCard />
-              <AppointmentCard />
-              <AppointmentCard />
-              <AppointmentCard />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              <AppointmentCard />
-              <AppointmentCard />
-              <AppointmentCard />
-              <AppointmentCard />{' '}
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-              <AppointmentCard />
-            </TabPanel>
-          </DashboardBox>
-          <DashboardBox className='lg'>
-            <div className='container'>
-              <header>
-                <div className='top-header'>
-                  <h2>Overview of Appointment</h2>
-                </div>
-
-                <div style={{ display: 'flex', overflow: 'scroll' }}>
-                  <StatusBatch status='cancelled' />
-                  <StatusBatch label='Confirmed' status='confirmed' />
-                  <StatusBatch label='Attended' status='attended' />
-                  <StatusBatch label='Absent' status='absent' />
-                  <StatusBatch label='Rescheduled' status='rescheduled' />
-                </div>
-              </header>
-
-              <AppointmentGrid />
-            </div>
-
-            <div className='container'>
-              <header>
-                <div className='top-header'>
-                  <h2>At a glance</h2>
-                </div>
-              </header>
-              <PieChart />
-            </div>
-            <AreaChart />
-            <LineChart />
-            <BarChart />
-            <ColumnChart />
-            <HorizontalBar />
-            <MixedChart />
-            <PolarAreaChart />
-            <CircleChart />
-            <BubbleChart />
-          </DashboardBox>
+              <Stack
+                direction='row'
+                spacing={0.4}
+                sx={{ mt: 4, width: '100%' }}
+                justifyContent='center'
+              >
+                <Button>Male</Button>
+                <Button>Female</Button>
+                <Button>Others</Button>
+              </Stack>
+              <CircleChart />
+            </Box>
+          </Box>
         </DashboardContainer>
       </Box>
     </DashboardPageWrapper>

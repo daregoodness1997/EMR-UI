@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
 import React from 'react';
 import Chart from 'react-apexcharts';
+import ChartCard from './ChartCard';
 interface PieChartProps {
   type?:
     | 'area'
@@ -20,9 +21,10 @@ interface PieChartProps {
     | 'polarArea'
     | 'rangeBar'
     | undefined;
+  title?: string;
 }
 
-const PieChart: React.FC<PieChartProps> = ({ type = 'donut' }) => {
+const PieChart: React.FC<PieChartProps> = ({ type = 'donut', title }) => {
   const state = {
     options: {
       plotOptions: {
@@ -37,14 +39,14 @@ const PieChart: React.FC<PieChartProps> = ({ type = 'donut' }) => {
     labels: ['A', 'B', 'C', 'D', 'E'],
   };
   return (
-    <Box>
+    <ChartCard title={title}>
       <Chart
         options={state.options}
         series={state.data}
         type={type}
         width='340'
       />
-    </Box>
+    </ChartCard>
   );
 };
 

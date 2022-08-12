@@ -6,12 +6,14 @@ interface AreaChartProps {
   title?: string;
   subheader?: string;
   series?: { name: string; data: [] }[];
+  height?: any;
 }
 
 const AreaChart: React.FC<AreaChartProps> = ({
   title = 'Area Chart',
   subheader = 'Sample Area Chart',
   series,
+  height = 200,
 }) => {
   const state = {
     series: [
@@ -27,12 +29,12 @@ const AreaChart: React.FC<AreaChartProps> = ({
     options: chartoptions,
   };
   return (
-    <ChartCard>
+    <ChartCard title={title}>
       <Chart
         options={state.options}
         series={state.series}
         type='area'
-        height={350}
+        height={height}
       />
     </ChartCard>
   );
