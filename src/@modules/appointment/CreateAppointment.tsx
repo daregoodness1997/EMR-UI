@@ -3,12 +3,12 @@ import { GrayWrapper, HeadWrapper } from '../../@views/styles';
 import { Button } from '../../components';
 import DynamicInput from '../../components/Inputs/DynamicInput';
 import { BottomWrapper, FullDetailsWrapper } from '../../components/styles';
-import { GridWrapper, PageWrapper } from '../../core-ui/styles';
+import { GridWrapper, DashboardPageWrapper } from '../../core-ui/styles';
 import { AppointmentSchema } from '../../utils/schema';
 
 const CreateAppointment = () => {
   return (
-    <PageWrapper>
+    <DashboardPageWrapper>
       <GrayWrapper>
         <HeadWrapper>
           <div>
@@ -54,7 +54,7 @@ const CreateAppointment = () => {
           </BottomWrapper>
         </form>
       </GrayWrapper>
-    </PageWrapper>
+    </DashboardPageWrapper>
   );
 };
 

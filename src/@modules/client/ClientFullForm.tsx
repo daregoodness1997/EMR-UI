@@ -4,7 +4,7 @@ import { GrayWrapper, HeadWrapper } from '../../@views/styles';
 import { Button } from '../../components';
 import DynamicInput from '../../components/Inputs/DynamicInput';
 import { BottomWrapper, DetailsWrapper } from '../../components/styles';
-import { GridWrapper, PageWrapper } from '../../core-ui/styles';
+import { GridWrapper, DashboardPageWrapper } from '../../core-ui/styles';
 import { ClientFullSchema } from '../../utils/schema';
 import ClientQuickForm from './ClientQuickForm';
 
@@ -19,12 +19,12 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
 }) => {
   const [isFullRegistration, setFullRegistration] = useState(true);
 
-  const { control, handleSubmit } = useForm();
+  const { handleSubmit } = useForm();
 
   return (
     <>
       {isFullRegistration ? (
-        <PageWrapper>
+        <DashboardPageWrapper>
           <GrayWrapper>
             <HeadWrapper>
               <Button
@@ -179,7 +179,7 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
               </BottomWrapper>
             </form>
           </GrayWrapper>
-        </PageWrapper>
+        </DashboardPageWrapper>
       ) : (
         <ClientQuickForm />
       )}

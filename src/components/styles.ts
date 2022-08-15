@@ -210,6 +210,7 @@ export const BottomWrapper = styled.div`
 
     & button {
       width: 100%;
+      margin: 0;
       margin-top: 1rem;
     }
   }

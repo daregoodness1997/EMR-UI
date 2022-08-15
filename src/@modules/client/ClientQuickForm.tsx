@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { GrayWrapper, HeadWrapper } from '../../@views/styles';
 import { Button } from '../../components';
 import DynamicInput from '../../components/Inputs/DynamicInput';
 import { BottomWrapper, DetailsWrapper } from '../../components/styles';
-import { GridWrapper, PageWrapper } from '../../core-ui/styles';
+import { GridWrapper, DashboardPageWrapper } from '../../core-ui/styles';
 import { ClientMiniSchema } from '../../utils/schema';
 
 import ClientFullForm from './ClientFullForm';
@@ -17,15 +16,13 @@ interface ClientDetailsProps {
   row?: RowProps;
 }
 
-const ClientQuickForm: React.FC<ClientDetailsProps> = ({}) => {
+const ClientQuickForm: React.FC<ClientDetailsProps> = () => {
   const [isFullRegistration, setFullRegistration] = useState(false);
-
-  const { control, handleSubmit } = useForm();
 
   return (
     <>
       {!isFullRegistration ? (
-        <PageWrapper>
+        <DashboardPageWrapper>
           <GrayWrapper>
             <HeadWrapper>
               <div>
@@ -70,7 +67,7 @@ const ClientQuickForm: React.FC<ClientDetailsProps> = ({}) => {
               </BottomWrapper>
             </form>
           </GrayWrapper>
-        </PageWrapper>
+        </DashboardPageWrapper>
       ) : (
         <ClientFullForm
           backClick={() => setFullRegistration(true)}
