@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import AppointmentDetail from '../@modules/appointment/AppointmentDetail';
 import Appointments from '../@modules/appointment/Appointments';
+import AttendToClient from '../@modules/appointment/AttendToClient';
 import CreateAppointment from '../@modules/appointment/CreateAppointment';
 import ClientDashboard from '../@modules/client/ClientDashboard';
 import ClientDetails from '../@modules/client/ClientDetails';
@@ -36,6 +37,10 @@ const AppRoutes = () => {
           <Route
             path='/app/clients/appointments/:id'
             element={<AppointmentDetail />}
+          />
+          <Route
+            path='/app/clients/appointments/:id/attend-to-client'
+            element={<AttendToClient />}
           />
           <Route path='/app/clients/:id' element={<ClientDetails />} />
           <Route path='/app/clinic' element={<ClinicDashboard />} />
