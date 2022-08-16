@@ -6,7 +6,7 @@ import {
   Typography,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { CloseIcon } from '../Ixons/Icons';
+import { CloseIcon } from '../Icons/Icons';
 import useResponsive from '../../utils/useResponsive';
 
 const Root = styled('div')(({ theme }) => ({

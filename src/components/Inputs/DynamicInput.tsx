@@ -14,7 +14,7 @@ interface DynamicInputProps {
   label: string;
   name: any;
   data?: any;
-  options: any[];
+  options?: any[];
   errors?: any;
   readonly?: boolean;
   defaultValue?: any;
@@ -27,7 +27,7 @@ const DynamicInput = (props: DynamicInputProps) => {
     label,
     name,
     data = {},
-    options,
+    options = [],
     errors = {},
     readonly,
     defaultValue,

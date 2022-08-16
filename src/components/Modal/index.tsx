@@ -6,7 +6,7 @@ import { Modal as CustomModal } from '@mui/material';
 interface ModalProps {
   open: boolean;
   onClose?: () => void;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 const style = {
   width: '68%',
