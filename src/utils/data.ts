@@ -98,7 +98,7 @@ const clientsList = [...Array(100)].map((_, index) => ({
 
   paymentInformation: [
     { accountname: faker.name.findName() },
-    { accountnumber: Math.round(Math.random() * 14263673700) },
+    { accountnumber: `${Math.round(Math.random() * 14263673700)}` },
     {
       bloodgroup: sample(['AA', 'AB', 'SS', 'AC', 'CS']),
     },

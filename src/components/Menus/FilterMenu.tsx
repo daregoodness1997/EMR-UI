@@ -49,7 +49,7 @@ const FilterMenu = () => {
     console.log('hello');
   };
   return (
-    <Box sx={{ width: { xs: '100%', lg: 'auto' } }}>
+    <Box>
       <IconButton
         ref={anchorRef}
         onClick={handleOpen}
@@ -57,6 +57,7 @@ const FilterMenu = () => {
           padding: '0.5rem 1.2rem',
           borderRadius: 2,
           border: '1px solid #CDD2D7',
+          width: { xs: '100%' },
         }}
       >
         <Typography variant='body1'>Filter by</Typography>
@@ -69,7 +70,7 @@ const FilterMenu = () => {
         placement='bottom-start'
         transition
         disablePortal
-        sx={{ zIndex: 1000 }}
+        sx={{ zIndex: 1000, width: { xs: '100%' } }}
       >
         {({ TransitionProps, placement }) => (
           <Grow
@@ -85,6 +86,7 @@ const FilterMenu = () => {
                 minWidth: '200px',
                 borderRadius: '4px',
                 boxShadow: '4px 4px 20px rgba(0,0,0,0.08)',
+                width: { xs: '100%' },
               }}
             >
               <ClickAwayListener onClickAway={handleClose}>
