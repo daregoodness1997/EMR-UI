@@ -55,8 +55,9 @@ export const ButtonGroup = styled.div`
 
   @media (max-width: 400px) {
     flex-direction: column;
-    margin-top: 0.5rem;
+    margin-top: 0.2rem;
     width: 100%;
+    padding: 0 0.5rem;
 
     & button {
       width: 100%;

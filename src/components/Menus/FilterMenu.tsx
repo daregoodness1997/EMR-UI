@@ -86,7 +86,7 @@ const FilterMenu = () => {
                 minWidth: '200px',
                 borderRadius: '4px',
                 boxShadow: '4px 4px 20px rgba(0,0,0,0.08)',
-                width: { xs: '100%' },
+                width: { xs: '100%', lg: '100%' },
               }}
             >
               <ClickAwayListener onClickAway={handleClose}>
