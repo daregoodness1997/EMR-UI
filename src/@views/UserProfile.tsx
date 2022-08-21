@@ -1,10 +1,18 @@
-import { Avatar, Box, Chip, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Button, Chip, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { Button } from '../components';
 import Modal from '../components/Modal';
 
 const UserProfile = () => {
   const [open, setOpen] = useState(false);
+  function randomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
   return (
     <>
       <Modal open={open} onClose={() => setOpen(false)} />
@@ -23,100 +31,160 @@ const UserProfile = () => {
             borderRadius: 2,
           }}
         >
-          <Stack
-            direction='row'
-            alignItems='center'
-            justifyContent='space-between'
-          >
+          <Stack direction='column' alignItems='center' justifyContent='center'>
             <Box>
               <Avatar
                 src='h
         ttps://via.placeholder.com/150'
                 alt='AT'
+                sx={{ bgcolor: 'orange', width: '120px', height: '120px' }}
               />
-              <Typography variant='h2'>Jon Doe</Typography>
+              <Typography
+                sx={{ fontSize: '20px', width: '100%', textAlign: 'center' }}
+              >
+                Jon Doe
+              </Typography>
             </Box>
-            <Button>Bill Client</Button>
+            <Button
+              sx={{
+                height: '40px',
+                background: '#eee',
+                color: '#000',
+                width: '100%',
+                mt: 1,
+                mb: 1,
+                borderRadius: '15px',
+                p: 1.6,
+                border: '0.4px solid #dfdfdf',
+              }}
+            >
+              Bill Client
+            </Button>
           </Stack>
+          <Typography variant='body2'>
+            Description: Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Quam, optio, impedit
+          </Typography>
 
-          <Box>
-            <Typography variant='body2' sx={{ mt: 1 }}>
-              Payment Mode : Cash
-            </Typography>
-            <Typography variant='body2' sx={{ mt: 0.5 }}>
-              HMO : Axzard HMO
-            </Typography>
+          <Box sx={{ mt: 1, p: 0 }}>
+            <Chip
+              label='Cash'
+              sx={{
+                background: randomColor(),
+                color: '#fff',
+                mr: 0.4,
+                mt: 0.3,
+              }}
+            />
+            <Chip
+              label='Axzard HMO'
+              sx={{
+                background: randomColor(),
+                color: '#fff',
+                mr: 0.4,
+                mt: 0.3,
+              }}
+            />
+            <Chip
+              label='Male'
+              sx={{
+                background: randomColor(),
+                color: '#fff',
+                mr: 0.4,
+                mt: 0.3,
+              }}
+            />
+            <Chip
+              label='24 yrs old'
+              sx={{
+                background: randomColor(),
+                color: '#fff',
+                mr: 0.4,
+                mt: 0.3,
+              }}
+            />
+            <Chip
+              label='Christianity'
+              sx={{
+                background: randomColor(),
+                color: '#fff',
+                mr: 0.4,
+                mt: 0.3,
+              }}
+            />
+            <Chip
+              label='AA'
+              sx={{
+                background: randomColor(),
+                color: '#fff',
+                mr: 0.4,
+                mt: 0.3,
+              }}
+            />
+            <Chip
+              label='A+'
+              sx={{
+                background: randomColor(),
+                color: '#fff',
+                mr: 0.4,
+                mt: 0.3,
+              }}
+            />
+            <Chip
+              label='(234) 823 567 8893'
+              sx={{
+                background: randomColor(),
+                color: '#fff',
+                mr: 0.4,
+                mt: 0.3,
+              }}
+            />
+            <Chip
+              label='john@mail.com'
+              sx={{
+                background: randomColor(),
+                color: '#fff',
+                mr: 0.4,
+                mt: 0.3,
+              }}
+            />
           </Box>
 
           <Box sx={{ mt: 2 }}>
-            <Typography variant='body2'>
-              Description: Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Quam, optio, impedit reiciendis ab aliquam ad non rem fugit
-              earum quidem enim ex neque illum, delectus excepturi distinctio
-              commodi suscipit! Facilis?
-            </Typography>
-            <Stack
-              direction='row'
-              justifyContent='space-between'
-              sx={{ mt: 1.5 }}
-            >
-              <Stack direction='row' alignItems='center'>
-                <Typography variant='h5' sx={{ mr: 1 }}>
-                  Gender:
-                </Typography>
-                <Chip label='Male' />
-              </Stack>
-              <Stack direction='row' alignItems='center'>
-                <Typography variant='h5' sx={{ mr: 1 }}>
-                  Age:
-                </Typography>
-                <Chip label='24' />
-              </Stack>
-            </Stack>
-            <Stack
-              direction='row'
-              justifyContent='space-between'
-              sx={{ mt: 1.5 }}
-            >
-              <Stack direction='row' alignItems='center'>
-                <Typography variant='h5' sx={{ mr: 1 }}>
-                  Religion:
-                </Typography>
-                <Chip label='Christianity' />
-              </Stack>
-            </Stack>
-            <Stack direction='row' alignItems='center'>
-              <Typography variant='h5' sx={{ mr: 1 }}>
-                Genetype:
-              </Typography>
-              <Chip label='AA' />
-            </Stack>
-
-            <Stack direction='row' alignItems='center'>
-              <Typography variant='h5' sx={{ mr: 1 }}>
-                Blood Group:
-              </Typography>
-              <Chip label='A+' />
-            </Stack>
-            <Stack direction='row' alignItems='center'>
-              <Typography variant='h5' sx={{ mr: 1 }}>
-                Phone:
-              </Typography>
-              <Chip label='(234) 823 567 8893' />
-            </Stack>
-            <Stack direction='row' alignItems='center' sx={{ mts: 1 }}>
-              <Typography variant='h5'>Email:</Typography>
-              <Chip label='john@mail.com' />
-            </Stack>
-
             <Box>
               <Typography variant='body2'>
                 Client Tags:
-                <Box>
-                  <Chip label='Tag 1' sx={{ ml: 0.5 }} />
-                  <Chip label='Tag 2' sx={{ ml: 0.5 }} />
-                  <Chip label='Tag 3' sx={{ ml: 0.5 }} />
-                  <Chip label='Tag 4' sx={{ ml: 0.5 }} />
+                <Box sx={{ p: 0 }}>
+                  <Chip
+                    label='Cash payer'
+                    sx={{
+                      ml: 0.5,
+                      background: randomColor(),
+                      color: '#fff',
+                      mr: 0.4,
+                      mt: 0.2,
+                    }}
+                  />
+                  <Chip
+                    label='Cash payer'
+                    sx={{
+                      ml: 0.5,
+                      background: randomColor(),
+                      color: '#fff',
+                      mr: 0.4,
+                      mt: 0.2,
+                    }}
+                  />
+                  <Chip
+                    label='Cash payer'
+                    sx={{
+                      ml: 0.5,
+                      background: randomColor(),
+                      color: '#fff',
+                      mr: 0.4,
+                      mt: 0.2,
+                    }}
+                  />
                 </Box>
               </Typography>
             </Box>
