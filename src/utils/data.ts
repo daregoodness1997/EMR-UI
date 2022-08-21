@@ -1,6 +1,28 @@
 import { faker } from '@faker-js/faker';
 import { sample } from 'lodash';
 
+// const clientsList = [...Array(100)].map((_, index) => ({
+//   id: faker.datatype.uuid(),
+//   avartarUrl: faker.image.avatar(),
+//   firstname: faker.name.firstName(),
+//   middlename: faker.name.middleName(),
+//   lastname: faker.name.lastName(),
+//   dob: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
+//   gender: sample(['Male', 'Female']),
+//   maritalstatus: sample(['Single', 'Married', 'Divorced']),
+//   residentialaddress: faker.address.streetName(),
+//   email: faker.internet.exampleEmail(),
+//   phone: faker.phone.phoneNumber(),
+//   town: faker.address.city(),
+//   state: faker.address.state(),
+//   country: faker.address.country(),
+//   nextofkin: faker.name.findName(),
+//   nextofkinphone: faker.phone.phoneNumber(),
+//   company: faker.company.companyName(),
+//   isVerified: faker.datatype.boolean(),
+//   status: sample(['active', 'inactive']),
+// }));
+
 const clientsList = [...Array(100)].map((_, index) => ({
   id: faker.datatype.uuid(),
   avartarUrl: faker.image.avatar(),
@@ -21,6 +43,86 @@ const clientsList = [...Array(100)].map((_, index) => ({
   company: faker.company.companyName(),
   isVerified: faker.datatype.boolean(),
   status: sample(['active', 'inactive']),
+  names: [
+    { firstname: faker.name.firstName() },
+    { middlename: faker.name.middleName() },
+    { lastname: faker.name.lastName() },
+  ],
+  biodata: [
+    { dob: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}` },
+    { gender: sample(['Male', 'Female']) },
+    { maritalstatus: sample(['Single', 'Married', 'Divorced']) },
+    { religion: sample(['Christainity', 'Islam', 'Others']) },
+    { medicalRecords: ['Record', 'Record 2'] },
+    { profession: sample(['Private', 'Public', 'Others']) },
+    { phone: faker.phone.phoneNumber() },
+    { email: faker.internet.exampleEmail() },
+  ],
+
+  address: [
+    { country: faker.address.country() },
+    { state: faker.address.state() },
+    { localgovernment: faker.address.state() },
+    { town: faker.address.city() },
+    { neighbourhood: faker.address.city() },
+    { residentialaddress: faker.address.street() },
+  ],
+  otherDetails: [
+    { medicaldata: ['Record', 'Record 2'] },
+    { tags: ['Tag 1', 'Tag 2'] },
+    { otherbiodata: faker.lorem.text() },
+    { nextofkin: faker.name.findName() },
+    { nonhospitalindetifiers: sample(['CD120', 'CD122', 'CD120', 'CD130']) },
+    { paymentinformation: sample(['Paid', 'Out of cash']) },
+    { assignttocareteam: sample(['Yes', 'No']) },
+  ],
+
+  nextofkins: [
+    { nextofkin: faker.name.findName() },
+    { nextofkinphone: faker.phone.phoneNumber() },
+    { nextofkinemail: faker.internet.exampleEmail() },
+    {
+      relationship: sample(['Parent(s)', 'Sibling(s)', 'Spouse', 'Friend(s)']),
+    },
+  ],
+  nonHospitalIndetifiers: [
+    { nin: 'NGA' + Math.round(Math.random() * 142553663673700) },
+    {
+      voterscardnumber: 'NGAVOTE' + Math.round(Math.random() * 142553663673700),
+    },
+    {
+      driverslicensenumber:
+        'NGADRIVE' + Math.round(Math.random() * 142553663673700),
+    },
+  ],
+
+  paymentInformation: [
+    { accountname: faker.name.findName() },
+    { accountnumber: Math.round(Math.random() * 14263673700) },
+    {
+      bloodgroup: sample(['AA', 'AB', 'SS', 'AC', 'CS']),
+    },
+    {
+      genotype: sample(['A+', 'A-', 'B+']),
+    },
+    {
+      disabilities: sample(['Back', 'Eye sight']),
+    },
+    {
+      allergies: sample(['Back', 'Eye sight']),
+    },
+    {
+      comobidities: sample(['Back', 'Eye sight']),
+    },
+    { payment: faker.name.findName() },
+    { details: faker.lorem.text() },
+  ],
+
+  // nextofkin: faker.name.findName(),
+  // nextofkinphone: faker.phone.phoneNumber(),
+  // company: faker.company.companyName(),
+  // isVerified: faker.datatype.boolean(),
+  // status: sample(['active', 'inactive']),
 }));
 
 const appointmentList = [...Array(100)].map((_, index) => ({

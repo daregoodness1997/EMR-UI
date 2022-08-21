@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import DetailView from '../../@views/DetailView';
 import DynamicInput from '../../components/Inputs/DynamicInput';
 import { clientsList } from '../../utils/data';
-import { ClientMiniSchema } from '../../utils/schema';
+import { ClientSchema } from '../../utils/schema';
 
 const ClientDetails = () => {
   const { id } = useParams();
@@ -15,6 +15,8 @@ const ClientDetails = () => {
   });
 
   let keys = Object.keys(details[0]);
+
+  console.log('list', clientsList);
 
   const renderLabel = (key: any) => {
     if (key === 'id') return 'ID';
@@ -43,12 +45,12 @@ const ClientDetails = () => {
   };
 
   const returnInputType = (idx: any) => {
-    if (ClientMiniSchema[idx]) return ClientMiniSchema[idx].inputType;
+    if (ClientSchema[idx]) return ClientSchema[idx].inputType;
 
     return 'TEXT';
   };
   const returnOptions = (idx: any) => {
-    if (ClientMiniSchema[idx]) return ClientMiniSchema[idx].options;
+    if (ClientSchema[idx]) return ClientSchema[idx].options;
 
     return null;
   };
@@ -72,7 +74,7 @@ const ClientDetails = () => {
             </>
           );
         return (
-          <Box>
+          <Box key={idx}>
             <label>{renderLabel(key)}</label>
             <Typography variant='body2'>{`${details[0][key]}`}</Typography>
           </Box>
