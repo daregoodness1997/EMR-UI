@@ -36,7 +36,9 @@ const AttendToClient = () => {
           }}
         >
           <Stack direction='row' alignItems='center' justifyContent='end'>
-            <Button>End Encounter</Button>
+            <Button background={'#ff0000'} color={'#fff'}>
+              End Encounter
+            </Button>
             <Button>New Document</Button>
           </Stack>
 
@@ -82,7 +84,7 @@ const AttendToClient = () => {
             </Box>
 
             {/* Right */}
-            <Box
+            {/* <Box
               sx={{
                 width: '100%',
                 height: '100%',
@@ -97,7 +99,7 @@ const AttendToClient = () => {
                 dolore asperiores deserunt quasi assumenda hic beatae excepturi
                 recusandae amet soluta?
               </p>
-            </Box>
+            </Box> */}
           </Stack>
         </Box>
       </Stack>

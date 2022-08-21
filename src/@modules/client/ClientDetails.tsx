@@ -10,8 +10,8 @@ const ClientDetails = () => {
   const { id } = useParams();
   const [isEditing, setIsEditing] = useState(false);
 
-  const details: any = clientsList.filter((appointment, index) => {
-    return appointment.id === id;
+  const details: any = clientsList.filter((client, index) => {
+    return client.id === id;
   });
 
   let keys = Object.keys(details[0]);

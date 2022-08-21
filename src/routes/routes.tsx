@@ -25,6 +25,7 @@ const AppRoutes = () => {
           <Route index element={<Overview />} />
           <Route path='/app/clients' element={<Clients />} />
           <Route path='/app/clients/appointments' element={<Appointments />} />
+          <Route path='/app/clinic/appointments' element={<Appointments />} />
           <Route path='/app/clients/dashboard' element={<ClientDashboard />} />
           <Route
             path='/app/clients/create-client'
