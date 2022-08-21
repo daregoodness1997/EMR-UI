@@ -49,7 +49,7 @@ const FilterMenu = () => {
     console.log('hello');
   };
   return (
-    <Box>
+    <Box sx={{ width: { xs: '100%', lg: 'auto' } }}>
       <IconButton
         ref={anchorRef}
         onClick={handleOpen}
