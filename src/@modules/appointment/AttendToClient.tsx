@@ -41,13 +41,13 @@ const AttendToClient = () => {
           }}
         >
           <Stack direction='row' alignItems='center' justifyContent='end'>
-            <Button background={'#ff0000'} color={'#fff'}>
+            <Button background={'#ffd0d0'} color={'#ff4545'}>
               End Encounter
             </Button>
             <Button>New Document</Button>
           </Stack>
 
-          <Stack direction='row' spacing={2} sx={{ width: '100%', p: 2 }}>
+          <Stack direction='row' spacing={2} sx={{ width: '100%' }}>
             {/* Left */}
 
             <Box sx={{ width: '100%' }}>
