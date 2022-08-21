@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { appointmentList } from '../../utils/data';
 import { Box, Typography } from '@mui/material';
 import BottomButtons from './BottomButtons';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const AppointmentDetail = () => {
   let navigate = useNavigate();
@@ -33,7 +33,7 @@ const AppointmentDetail = () => {
   };
 
   const handleAttendtoClientClick = () => {
-    navigate('/app/clients/appointments/:id/attend-to-client');
+    navigate(`/app/clients/appointments/${id}/attend-to-client`);
   };
   return (
     <DetailView
