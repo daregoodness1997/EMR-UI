@@ -25,13 +25,17 @@ const clientsList = [...Array(100)].map((_, index) => ({
 
 const appointmentList = [...Array(100)].map((_, index) => ({
   id: faker.datatype.uuid(),
+  firstname: faker.name.firstName(),
+  middlename: faker.name.middleName(),
+  lastname: faker.name.lastName(),
+  practitionername: faker.name.lastName(),
   clientId: faker.datatype.uuid(),
   location: faker.address.country(),
   employee: faker.name.findName(),
   start_time: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
   appointmentClass: sample(['On-site', 'Telemedicine', 'Home Visit']),
-  appointmentType: sample(['New', 'Type B', 'Follow up', 'Annual Checkup']),
-  appointmentStatus: sample([
+  appointment_type: sample(['New', 'Type B', 'Follow up', 'Annual Checkup']),
+  appointment_status: sample([
     'Scheduled',
     'Confirmed',
     'Checked In',
@@ -41,4 +45,4 @@ const appointmentList = [...Array(100)].map((_, index) => ({
   ]),
   appointmentReason: faker.lorem.text(),
 }));
-export { clientsList };
+export { clientsList, appointmentList };

@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import React, { useState } from 'react';
 import UserProfile from '../../@views/UserProfile';
 import { Button } from '../../components';
@@ -6,6 +6,11 @@ import TabPanel from '../../components/Tabs/TabPanel';
 import { StyledTab, StyledTabs } from '../../components/Tabs/Tabs';
 import { DashboardPageWrapper } from '../../core-ui/styles';
 import { a11yProps } from '../../pages/app/Overview';
+import Documentation from './@sections/Documentation';
+import History from './@sections/History';
+import LabOrder from './@sections/LabOrder';
+import Prescription from './@sections/Prescription';
+import Radiology from './@sections/Radiology';
 
 const AttendToClient = () => {
   const [value, setValue] = useState(0);
@@ -36,7 +41,9 @@ const AttendToClient = () => {
           }}
         >
           <Stack direction='row' alignItems='center' justifyContent='end'>
-            <Button>End Encounter</Button>
+            <Button background={'#ff0000'} color={'#fff'}>
+              End Encounter
+            </Button>
             <Button>New Document</Button>
           </Stack>
 
@@ -54,6 +61,7 @@ const AttendToClient = () => {
                   <StyledTab label='Lab Orders' {...a11yProps(1)} />
                   <StyledTab label='Prescriptions' {...a11yProps(2)} />
                   <StyledTab label='Radiology' {...a11yProps(3)} />
+                  <StyledTab label='Documentation' {...a11yProps(4)} />
                 </StyledTabs>
               </Box>
               <Box
@@ -67,22 +75,25 @@ const AttendToClient = () => {
                 }}
               >
                 <TabPanel value={value} index={0}>
-                  <Typography>History</Typography>
+                  <History />
                 </TabPanel>
                 <TabPanel value={value} index={1}>
-                  <Typography>Lab Orders</Typography>
+                  <LabOrder />
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                  <Typography>Prescriptions</Typography>
+                  <Prescription />
                 </TabPanel>
                 <TabPanel value={value} index={3}>
-                  <Typography>Radiology</Typography>
+                  <Radiology />
+                </TabPanel>
+                <TabPanel value={value} index={4}>
+                  <Documentation />
                 </TabPanel>
               </Box>
             </Box>
 
             {/* Right */}
-            <Box
+            {/* <Box
               sx={{
                 width: '100%',
                 height: '100%',
@@ -97,7 +108,7 @@ const AttendToClient = () => {
                 dolore asperiores deserunt quasi assumenda hic beatae excepturi
                 recusandae amet soluta?
               </p>
-            </Box>
+            </Box> */}
           </Stack>
         </Box>
       </Stack>

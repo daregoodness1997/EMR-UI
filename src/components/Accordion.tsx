@@ -8,12 +8,23 @@ interface AccordionProps {
   title?: string;
   defaultExpanded?: boolean;
   children?: React.ReactNode;
+  status?: 'unsuccesful' | 'success' | 'warning' | 'default';
 }
+
+const statusColor = (status: string) => {
+  if (status === 'unsuccesful')
+    return { background: '#ff8886', color: '#ffffff' };
+  if (status === 'warning') return { background: '#fffd86', color: '#3f3c03' };
+  if (status === 'success') return { background: '#8eff86', color: '#01440c' };
+
+  return;
+};
 
 const Accordion: React.FC<AccordionProps> = ({
   title,
   defaultExpanded = false,
   children,
+  status = 'default',
 }) => {
   return (
     <CustomAccordion
@@ -24,7 +35,8 @@ const Accordion: React.FC<AccordionProps> = ({
         // boxShadow: '2px 2px 10px rgba(0,0,0,0.04)',
         margin: '10px 0',
         border: '0.6px solid #ebebeb',
-        background: '#fafafa',
+        background: statusColor(status)?.background,
+        color: statusColor(status)?.color,
       }}
     >
       <AccordionSummary

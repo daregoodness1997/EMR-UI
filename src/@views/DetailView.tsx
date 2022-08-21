@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 import { Button } from '../components';
+import { BottomWrapper } from '../components/styles';
 import { DashboardPageWrapper, GridWrapper } from '../core-ui/styles';
 import { ButtonGroup, GrayWrapper, HeadWrapper } from './styles';
 
@@ -61,7 +62,11 @@ const DetailView: React.FC<DetailViewProps> = ({
         </HeadWrapper>
         <GridWrapper>{children}</GridWrapper>
 
-        {hasBottomNavigation && <ButtonGroup>{bottomNavChildren}</ButtonGroup>}
+        {hasBottomNavigation && (
+          <BottomWrapper>
+            <ButtonGroup>{bottomNavChildren}</ButtonGroup>
+          </BottomWrapper>
+        )}
       </GrayWrapper>
     </DashboardPageWrapper>
   );
