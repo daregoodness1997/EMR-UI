@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import DetailView from '../../../@views/DetailView';
-import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { employeeList } from '../../../utils/data';
 import { Box, Typography } from '@mui/material';
 import DynamicInput from '../../../components/Inputs/DynamicInput';
-import { BandSchema, EmployeeSchema } from '../../../utils/schema';
+import { EmployeeSchema } from '../../../utils/schema';
 import { BottomWrapper } from '../../../components/styles';
 import { Button } from '../../../components';
 
 const EmployeeDetails = () => {
-  let navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
 
   const { id } = useParams();

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import DetailView from '../../../@views/DetailView';
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { bandList } from '../../../utils/data';
 import { Box, Typography } from '@mui/material';

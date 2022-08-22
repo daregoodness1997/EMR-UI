@@ -11,14 +11,14 @@ import History from './@sections/History';
 import LabOrder from './@sections/LabOrder';
 import Prescription from './@sections/Prescription';
 import Radiology from './@sections/Radiology';
-import { useParams } from 'react-router-dom';
-import { appointmentList } from '../../utils/data';
+// import { useParams } from 'react-router-dom';
+// import { appointmentList } from '../../utils/data';
 
 const AttendToClient = () => {
-  const { id } = useParams();
-  const details: any = appointmentList.filter((appointment, index) => {
-    return appointment.id === id;
-  });
+  // const { id } = useParams();
+  // const details: any = appointmentList.filter((appointment, index) => {
+  //   return appointment.id === id;
+  // });
   const [value, setValue] = useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);

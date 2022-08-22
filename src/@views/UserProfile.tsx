@@ -2,7 +2,6 @@ import { Avatar, Box, Button, Chip, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import Modal from '../components/Modal';
 
-interface UserProfileProps {}
 const UserProfile = () => {
   const [open, setOpen] = useState(false);
   function randomColor() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ViewOne from '../../../@views/ViewOne';
-import { bandList, employeeList } from '../../../utils/data';
+import { employeeList } from '../../../utils/data';
 import { EmployeeSchema } from '../../../utils/schema';
 
 const Employees = () => {

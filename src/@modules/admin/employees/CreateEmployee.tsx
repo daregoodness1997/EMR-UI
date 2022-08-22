@@ -4,7 +4,7 @@ import { Button } from '../../../components';
 import DynamicInput from '../../../components/Inputs/DynamicInput';
 import { BottomWrapper, FullDetailsWrapper } from '../../../components/styles';
 import { DashboardPageWrapper, GridWrapper } from '../../../core-ui/styles';
-import { BandSchema, EmployeeSchema } from '../../../utils/schema';
+import {  EmployeeSchema } from '../../../utils/schema';
 
 const CreateEmployee = () => {
   return (
