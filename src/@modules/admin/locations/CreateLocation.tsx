@@ -4,7 +4,7 @@ import { Button } from '../../../components';
 import DynamicInput from '../../../components/Inputs/DynamicInput';
 import { BottomWrapper, FullDetailsWrapper } from '../../../components/styles';
 import { DashboardPageWrapper, GridWrapper } from '../../../core-ui/styles';
-import { BandSchema, LocationSchema } from '../../../utils/schema';
+import { LocationSchema } from '../../../utils/schema';
 
 const CreateLocation = () => {
   return (
