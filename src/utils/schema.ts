@@ -1169,4 +1169,48 @@ const AppointmentSchema = [
     inputType: InputType.TEXT_AREA,
   },
 ];
-export { ClientMiniSchema, AppointmentSchema, ClientFullSchema, ClientSchema };
+const BandSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'Enter name of band',
+    selector: (row: any) => row.id,
+    sortable: true,
+    inputType: InputType.HIDDEN,
+  },
+  {
+    name: 'Name of Band',
+    key: 'name',
+    description: 'Enter name of band',
+    selector: (row: any) => row.name,
+    sortable: true,
+    required: true,
+    inputType: InputType.TEXT,
+  },
+  {
+    name: 'Band Type',
+    key: 'bandType',
+    description: 'Enter name of band',
+    selector: (row: any) => row.bandType,
+    sortable: true,
+    required: true,
+    inputType: InputType.SELECT_LIST,
+    options: ['Provider', 'Company', 'Patient', 'Plan'],
+  },
+  {
+    name: 'Description of Band',
+    key: 'description',
+    description: 'Enter description of band',
+    selector: (row: any) => row.description,
+    sortable: true,
+    required: false,
+    inputType: InputType.TEXT,
+  },
+];
+export {
+  ClientMiniSchema,
+  AppointmentSchema,
+  ClientFullSchema,
+  ClientSchema,
+  BandSchema,
+};

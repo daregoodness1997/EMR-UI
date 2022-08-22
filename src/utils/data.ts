@@ -147,4 +147,12 @@ const appointmentList = [...Array(100)].map((_, index) => ({
   ]),
   appointmentReason: faker.lorem.text(),
 }));
-export { clientsList, appointmentList };
+
+const bandList = [...Array(100)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  name: faker.name.findName(),
+  bandType: sample(['Provider', 'Company', 'Patient', 'Plan']),
+  description: faker.name.findName(),
+}));
+
+export { clientsList, appointmentList, bandList };

@@ -6,7 +6,7 @@ export const GrayWrapper = styled.div`
   height: 100%;
   padding: 1rem;
   /* padding-bottom: 30rem; */
-  overflow-y: auto;
+  overflow-y: scroll;
   animation: divanimation 0.6s;
   -webkit-animation: divanimation 0.6s;
   animation-fill-mode: forwards;

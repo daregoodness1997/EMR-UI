@@ -1,4 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
+import AdminDashboard from '../@modules/admin/AdminDashboard';
+import Bands from '../@modules/admin/bands';
+import BandDetails from '../@modules/admin/bands/BandDetails';
+import CreateBand from '../@modules/admin/bands/CreateBand';
 import AppointmentDetail from '../@modules/appointment/AppointmentDetail';
 import Appointments from '../@modules/appointment/Appointments';
 import AttendToClient from '../@modules/appointment/AttendToClient';
@@ -45,6 +49,11 @@ const AppRoutes = () => {
           />
           <Route path='/app/clients/:id' element={<ClientDetails />} />
           <Route path='/app/clinic' element={<ClinicDashboard />} />
+          <Route path='/app/admin' element={<AdminDashboard />} />
+
+          <Route path='/app/admin/bands' element={<Bands />} />
+          <Route path='/app/admin/bands/create' element={<CreateBand />} />
+          <Route path='/app/admin/bands/:id' element={<BandDetails />} />
         </Route>
       </Routes>
     </>
