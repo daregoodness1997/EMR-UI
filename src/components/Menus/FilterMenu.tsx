@@ -70,14 +70,14 @@ const FilterMenu = () => {
         placement='bottom-start'
         transition
         disablePortal
-        sx={{ zIndex: 1000, width: { xs: '100%' } }}
+        sx={{ zIndex: 1000, width: { xs: '100%', lg: '320px' } }}
       >
         {({ TransitionProps, placement }) => (
           <Grow
             {...TransitionProps}
             style={{
               transformOrigin:
-                placement === 'bottom-start' ? 'left top' : 'left bottom',
+                placement === 'bottom-start' ? 'left right' : 'left bottom',
             }}
           >
             <Box
