@@ -11,14 +11,35 @@ import History from './@sections/History';
 import LabOrder from './@sections/LabOrder';
 import Prescription from './@sections/Prescription';
 import Radiology from './@sections/Radiology';
+// import { useParams } from 'react-router-dom';
+// import { appointmentList } from '../../utils/data';
 
 const AttendToClient = () => {
+  // const { id } = useParams();
+  // const details: any = appointmentList.filter((appointment, index) => {
+  //   return appointment.id === id;
+  // });
   const [value, setValue] = useState(0);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
   return (
     <DashboardPageWrapper>
+      <Stack
+        direction='row'
+        alignItems='center'
+        justifyContent='end'
+        sx={{ p: 1, background: '#fff', pt: 0 }}
+      >
+        <Button
+          background={'#ffd0d0'}
+          color={'#ff4545'}
+          sx={{ p: 1, pt: 0.4, pb: 0.4, width: '32px !important' }}
+        >
+          End Encounter
+        </Button>
+        <Button>New Document</Button>
+      </Stack>
       <Stack direction={{ lg: 'row', xs: 'column' }} spacing={2}>
         <Box
           sx={{
@@ -40,13 +61,6 @@ const AttendToClient = () => {
             top: { xs: '40px' },
           }}
         >
-          <Stack direction='row' alignItems='center' justifyContent='end'>
-            <Button background={'#ffd0d0'} color={'#ff4545'}>
-              End Encounter
-            </Button>
-            <Button>New Document</Button>
-          </Stack>
-
           <Stack direction='row' spacing={2} sx={{ width: '100%' }}>
             {/* Left */}
 

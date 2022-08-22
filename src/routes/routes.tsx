@@ -1,4 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
+import AdminDashboard from '../@modules/admin/AdminDashboard';
+import Bands from '../@modules/admin/bands';
+import BandDetails from '../@modules/admin/bands/BandDetails';
+import CreateBand from '../@modules/admin/bands/CreateBand';
+import Employees from '../@modules/admin/employees';
+import CreateEmployee from '../@modules/admin/employees/CreateEmployee';
+import EmployeeDetails from '../@modules/admin/employees/EmployeeDetails';
+import Locations from '../@modules/admin/locations';
+import CreateLocation from '../@modules/admin/locations/CreateLocation';
+import LocationDetails from '../@modules/admin/locations/LocationDetails';
 import AppointmentDetail from '../@modules/appointment/AppointmentDetail';
 import Appointments from '../@modules/appointment/Appointments';
 import AttendToClient from '../@modules/appointment/AttendToClient';
@@ -45,6 +55,29 @@ const AppRoutes = () => {
           />
           <Route path='/app/clients/:id' element={<ClientDetails />} />
           <Route path='/app/clinic' element={<ClinicDashboard />} />
+          <Route path='/app/admin' element={<AdminDashboard />} />
+
+          <Route path='/app/admin/bands' element={<Bands />} />
+          <Route path='/app/admin/bands/create' element={<CreateBand />} />
+          <Route path='/app/admin/bands/:id' element={<BandDetails />} />
+          <Route path='/app/admin/employees' element={<Employees />} />
+          <Route
+            path='/app/admin/employees/create'
+            element={<CreateEmployee />}
+          />
+          <Route
+            path='/app/admin/employees/:id'
+            element={<EmployeeDetails />}
+          />
+          <Route path='/app/admin/locations' element={<Locations />} />
+          <Route
+            path='/app/admin/locations/create'
+            element={<CreateLocation />}
+          />
+          <Route
+            path='/app/admin/locations/:id'
+            element={<LocationDetails />}
+          />
         </Route>
       </Routes>
     </>

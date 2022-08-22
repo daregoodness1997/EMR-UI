@@ -6,7 +6,7 @@ export const GrayWrapper = styled.div`
   height: 100%;
   padding: 1rem;
   /* padding-bottom: 30rem; */
-  overflow-y: auto;
+  overflow-y: scroll;
   animation: divanimation 0.6s;
   -webkit-animation: divanimation 0.6s;
   animation-fill-mode: forwards;
@@ -55,8 +55,9 @@ export const ButtonGroup = styled.div`
 
   @media (max-width: 400px) {
     flex-direction: column;
-    margin-top: 0.5rem;
+    margin-top: 0.2rem;
     width: 100%;
+    padding: 0 0.5rem;
 
     & button {
       width: 100%;

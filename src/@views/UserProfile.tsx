@@ -37,7 +37,7 @@ const UserProfile = () => {
                 src='h
         ttps://via.placeholder.com/150'
                 alt='AT'
-                sx={{ bgcolor: 'orange', width: '120px', height: '120px' }}
+                sx={{ bgcolor: 'orange', width: '100px', height: '100px' }}
               />
               <Typography
                 sx={{ fontSize: '20px', width: '100%', textAlign: 'center' }}

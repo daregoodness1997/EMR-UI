@@ -147,4 +147,42 @@ const appointmentList = [...Array(100)].map((_, index) => ({
   ]),
   appointmentReason: faker.lorem.text(),
 }));
-export { clientsList, appointmentList };
+
+const bandList = [...Array(100)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  name: faker.name.findName(),
+  bandType: sample(['Provider', 'Company', 'Patient', 'Plan']),
+  description: faker.name.findName(),
+}));
+
+const employeeList = [...Array(100)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  firstname: faker.name.firstName(),
+  middlename: faker.name.middleName(),
+  lastname: faker.name.lastName(),
+  profession: sample(['Private', 'Public', 'Others']),
+  description: faker.name.findName(),
+  email: faker.internet.exampleEmail(),
+  phone: faker.phone.phoneNumber(),
+  department: sample([
+    'Admin',
+    'Pharmacy',
+    'Frontdesk',
+    'Nursing',
+    'Intensive Care',
+  ]),
+  deptunit: sample([
+    'Admin',
+    'Pharmacy',
+    'Frontdesk',
+    'Nursing',
+    'Intensive Care',
+  ]),
+}));
+const locationList = [...Array(100)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  name: faker.name.findName(),
+  locationType: sample(['Provider', 'Company', 'Patient', 'Plan']),
+}));
+
+export { clientsList, appointmentList, bandList, employeeList, locationList };

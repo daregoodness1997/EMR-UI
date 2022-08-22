@@ -50,6 +50,17 @@ const DynamicInput = (props: DynamicInputProps) => {
       />
     );
   }
+  if (inputType === InputType.SELECT_AUTO_SUGGEST) {
+    return (
+      <Input
+        label={label}
+        disabled={readonly}
+        errorText={errors[name]?.message}
+        defaultValue={data[name] || ''}
+        value={value}
+      />
+    );
+  }
 
   if (inputType === InputType.NUMBER) {
     return (
