@@ -4,9 +4,9 @@ import { Button } from '../../../components';
 import DynamicInput from '../../../components/Inputs/DynamicInput';
 import { BottomWrapper, FullDetailsWrapper } from '../../../components/styles';
 import { DashboardPageWrapper, GridWrapper } from '../../../core-ui/styles';
-import { BandSchema } from '../../../utils/schema';
+import { BandSchema, EmployeeSchema } from '../../../utils/schema';
 
-const CreateBand = () => {
+const CreateEmployee = () => {
   return (
     <DashboardPageWrapper>
       <GrayWrapper>
@@ -21,13 +21,13 @@ const CreateBand = () => {
         <form>
           <FullDetailsWrapper>
             <GridWrapper>
-              {BandSchema.map(({ inputType, key, name, options }) => (
+              {EmployeeSchema.map(({ inputType, key, name }) => (
                 <DynamicInput
                   key={key}
                   name={key}
                   inputType={inputType}
                   label={name}
-                  options={options}
+                  options={[]}
                 />
               ))}
             </GridWrapper>
@@ -42,4 +42,4 @@ const CreateBand = () => {
   );
 };
 
-export default CreateBand;
+export default CreateEmployee;

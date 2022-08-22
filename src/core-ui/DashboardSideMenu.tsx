@@ -15,6 +15,18 @@ export const menuItems = [
     iconClassName: 'bi bi-house-door',
   },
   {
+    name: 'Admin',
+    exact: true,
+    to: '/app/admin',
+    iconClassName: 'bi bi-person',
+    subMenus: [
+      { name: 'Dashboard', to: '/app/admin' },
+      { name: 'Bands', to: '/app/admin/bands' },
+      { name: 'Employees', to: '/app/admin/employees' },
+      { name: 'Location', to: '/app/admin/location' },
+    ],
+  },
+  {
     name: 'Client',
     exact: true,
     to: '/app/clients',
@@ -107,18 +119,7 @@ export const menuItems = [
       { name: 'Signals', to: '/app/epidemiology/signal' },
     ],
   },
-  {
-    name: 'Admin',
-    exact: true,
-    to: '/app/admin',
-    iconClassName: 'bi bi-person',
-    subMenus: [
-      { name: 'Dashboard', to: '/app/admin' },
-      { name: 'Bands', to: '/app/admin/bands' },
-      { name: 'Employees', to: '/app/admin/employees' },
-      { name: 'Location', to: '/app/admin/location' },
-    ],
-  },
+
   {
     name: 'Communication',
     exact: true,

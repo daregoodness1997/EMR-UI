@@ -155,4 +155,29 @@ const bandList = [...Array(100)].map((_, index) => ({
   description: faker.name.findName(),
 }));
 
-export { clientsList, appointmentList, bandList };
+const employeeList = [...Array(100)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  firstname: faker.name.firstName(),
+  middlename: faker.name.middleName(),
+  lastname: faker.name.lastName(),
+  profession: sample(['Private', 'Public', 'Others']),
+  description: faker.name.findName(),
+  email: faker.internet.exampleEmail(),
+  phone: faker.phone.phoneNumber(),
+  department: sample([
+    'Admin',
+    'Pharmacy',
+    'Frontdesk',
+    'Nursing',
+    'Intensive Care',
+  ]),
+  deptunit: sample([
+    'Admin',
+    'Pharmacy',
+    'Frontdesk',
+    'Nursing',
+    'Intensive Care',
+  ]),
+}));
+
+export { clientsList, appointmentList, bandList, employeeList };

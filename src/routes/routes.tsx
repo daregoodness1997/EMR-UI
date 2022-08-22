@@ -3,6 +3,9 @@ import AdminDashboard from '../@modules/admin/AdminDashboard';
 import Bands from '../@modules/admin/bands';
 import BandDetails from '../@modules/admin/bands/BandDetails';
 import CreateBand from '../@modules/admin/bands/CreateBand';
+import Employees from '../@modules/admin/employees';
+import CreateEmployee from '../@modules/admin/employees/CreateEmployee';
+import EmployeeDetails from '../@modules/admin/employees/EmployeeDetails';
 import AppointmentDetail from '../@modules/appointment/AppointmentDetail';
 import Appointments from '../@modules/appointment/Appointments';
 import AttendToClient from '../@modules/appointment/AttendToClient';
@@ -54,6 +57,15 @@ const AppRoutes = () => {
           <Route path='/app/admin/bands' element={<Bands />} />
           <Route path='/app/admin/bands/create' element={<CreateBand />} />
           <Route path='/app/admin/bands/:id' element={<BandDetails />} />
+          <Route path='/app/admin/employees' element={<Employees />} />
+          <Route
+            path='/app/admin/employees/create'
+            element={<CreateEmployee />}
+          />
+          <Route
+            path='/app/admin/employees/:id'
+            element={<EmployeeDetails />}
+          />
         </Route>
       </Routes>
     </>
