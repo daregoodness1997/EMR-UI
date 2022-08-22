@@ -23,6 +23,19 @@ const CreateAppointment = () => {
         <form>
           <FullDetailsWrapper title={'Create Appointment'}>
             {AppointmentSchema.map((field: any, index) => {
+              return (
+                <DynamicInput
+                  key={index}
+                  name={field.key}
+                  label={field.name}
+                  inputType={field.inputType}
+                  options={field.options || []}
+                />
+              );
+            })}
+          </FullDetailsWrapper>
+          {/* <FullDetailsWrapper title={'Create Appointment'}>
+            {AppointmentSchema.map((field: any, index) => {
               if (field.length) {
                 return (
                   <GridWrapper className='subgrid two-columns' key={index}>
@@ -46,7 +59,7 @@ const CreateAppointment = () => {
                 );
               }
             })}
-          </FullDetailsWrapper>
+          </FullDetailsWrapper> */}
 
           <BottomWrapper>
             <Button label='Clear Form' background='#FFE9E9' color='#ED0423' />

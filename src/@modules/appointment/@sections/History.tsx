@@ -20,16 +20,18 @@ const History = () => {
             display: 'flex',
             margin: { xs: '10px 0', lg: '24px 0' },
             width: { xs: '100%' },
+            // flexDirection: { xs: 'column', lg: 'row' },
           }}
         >
           <TextField
             variant='outlined'
             size='small'
             sx={{
-              width: { lg: '320px', xs: '320px' },
+              width: { lg: '320px', xs: '55%' },
               // height: '40px',
               borderRadius: '4px',
               marginRight: '10px',
+              mb: { xs: 1 },
             }}
           />
           <FilterMenu />
