@@ -37,7 +37,11 @@ const EmployeeDetails = () => {
   const handleDelete = () => null;
 
   return (
-    <DetailView title='Band Detail' onEdit={handleEdit} onDelete={handleDelete}>
+    <DetailView
+      title='Employee Detail'
+      onEdit={handleEdit}
+      onDelete={handleDelete}
+    >
       {isEditing ? (
         <>
           {EmployeeSchema.map(({ inputType, key, name }, idx) => (

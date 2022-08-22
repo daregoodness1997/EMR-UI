@@ -6,6 +6,9 @@ import CreateBand from '../@modules/admin/bands/CreateBand';
 import Employees from '../@modules/admin/employees';
 import CreateEmployee from '../@modules/admin/employees/CreateEmployee';
 import EmployeeDetails from '../@modules/admin/employees/EmployeeDetails';
+import Locations from '../@modules/admin/locations';
+import CreateLocation from '../@modules/admin/locations/CreateLocation';
+import LocationDetails from '../@modules/admin/locations/LocationDetails';
 import AppointmentDetail from '../@modules/appointment/AppointmentDetail';
 import Appointments from '../@modules/appointment/Appointments';
 import AttendToClient from '../@modules/appointment/AttendToClient';
@@ -65,6 +68,15 @@ const AppRoutes = () => {
           <Route
             path='/app/admin/employees/:id'
             element={<EmployeeDetails />}
+          />
+          <Route path='/app/admin/locations' element={<Locations />} />
+          <Route
+            path='/app/admin/locations/create'
+            element={<CreateLocation />}
+          />
+          <Route
+            path='/app/admin/locations/:id'
+            element={<LocationDetails />}
           />
         </Route>
       </Routes>

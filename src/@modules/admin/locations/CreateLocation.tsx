@@ -4,17 +4,17 @@ import { Button } from '../../../components';
 import DynamicInput from '../../../components/Inputs/DynamicInput';
 import { BottomWrapper, FullDetailsWrapper } from '../../../components/styles';
 import { DashboardPageWrapper, GridWrapper } from '../../../core-ui/styles';
-import { EmployeeSchema } from '../../../utils/schema';
+import { BandSchema, LocationSchema } from '../../../utils/schema';
 
-const CreateEmployee = () => {
+const CreateLocation = () => {
   return (
     <DashboardPageWrapper>
       <GrayWrapper>
         <HeadWrapper>
           <div>
-            <h2>Create Employee</h2>
+            <h2>Create Location</h2>
             <span>
-              Create a New Employee by filling out the form below to get
+              Create a New Location by filling out the form below to get
               started.
             </span>
           </div>
@@ -22,13 +22,13 @@ const CreateEmployee = () => {
         <form>
           <FullDetailsWrapper>
             <GridWrapper>
-              {EmployeeSchema.map(({ inputType, key, name }) => (
+              {LocationSchema.map(({ inputType, key, name, options }) => (
                 <DynamicInput
                   key={key}
                   name={key}
                   inputType={inputType}
                   label={name}
-                  options={[]}
+                  options={options}
                 />
               ))}
             </GridWrapper>
@@ -43,4 +43,4 @@ const CreateEmployee = () => {
   );
 };
 
-export default CreateEmployee;
+export default CreateLocation;

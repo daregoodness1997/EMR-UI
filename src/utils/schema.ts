@@ -1297,6 +1297,36 @@ const EmployeeSchema = [
     // validator: yup.string().required('Enter your Departmental Unit'),
   },
 ];
+
+const LocationSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'Enter name of location',
+    sortable: true,
+    selector: (row: any) => row.id,
+    inputType: InputType.HIDDEN,
+  },
+  {
+    name: 'Name of Location',
+    key: 'name',
+    description: 'Enter name of Location',
+    selector: (row: any) => row.name,
+    sortable: true,
+    required: true,
+    inputType: InputType.TEXT,
+  },
+  {
+    name: 'Location Type',
+    key: 'locationType',
+    description: 'Enter name of Location',
+    selector: (row: any) => row.locationType,
+    sortable: true,
+    required: true,
+    inputType: InputType.SELECT_LIST,
+    options: ['Front Desk', 'Clinic', 'Store', 'Laboratory', 'Finance'],
+  },
+];
 export {
   ClientMiniSchema,
   AppointmentSchema,
@@ -1304,4 +1334,5 @@ export {
   ClientSchema,
   BandSchema,
   EmployeeSchema,
+  LocationSchema,
 };
