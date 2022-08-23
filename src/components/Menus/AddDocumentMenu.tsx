@@ -56,7 +56,14 @@ const AddDocumentMenu: React.FC<AddDocumentMenuProps> = ({
   return (
     <Box>
       <IconButton
-        sx={{ width: '160px', p: 1, pt: 2, pb: 2, borderRadius: '8px' }}
+        sx={{
+          width: { lg: '160px', xs: '100%' },
+          p: 1,
+          pt: 2,
+          pb: 2,
+          borderRadius: '8px',
+          background: '#fafafa',
+        }}
         ref={anchorRef}
         onClick={handleOpen}
       >
