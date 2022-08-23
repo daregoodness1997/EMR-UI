@@ -106,7 +106,7 @@ const AttendToClient = () => {
                   <Radiology />
                 </TabPanel>
                 <TabPanel value={value} index={4}>
-                  <Documentation />
+                  <Documentation onAddDocument={() => setDocument(true)} />
                 </TabPanel>
               </Box>
             </Box>

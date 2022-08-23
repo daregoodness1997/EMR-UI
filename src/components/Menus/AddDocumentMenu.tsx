@@ -54,7 +54,7 @@ const AddDocumentMenu: React.FC<AddDocumentMenuProps> = ({
     console.log('hello');
   };
   return (
-    <Box>
+    <Box sx={{ width: { lg: '160px', xs: '100%' } }}>
       <IconButton
         sx={{
           width: { lg: '160px', xs: '100%' },

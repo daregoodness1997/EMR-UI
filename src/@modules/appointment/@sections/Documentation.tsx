@@ -9,8 +9,11 @@ export const list = [
   'Phamracy Note',
   'Test Result',
 ];
+interface DocumentationProps {
+  onAddDocument: () => void;
+}
 
-const Documentation = () => {
+const Documentation: React.FC<DocumentationProps> = ({ onAddDocument }) => {
   return (
     <Box>
       <Box
@@ -43,7 +46,7 @@ const Documentation = () => {
           />
           <FilterMenu />
         </Box>
-        <AddDocumentMenu list={list} handleClick={() => null} />
+        <AddDocumentMenu list={list} handleClick={onAddDocument} />
       </Box>
       <Accordion title='Documentation added' />
       <Accordion title='Documentation added' />
