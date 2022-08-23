@@ -215,6 +215,8 @@ export const MainMenu = styled.div`
 `;
 
 export const Sidemenu = styled.div`
+  zoom: 70%;
+
 &.hide{
     left: -300px;
     width: 0;
@@ -267,7 +269,7 @@ export const TopSection = styled.div`
 // PageWrapper
 export const DashboardPageWrapper = styled.div`
   width: 100%;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 0.01px);
   overflow-y: hidden;
   padding: 2.2rem;
   transition: width 2s, height 4s;
@@ -275,7 +277,7 @@ export const DashboardPageWrapper = styled.div`
   -webkit-animation: divanimation 0.6s;
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
-  /* zoom: 85%; */
+  zoom: 85%;
 
   @media (max-width: 400px) {
     overflow-y: auto;
@@ -319,6 +321,8 @@ export const TopMenuWrapper = styled.div`
   padding: 0 1.4rem;
   backdrop-filter: blur(60px);
   webkit-backdrop-filter: blur(60px);
+  zoom: 70%;
+
   & .breadcrumb {
     @media (max-width: 400px) {
       display: none;
