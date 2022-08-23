@@ -184,5 +184,36 @@ const locationList = [...Array(100)].map((_, index) => ({
   name: faker.name.findName(),
   locationType: sample(['Provider', 'Company', 'Patient', 'Plan']),
 }));
+const visitList = [...Array(10)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  visithistory: faker.name.findName(),
+}));
+const drugList = [...Array(10)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  drugtolerance: faker.name.findName(),
+}));
+const medicationList = [...Array(10)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  medications: faker.name.findName(),
+}));
+const problemList = [...Array(10)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  problemlist: faker.name.findName(),
+}));
+const taskList = [...Array(10)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  tasks: faker.name.findName(),
+}));
 
-export { clientsList, appointmentList, bandList, employeeList, locationList };
+export {
+  clientsList,
+  appointmentList,
+  bandList,
+  employeeList,
+  locationList,
+  visitList,
+  drugList,
+  medicationList,
+  problemList,
+  taskList,
+};

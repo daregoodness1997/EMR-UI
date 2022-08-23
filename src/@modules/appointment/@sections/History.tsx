@@ -1,7 +1,32 @@
-import { Box, TextField } from '@mui/material';
+import { Box, IconButton, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { Accordion } from '../../../components';
 import FilterMenu from '../../../components/Menus/FilterMenu';
+import { formatDistanceToNow, parseISO, sub } from 'date-fns';
+
+const HistoryTitle = () => {
+  let min = 1;
+  const dateGenerated = `${sub(new Date(), { minutes: min++ }).toISOString()}`;
+  let timeAgo = '';
+  const date = parseISO(dateGenerated);
+  const timePeriod = formatDistanceToNow(date);
+  timeAgo = `${timePeriod} ago`;
+
+  return (
+    <Stack
+      direction='row'
+      justifyContent='space-between'
+      alignItems='center'
+      spacing={10}
+    >
+      <Typography>
+        <span style={{ fontWeight: 'bold' }}>{timeAgo}</span> History Added Now
+      </Typography>
+
+      <IconButton>Print</IconButton>
+    </Stack>
+  );
+};
 
 const History = () => {
   return (
@@ -37,21 +62,28 @@ const History = () => {
           <FilterMenu />
         </Box>
       </Box>
-      <Accordion title='History added' status='success' />
-      <Accordion title='Prescription added' status='success' />
-      <Accordion title='Prescription added' status='warning' />
-      <Accordion title='Prescription added' status='unsuccesful' />
-      <Accordion title='Prescription added' />
-      <Accordion title='Prescription added' />
-      <Accordion title='Prescription added' />
-      <Accordion title='Prescription added' />
-      <Accordion title='Prescription added' />
-      <Accordion title='Prescription added' />
-      <Accordion title='Prescription added' />
-      <Accordion title='Prescription added' />
-      <Accordion title='Prescription added' />
-      <Accordion title='Prescription added' />
-      <Accordion title='Prescription added' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='unsuccesful' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='warning' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='warning' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} />
+      <Accordion title={<HistoryTitle />} />
+      <Accordion title={<HistoryTitle />} status='unsuccesful' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='warning' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='warning' />
+      <Accordion title={<HistoryTitle />} status='success' />
+      <Accordion title={<HistoryTitle />} status='success' />
     </Box>
   );
 };

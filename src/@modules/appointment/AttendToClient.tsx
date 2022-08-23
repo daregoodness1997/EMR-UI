@@ -38,7 +38,7 @@ const AttendToClient = () => {
         >
           End Encounter
         </Button>
-        <Button>New Document</Button>
+        <Button background={'#04ed7c'}>Start Telemedicine</Button>
       </Stack>
       <Stack direction={{ lg: 'row', xs: 'column' }} spacing={2}>
         <Box

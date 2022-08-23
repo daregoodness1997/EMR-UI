@@ -13,6 +13,7 @@ interface ViewOneProps {
   columns: any;
   data: any;
   tableTitle: string;
+  hasCreate?: boolean;
 }
 
 const ViewOne: React.FC<ViewOneProps> = ({
@@ -23,6 +24,7 @@ const ViewOne: React.FC<ViewOneProps> = ({
   tableTitle,
   handleCreate,
   handleSearch,
+  hasCreate = true,
 }) => {
   return (
     <DashboardPageWrapper>
@@ -57,12 +59,14 @@ const ViewOne: React.FC<ViewOneProps> = ({
           />
           <FilterMenu />
         </Box>
-        <Button
-          sx={{ width: { xs: '100%', lg: 'auto' } }}
-          onClick={handleCreate}
-        >
-          Add {title}
-        </Button>
+        {hasCreate && (
+          <Button
+            sx={{ width: { xs: '100%', lg: 'auto' } }}
+            onClick={handleCreate}
+          >
+            Add {title}
+          </Button>
+        )}
       </Box>
 
       <Box sx={{ height: `calc(100vh - 90px)`, overflowY: 'scroll' }}>
