@@ -44,7 +44,7 @@ export const StyledTab = styled((props: StyledTabProps) => (
   marginRight: theme.spacing(1),
   marginBottom: theme.spacing(1),
   // width: '31%',
-  padding: 4,
+  padding: '14px',
   borderRadius: 4,
   border: '0px',
   backgroundColor: '#EAF2FF',

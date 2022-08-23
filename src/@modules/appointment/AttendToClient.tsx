@@ -20,6 +20,7 @@ const AttendToClient = () => {
   //   return appointment.id === id;
   // });
   const [value, setValue] = useState(0);
+  const [document, setDocument] = useState(false);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
@@ -61,7 +62,11 @@ const AttendToClient = () => {
             top: { xs: '40px' },
           }}
         >
-          <Stack direction='row' spacing={2} sx={{ width: '100%' }}>
+          <Stack
+            direction={{ lg: 'row', xs: 'column-reverse' }}
+            spacing={2}
+            sx={{ width: '100%' }}
+          >
             {/* Left */}
 
             <Box sx={{ width: '100%' }}>
@@ -101,28 +106,30 @@ const AttendToClient = () => {
                   <Radiology />
                 </TabPanel>
                 <TabPanel value={value} index={4}>
-                  <Documentation />
+                  <Documentation onAddDocument={() => setDocument(true)} />
                 </TabPanel>
               </Box>
             </Box>
 
             {/* Right */}
-            {/* <Box
-              sx={{
-                width: '100%',
-                height: '100%',
-                background: 'white',
-                borderRadius: 2,
-                p: 2,
-              }}
-            >
-              <h1>Hello</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-                dolore asperiores deserunt quasi assumenda hic beatae excepturi
-                recusandae amet soluta?
-              </p>
-            </Box> */}
+            {document && (
+              <Box
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  background: 'white',
+                  borderRadius: 2,
+                  p: 2,
+                }}
+              >
+                <h1>Add Document</h1>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
+                  dolore asperiores deserunt quasi assumenda hic beatae
+                  excepturi recusandae amet soluta?
+                </p>
+              </Box>
+            )}
           </Stack>
         </Box>
       </Stack>

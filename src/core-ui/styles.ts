@@ -321,7 +321,7 @@ export const TopMenuWrapper = styled.div`
   padding: 0 1.4rem;
   backdrop-filter: blur(60px);
   webkit-backdrop-filter: blur(60px);
-  zoom: 70%;
+  zoom: 85%;
 
   & .breadcrumb {
     @media (max-width: 400px) {
