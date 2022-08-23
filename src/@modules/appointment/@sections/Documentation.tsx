@@ -3,7 +3,12 @@ import React from 'react';
 import { Accordion } from '../../../components';
 import FilterMenu from '../../../components/Menus/FilterMenu';
 import AddDocumentMenu from '../../../components/Menus/AddDocumentMenu';
-const list = ['Doctors Note', 'Clinic Note', 'Phamracy Note', 'Test Result'];
+export const list = [
+  'Doctors Note',
+  'Clinic Note',
+  'Phamracy Note',
+  'Test Result',
+];
 
 const Documentation = () => {
   return (
