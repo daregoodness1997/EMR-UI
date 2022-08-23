@@ -1,9 +1,25 @@
 import { Avatar, Box, Button, Chip, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import Modal from '../components/Modal';
+import {
+  drugList,
+  medicationList,
+  problemList,
+  taskList,
+  visitList,
+} from '../utils/data';
+import {
+  drugSchema,
+  historySchema,
+  medicationSchema,
+  problemSchema,
+  taskSchema,
+} from '../utils/schema';
+import ViewOne from './ViewOne';
 
 const UserProfile = () => {
   const [open, setOpen] = useState(false);
+  const [modalDetails, setModalDetails] = useState('Visit History');
   function randomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
@@ -13,9 +29,31 @@ const UserProfile = () => {
     return color;
   }
 
+  const modalContent = () => {
+    if (modalDetails === 'Visit History')
+      return { columns: historySchema, data: visitList };
+    if (modalDetails === 'Drug Tolerance')
+      return { columns: drugSchema, data: drugList };
+    if (modalDetails === 'Medications')
+      return { columns: medicationSchema, data: medicationList };
+    if (modalDetails === 'Problem List')
+      return { columns: problemSchema, data: problemList };
+    if (modalDetails === 'Tasks')
+      return { columns: taskSchema, data: taskList };
+    return { columns: '', data: '' };
+  };
+
   return (
     <>
-      <Modal open={open} onClose={() => setOpen(false)} />
+      <Modal open={open} onClose={() => setOpen(false)}>
+        <ViewOne
+          title={modalDetails}
+          columns={modalContent().columns}
+          data={modalContent().data}
+          tableTitle={modalDetails}
+          hasCreate={false}
+        />
+      </Modal>
       <Box
         sx={{
           height: '100vh',
@@ -258,7 +296,10 @@ const UserProfile = () => {
                 background: '#fff',
               },
             }}
-            onClick={() => setOpen(true)}
+            onClick={() => {
+              setOpen(true);
+              setModalDetails('Visit History');
+            }}
           >
             Visit History
           </Box>
@@ -273,7 +314,10 @@ const UserProfile = () => {
                 background: '#fff',
               },
             }}
-            onClick={() => setOpen(true)}
+            onClick={() => {
+              setOpen(true);
+              setModalDetails('Drug Tolerance');
+            }}
           >
             Drug Tolerance
           </Box>
@@ -288,7 +332,10 @@ const UserProfile = () => {
                 background: '#fff',
               },
             }}
-            onClick={() => setOpen(true)}
+            onClick={() => {
+              setOpen(true);
+              setModalDetails('Medications');
+            }}
           >
             Medications
           </Box>
@@ -303,7 +350,10 @@ const UserProfile = () => {
                 background: '#fff',
               },
             }}
-            onClick={() => setOpen(true)}
+            onClick={() => {
+              setOpen(true);
+              setModalDetails('Problem List');
+            }}
           >
             Problem List
           </Box>
@@ -318,9 +368,12 @@ const UserProfile = () => {
                 background: '#fff',
               },
             }}
-            onClick={() => setOpen(true)}
+            onClick={() => {
+              setOpen(true);
+              setModalDetails('Tasks');
+            }}
           >
-            Task
+            Tasks
           </Box>
           <Box
             sx={{
@@ -333,9 +386,12 @@ const UserProfile = () => {
                 background: '#fff',
               },
             }}
-            onClick={() => setOpen(true)}
+            onClick={() => {
+              setOpen(true);
+              setModalDetails('Tasks');
+            }}
           >
-            History
+            Tasks
           </Box>
         </Box>
       </Box>

@@ -1327,6 +1327,88 @@ const LocationSchema = [
     options: ['Front Desk', 'Clinic', 'Store', 'Laboratory', 'Finance'],
   },
 ];
+
+const historySchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+  },
+  {
+    name: 'Visit History',
+    key: 'visithistory',
+    description: 'Visit History',
+    selector: (row: any) => row.visithistory,
+    sortable: true,
+  },
+];
+const drugSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+  },
+  {
+    name: 'Drug Tolerance',
+    key: 'drugtolerance',
+    description: 'Drug Tolerance',
+    selector: (row: any) => row.drugtolerance,
+    sortable: true,
+  },
+];
+const medicationSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+  },
+  {
+    name: 'Medications',
+    key: 'medications',
+    description: 'Medications',
+    selector: (row: any) => row.medications,
+    sortable: true,
+  },
+];
+const problemSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+  },
+  {
+    name: 'Problem List',
+    key: 'problemlist',
+    description: 'Problem List',
+    selector: (row: any) => row.problemlist,
+    sortable: true,
+  },
+];
+const taskSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+  },
+  {
+    name: 'Tasks',
+    key: 'tasks',
+    description: 'Tasks',
+    selector: (row: any) => row.tasks,
+    sortable: true,
+  },
+];
+
 export {
   ClientMiniSchema,
   AppointmentSchema,
@@ -1335,4 +1417,9 @@ export {
   BandSchema,
   EmployeeSchema,
   LocationSchema,
+  historySchema,
+  drugSchema,
+  medicationSchema,
+  problemSchema,
+  taskSchema,
 };

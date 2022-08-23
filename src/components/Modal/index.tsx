@@ -36,6 +36,7 @@ const Modal: React.FC<ModalProps> = ({ open, onClose, children }) => {
         width: '100%',
         display: 'grid',
         placeItems: 'center ',
+        p: 1,
       }}
     >
       <Fade in={open}>

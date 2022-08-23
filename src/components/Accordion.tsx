@@ -5,7 +5,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import React from 'react';
 
 interface AccordionProps {
-  title?: string;
+  title?: string | React.ReactNode | React.ReactElement;
   defaultExpanded?: boolean;
   children?: React.ReactNode;
   status?: 'unsuccesful' | 'success' | 'warning' | 'default';

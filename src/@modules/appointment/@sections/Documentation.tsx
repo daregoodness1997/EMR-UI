@@ -1,7 +1,9 @@
 import { Box, TextField } from '@mui/material';
 import React from 'react';
-import { Accordion, Button } from '../../../components';
+import { Accordion } from '../../../components';
 import FilterMenu from '../../../components/Menus/FilterMenu';
+import AddDocumentMenu from '../../../components/Menus/AddDocumentMenu';
+const list = ['Doctors Note', 'Clinic Note', 'Phamracy Note', 'Test Result'];
 
 const Documentation = () => {
   return (
@@ -36,9 +38,7 @@ const Documentation = () => {
           />
           <FilterMenu />
         </Box>
-        <Button sx={{ width: { xs: '100%', lg: 'auto' } }}>
-          Add Documentation
-        </Button>
+        <AddDocumentMenu list={list} handleClick={() => null} />
       </Box>
       <Accordion title='Documentation added' />
       <Accordion title='Documentation added' />

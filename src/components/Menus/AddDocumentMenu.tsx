@@ -15,8 +15,6 @@ import {
   ClickAwayListener,
 } from '@mui/material';
 
-import Input from '../Inputs/Input';
-
 interface ListItemStyleProps {
   children?: React.ReactNode;
   onClick?: (e: React.MouseEvent) => void;
@@ -36,10 +34,13 @@ export const ListItemStyle = styled((props: ListItemStyleProps) => (
 
 interface AddDocumentMenuProps {
   list: any[];
-  handleClick: ()=> void
+  handleClick: () => void;
 }
 
-const AddDocumentMenu: React.FC<AddDocumentMenuProps> = ({ list , handleClick}) => {
+const AddDocumentMenu: React.FC<AddDocumentMenuProps> = ({
+  list,
+  handleClick,
+}) => {
   const anchorRef = useRef(null);
 
   const [open, setOpen] = useState<any>(false);
@@ -54,7 +55,11 @@ const AddDocumentMenu: React.FC<AddDocumentMenuProps> = ({ list , handleClick}) 
   };
   return (
     <Box>
-      <IconButton ref={anchorRef} onClick={handleOpen}>
+      <IconButton
+        sx={{ width: '160px', p: 1, pt: 2, pb: 2, borderRadius: '8px' }}
+        ref={anchorRef}
+        onClick={handleOpen}
+      >
         Add Document
       </IconButton>
       <Popper
@@ -85,13 +90,11 @@ const AddDocumentMenu: React.FC<AddDocumentMenuProps> = ({ list , handleClick}) 
             >
               <ClickAwayListener onClickAway={handleClose}>
                 <Stack sx={{ p: 1 }}>
-                  {/* <SearchInput /> */}
-                  <Input sx={{ width: '100%', height: '36px' }} />
                   {list.map(option => (
-                    <ListItemStyle key={option.label} onClick={handleOpen}>
+                    <ListItemStyle key={option} onClick={handleClick}>
                       <List sx={{ display: 'flex', alignItems: 'center' }}>
                         <Typography variant='body1' sx={{ marginLeft: 1 }}>
-                          {option.label}
+                          {option}
                         </Typography>
                       </List>
                     </ListItemStyle>
