@@ -1,7 +1,8 @@
-import { Box, Stack } from '@mui/material';
+import { Box, IconButton, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import UserProfile from '../../@views/UserProfile';
 import { Button } from '../../components';
+import DynamicInput from '../../components/Inputs/DynamicInput';
 import TabPanel from '../../components/Tabs/TabPanel';
 import { StyledTab, StyledTabs } from '../../components/Tabs/Tabs';
 import { DashboardPageWrapper } from '../../core-ui/styles';
@@ -122,12 +123,39 @@ const AttendToClient = () => {
                   p: 2,
                 }}
               >
-                <h1>Add Document</h1>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum
-                  dolore asperiores deserunt quasi assumenda hic beatae
-                  excepturi recusandae amet soluta?
-                </p>
+                <Stack
+                  direction='row'
+                  alignItems='center'
+                  justifyContent='space-between'
+                  width='100%'
+                  onClick={() => setDocument(false)}
+                >
+                  <Typography variant='h4'>Add Document</Typography>
+                  <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>
+                    x
+                  </IconButton>
+                </Stack>
+                <Box sx={{ mt: 4 }}>
+                  <DynamicInput
+                    inputType='SELECT_LIST'
+                    label='Document Type'
+                    name='Document Type'
+                    options={[
+                      'Doctors Note',
+                      'Clinical Note',
+                      'Lab Result',
+                      'Progress Note',
+                    ]}
+                  />
+                  <DynamicInput
+                    inputType='SELECT_AUTO_SUGGEST'
+                    label='Search'
+                    name='Search'
+                  />
+                  <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>
+                    +
+                  </IconButton>
+                </Box>
               </Box>
             )}
           </Stack>

@@ -1,13 +1,12 @@
-import { Box, TextField } from '@mui/material';
+import { Box, IconButton, TextField } from '@mui/material';
 import React from 'react';
 import { Accordion } from '../../../components';
 import FilterMenu from '../../../components/Menus/FilterMenu';
-import AddDocumentMenu from '../../../components/Menus/AddDocumentMenu';
 export const list = [
   'Doctors Note',
-  'Clinic Note',
-  'Phamracy Note',
-  'Test Result',
+  'Clinical Note',
+  'Lab Result',
+  'Progress Note',
 ];
 interface DocumentationProps {
   onAddDocument: () => void;
@@ -46,7 +45,20 @@ const Documentation: React.FC<DocumentationProps> = ({ onAddDocument }) => {
           />
           <FilterMenu />
         </Box>
-        <AddDocumentMenu list={list} handleClick={onAddDocument} />
+        <IconButton
+          sx={{
+            width: { lg: '160px', xs: '100%' },
+            p: 1,
+            pt: 2,
+            pb: 2,
+            borderRadius: '8px',
+            background: '#fafafa',
+          }}
+          onClick={onAddDocument}
+        >
+          Add Document
+        </IconButton>
+        {/* <AddDocumentMenu list={list} handleClick={onAddDocument} /> */}
       </Box>
       <Accordion title='Documentation added' />
       <Accordion title='Documentation added' />
