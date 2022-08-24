@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DetailView from '../../@views/DetailView';
 
 import { useParams } from 'react-router-dom';
@@ -6,49 +6,55 @@ import { appointmentList } from '../../utils/data';
 import { Box, Typography } from '@mui/material';
 import BottomButtons from './BottomButtons';
 import { useNavigate } from 'react-router-dom';
+import { AppointmentSchema } from '../../utils/schema';
+import DynamicInput from '../../components/Inputs/DynamicInput';
 
 const AppointmentDetail = () => {
   let navigate = useNavigate();
+  const [isEditing, setIsEditing] = useState(false);
 
   const { id } = useParams();
   const details: any = appointmentList.filter((appointment, index) => {
     return appointment.id === id;
   });
 
-  let keys = Object.keys(details[0]);
-
-  const renderLabel = (key: any) => {
-    if (key === 'id') return 'ID';
-    if (key === 'firstname') return 'First Name';
-    if (key === 'middlename') return 'Middle Name';
-    if (key === 'lastname') return 'Last Name';
-    if (key === 'practitionername') return 'Practitioner Name';
-    if (key === 'location') return 'Location';
-    if (key === 'employee') return 'Employee';
-    if (key === 'start_time') return 'Start Time';
-    if (key === 'appointmentClass') return 'Appointment Class';
-    if (key === 'appointment_type') return 'Appointment Type';
-    if (key === 'appointment_status') return 'Appointment Status';
-    if (key === 'appointmentReason') return 'Appointment Reason';
-  };
-
   const handleAttendtoClientClick = () => {
     navigate(`/app/clients/appointments/${id}/attend-to-client`);
+  };
+  const handleBackClick = () => {
+    navigate(`/app/clients/appointments/`);
+  };
+  const handleEditClick = () => {
+    setIsEditing(!isEditing);
   };
   return (
     <DetailView
       title='Appointment Detail'
       hasBottomNavigation={true}
+      backClick={handleBackClick}
+      onEdit={handleEditClick}
       bottomNavChildren={
         <BottomButtons onAttendToClick={handleAttendtoClientClick} />
       }
     >
-      {keys.map((key, idx) => {
+      {AppointmentSchema.map(({ inputType, key, name }) => {
         return (
-          <Box>
-            <label>{renderLabel(key)}</label>
-            <Typography variant='body2'>{`${details[0][key]}`}</Typography>
-          </Box>
+          <>
+            {isEditing ? (
+              <DynamicInput
+                key={key}
+                label={name}
+                name={key}
+                value={details[0][key]}
+                inputType={inputType}
+              />
+            ) : (
+              <Box key={key}>
+                <label>{name}</label>
+                <Typography variant='body2'>{`${details[0][key]}`}</Typography>
+              </Box>
+            )}
+          </>
         );
       })}
     </DetailView>

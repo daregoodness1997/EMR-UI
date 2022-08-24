@@ -23,7 +23,7 @@ export const menuItems = [
       { name: 'Dashboard', to: '/app/admin' },
       { name: 'Bands', to: '/app/admin/bands' },
       { name: 'Employees', to: '/app/admin/employees' },
-      { name: 'Location', to: '/app/admin/location' },
+      { name: 'Locations', to: '/app/admin/locations' },
     ],
   },
   {
