@@ -216,6 +216,10 @@ export const MainMenu = styled.div`
 
 export const Sidemenu = styled.div`
   zoom: 70%;
+  @media (max-width: 768px) {
+    zoom: 90%;
+
+  }
 
 &.hide{
     left: -300px;
