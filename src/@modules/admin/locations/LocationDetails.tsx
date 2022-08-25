@@ -5,6 +5,8 @@ import { locationList } from '../../../utils/data';
 import { Box, Typography } from '@mui/material';
 import DynamicInput from '../../../components/Inputs/DynamicInput';
 import { LocationSchema } from '../../../utils/schema';
+import { BottomWrapper } from '../../../components/styles';
+import { Button } from '../../../components';
 
 const LocationDetails = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -26,12 +28,24 @@ const LocationDetails = () => {
   };
 
   const handleDelete = () => null;
+  const renderButton = () => {
+    return (
+      isEditing && (
+        <BottomWrapper>
+          <Button label='Clear Form' background='#FFE9E9' color='#ED0423' />
+          <Button label='Save Form' type='submit' />
+        </BottomWrapper>
+      )
+    );
+  };
 
   return (
     <DetailView
       title='Location Detail'
       onEdit={handleEdit}
       onDelete={handleDelete}
+      hasBottomNavigation={true}
+      bottomNavChildren={renderButton()}
     >
       {isEditing ? (
         <>

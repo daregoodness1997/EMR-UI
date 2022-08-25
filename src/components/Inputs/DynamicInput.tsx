@@ -149,25 +149,32 @@ const DynamicInput = (props: DynamicInputProps) => {
 
   if (inputType === InputType.DATETIME) {
     return (
-      <FormControl disabled={readonly} style={{ width: '100%' }}>
-        <DateTimePicker
-          label={label}
-          //   onChange={(value: any) =>
-          //     field.onChange({ target: { value: toAPIDate(value) } })
-          //   }
-          inputFormat={DateFormats.CONTROL_DATE_TIME}
-          renderInput={(params: any) => (
-            <TextField
-              {...params}
-              disabled={readonly}
-              error={errors[name]?.message}
-            />
-          )}
-        />
-        {errors[name] && (
-          <FormHelperText error>{errors[name].message}</FormHelperText>
-        )}
-      </FormControl>
+      <Input
+        label={label}
+        disabled={readonly}
+        errorText={errors[name]?.message}
+        type='datetime-local'
+        defaultValue={data[name]}
+      />
+      // <FormControl disabled={readonly} style={{ width: '100%' }}>
+      //   <DateTimePicker
+      //     label={label}
+      //     //   onChange={(value: any) =>
+      //     //     field.onChange({ target: { value: toAPIDate(value) } })
+      //     //   }
+      //     inputFormat={DateFormats.CONTROL_DATE_TIME}
+      //     renderInput={(params: any) => (
+      //       <TextField
+      //         {...params}
+      //         disabled={readonly}
+      //         error={errors[name]?.message}
+      //       />
+      //     )}
+      //   />
+      //   {errors[name] && (
+      //     <FormHelperText error>{errors[name].message}</FormHelperText>
+      //   )}
+      // </FormControl>
     );
   }
 

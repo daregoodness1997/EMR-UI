@@ -267,10 +267,12 @@ const ClientDetails = () => {
             })}
           </GridWrapper>
         </DetailsWrapper>
-        <BottomWrapper>
-          <Button label='Clear Form' background='#FFE9E9' color='#ED0423' />
-          <Button label='Save Form' type='submit' />
-        </BottomWrapper>
+        {isEditing && (
+          <BottomWrapper>
+            <Button label='Clear Form' background='#FFE9E9' color='#ED0423' />
+            <Button label='Save Form' type='submit' />
+          </BottomWrapper>
+        )}
       </GrayWrapper>
     </DashboardPageWrapper>
   );
