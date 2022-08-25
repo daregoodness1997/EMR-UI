@@ -276,11 +276,11 @@ export const DashboardPageWrapper = styled.div`
   height: calc(100vh - 0.01px);
   overflow-y: hidden;
   padding: 2.2rem;
-  transition: width 2s, height 4s;
+  /* transition: width 2s, height 4s;
   animation: divanimation 0.6s;
   -webkit-animation: divanimation 0.6s;
   animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards; */
   zoom: 85%;
 
   @media (max-width: 400px) {
