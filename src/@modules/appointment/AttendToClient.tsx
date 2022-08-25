@@ -152,6 +152,11 @@ const AttendToClient = () => {
                     label='Search'
                     name='Search'
                   />
+                  <DynamicInput
+                    inputType='TEXT_AREA'
+                    label='Notes'
+                    name='Notes'
+                  />
                   <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>
                     +
                   </IconButton>
