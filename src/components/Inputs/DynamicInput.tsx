@@ -1,6 +1,6 @@
 import DatePicker from '@mui/lab/DatePicker';
-import DateTimePicker from '@mui/lab/DateTimePicker';
-import { FormControl, FormHelperText, TextField } from '@mui/material';
+// import DateTimePicker from '@mui/lab/DateTimePicker';
+import { FormHelperText, TextField } from '@mui/material';
 import { DateFormats } from '../../pages/app/Constants';
 import { InputType } from '../../pages/app/schema/utils';
 import Checkbox from './Checkbox';
@@ -45,7 +45,8 @@ const DynamicInput = (props: DynamicInputProps) => {
         label={label}
         disabled={readonly}
         errorText={errors[name]?.message}
-        defaultValue={data[name] || ''}
+        // defaultValue={data[name] || ''}
+        defaultValue={value}
         value={value}
       />
     );
@@ -56,7 +57,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         label={label}
         disabled={readonly}
         errorText={errors[name]?.message}
-        defaultValue={data[name] || ''}
+        defaultValue={value}
         value={value}
       />
     );
@@ -69,7 +70,9 @@ const DynamicInput = (props: DynamicInputProps) => {
         disabled={readonly}
         errorText={errors[name]?.message}
         type='number'
-        defaultValue={data[name]}
+        // defaultValue={data[name]}
+        defaultValue={value}
+        value={value}
       />
     );
   }
@@ -81,7 +84,9 @@ const DynamicInput = (props: DynamicInputProps) => {
         disabled={readonly}
         errorText={errors[name]?.message}
         type='email'
-        defaultValue={data[name]}
+        // defaultValue={data[name]}
+        defaultValue={value}
+        value={value}
       />
     );
   }
@@ -92,7 +97,9 @@ const DynamicInput = (props: DynamicInputProps) => {
         label={label}
         disabled={readonly}
         errorText={errors[name]?.message}
-        defaultValue={data[name]}
+        // defaultValue={data[name]}
+        defaultValue={value}
+        value={value}
       />
     );
   }
@@ -104,7 +111,8 @@ const DynamicInput = (props: DynamicInputProps) => {
         title={label}
         disabled={readonly}
         options={options}
-        defaultValue={data[name]}
+        // defaultValue={data[name]}
+        defaultValue={value}
       />
     );
   }
@@ -114,9 +122,10 @@ const DynamicInput = (props: DynamicInputProps) => {
       <Checkbox
         label={label}
         disabled={readonly}
-        defaultValue={data[name]}
+        // defaultValue={data[name]}
         options={options}
         errorText={errors[name]?.message}
+        defaultValue={value}
       />
     );
   }
@@ -139,10 +148,12 @@ const DynamicInput = (props: DynamicInputProps) => {
         label={label}
         options={options}
         errorText={errors[name]?.message}
-        defaultValue={
-          defaultValue !== undefined ? defaultValue : data[name] || ''
-        }
+        // defaultValue={
+        //   defaultValue !== undefined ? defaultValue : data[name] || ''
+        // }
         disabled={readonly}
+        defaultValue={value}
+        value={value}
       />
     );
   }
@@ -154,7 +165,9 @@ const DynamicInput = (props: DynamicInputProps) => {
         disabled={readonly}
         errorText={errors[name]?.message}
         type='datetime-local'
-        defaultValue={data[name]}
+        // defaultValue={data[name]}
+        defaultValue={value}
+        value={value}
       />
       // <FormControl disabled={readonly} style={{ width: '100%' }}>
       //   <DateTimePicker
