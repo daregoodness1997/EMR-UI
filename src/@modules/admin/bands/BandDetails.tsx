@@ -5,6 +5,8 @@ import { bandList } from '../../../utils/data';
 import { Box, Typography } from '@mui/material';
 import DynamicInput from '../../../components/Inputs/DynamicInput';
 import { BandSchema } from '../../../utils/schema';
+import { BottomWrapper } from '../../../components/styles';
+import { Button } from '../../../components';
 
 const BandDetails = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -27,9 +29,25 @@ const BandDetails = () => {
   };
 
   const handleDelete = () => null;
+  const renderButton = () => {
+    return (
+      isEditing && (
+        <BottomWrapper>
+          <Button label='Clear Form' background='#FFE9E9' color='#ED0423' />
+          <Button label='Save Form' type='submit' />
+        </BottomWrapper>
+      )
+    );
+  };
 
   return (
-    <DetailView title='Band Detail' onEdit={handleEdit} onDelete={handleDelete}>
+    <DetailView
+      title='Band Detail'
+      onEdit={handleEdit}
+      onDelete={handleDelete}
+      hasBottomNavigation={true}
+      bottomNavChildren={renderButton()}
+    >
       {isEditing ? (
         <>
           {BandSchema.map(({ inputType, key, name, options }, idx) => (

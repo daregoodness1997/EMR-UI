@@ -36,11 +36,24 @@ const EmployeeDetails = () => {
 
   const handleDelete = () => null;
 
+  const renderButton = () => {
+    return (
+      isEditing && (
+        <BottomWrapper>
+          <Button label='Clear Form' background='#FFE9E9' color='#ED0423' />
+          <Button label='Save Form' type='submit' />
+        </BottomWrapper>
+      )
+    );
+  };
+
   return (
     <DetailView
       title='Employee Detail'
       onEdit={handleEdit}
       onDelete={handleDelete}
+      hasBottomNavigation={true}
+      bottomNavChildren={renderButton()}
     >
       {isEditing ? (
         <>
