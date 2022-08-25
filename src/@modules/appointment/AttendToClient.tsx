@@ -2,6 +2,7 @@ import { Box, IconButton, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import UserProfile from '../../@views/UserProfile';
 import { Button } from '../../components';
+import DnD from '../../components/DnD';
 import DynamicInput from '../../components/Inputs/DynamicInput';
 import TabPanel from '../../components/Tabs/TabPanel';
 import { StyledTab, StyledTabs } from '../../components/Tabs/Tabs';
@@ -160,6 +161,7 @@ const AttendToClient = () => {
                   <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>
                     +
                   </IconButton>
+                  <DnD />
                 </Box>
               </Box>
             )}

@@ -37,7 +37,11 @@ const Select: React.FC<SelectProps> = ({
         name={name}
         defaultValue={defaultValue || ''}
         onChange={onChange}
-        sx={{ background: 'white', border: '1px solid #eee' }}
+        sx={{
+          background: 'white',
+          border: '1px solid #eee',
+          // boxShadow: '4px 4px 20px rgba(0,0,0,0.06)',
+        }}
       >
         <MenuItem value='' sx={{ width: '100%' }}>
           <em>None</em>
