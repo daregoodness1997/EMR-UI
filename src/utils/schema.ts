@@ -9,6 +9,7 @@ const ClientMiniSchema = [
     sortable: true,
     required: true,
     inputType: null,
+    omit: true,
   },
 
   {
@@ -1069,6 +1070,7 @@ const AppointmentSchema = [
     description: 'SN',
     sortable: true,
     inputType: InputType.HIDDEN,
+    omit: true,
   },
   {
     name: 'Client',
@@ -1177,6 +1179,7 @@ const BandSchema = [
     selector: (row: any) => row.id,
     sortable: true,
     inputType: InputType.HIDDEN,
+    omit: true,
   },
   {
     name: 'Name of Band',
@@ -1216,6 +1219,7 @@ const EmployeeSchema = [
     selector: (row: any) => row.id,
     sortable: true,
     inputType: InputType.HIDDEN,
+    omit: true,
   },
   {
     name: 'Firstname',
@@ -1306,6 +1310,7 @@ const LocationSchema = [
     sortable: true,
     selector: (row: any) => row.id,
     inputType: InputType.HIDDEN,
+    omit: true,
   },
   {
     name: 'Name of Location',
@@ -1335,6 +1340,7 @@ const historySchema = [
     description: 'History Id',
     selector: (row: any) => row.id,
     sortable: true,
+    omit: true,
   },
   {
     name: 'Visit History',
@@ -1351,6 +1357,7 @@ const drugSchema = [
     description: 'History Id',
     selector: (row: any) => row.id,
     sortable: true,
+    omit: true,
   },
   {
     name: 'Drug Tolerance',
@@ -1367,6 +1374,7 @@ const medicationSchema = [
     description: 'History Id',
     selector: (row: any) => row.id,
     sortable: true,
+    omit: true,
   },
   {
     name: 'Medications',
@@ -1383,6 +1391,7 @@ const problemSchema = [
     description: 'History Id',
     selector: (row: any) => row.id,
     sortable: true,
+    omit: true,
   },
   {
     name: 'Problem List',
@@ -1399,6 +1408,7 @@ const taskSchema = [
     description: 'History Id',
     selector: (row: any) => row.id,
     sortable: true,
+    omit: true,
   },
   {
     name: 'Tasks',

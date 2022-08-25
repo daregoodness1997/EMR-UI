@@ -375,24 +375,6 @@ const UserProfile = () => {
           >
             Tasks
           </Box>
-          <Box
-            sx={{
-              width: '100%',
-              p: 2,
-              borderRadius: 1,
-              mt: 0.6,
-              cursor: 'pointer',
-              '&:hover': {
-                background: '#fff',
-              },
-            }}
-            onClick={() => {
-              setOpen(true);
-              setModalDetails('Tasks');
-            }}
-          >
-            Tasks
-          </Box>
         </Box>
       </Box>
     </>

@@ -34,7 +34,10 @@ const AppointmentDetail = () => {
       backClick={handleBackClick}
       onEdit={handleEditClick}
       bottomNavChildren={
-        <BottomButtons onAttendToClick={handleAttendtoClientClick} />
+        <BottomButtons
+          onAttendToClick={handleAttendtoClientClick}
+          onEditClick={handleEditClick}
+        />
       }
     >
       {AppointmentSchema.map(({ inputType, key, name }) => {
