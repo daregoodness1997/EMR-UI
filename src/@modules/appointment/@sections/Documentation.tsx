@@ -20,7 +20,7 @@ const Documentation: React.FC<DocumentationProps> = ({ onAddDocument }) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          flexDirection: { lg: 'row', sm: 'row', xs: 'column' },
+          flexDirection: { lg: 'row', sm: 'column', xs: 'column' },
           zIndex: 100,
         }}
       >

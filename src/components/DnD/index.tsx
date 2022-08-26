@@ -1,17 +1,21 @@
 import { faker } from '@faker-js/faker';
-import { Avatar, Box, Stack, Typography } from '@mui/material';
+import { Avatar, Box, IconButton, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import FilterMenu from '../Menus/FilterMenu';
 
 const finalSpaceCharacters: { id: string; name: string; thumb: string }[] = [
-  ...Array(8),
+  ...Array(4),
 ].map((_, index) => ({
   id: faker.datatype.uuid(),
   name: faker.name.findName(),
   thumb: faker.image.avatar(),
 }));
 
-const DnD = () => {
+interface DnDProps {
+  hasAvatar?: boolean;
+}
+const DnD: React.FC<DnDProps> = ({ hasAvatar }) => {
   const [items, setItems] = useState(finalSpaceCharacters);
   const handleOnDragEnd = (result: any) => {
     const data = Array.from(items);
@@ -22,6 +26,7 @@ const DnD = () => {
 
     if (!result.destination) return;
   };
+
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
       <Droppable droppableId='items'>
@@ -41,6 +46,7 @@ const DnD = () => {
                       {...provided.dragHandleProps}
                       direction='row'
                       alignItems='center'
+                      justifyContent='space-between'
                       sx={{
                         p: 2,
                         width: '100%',
@@ -51,14 +57,27 @@ const DnD = () => {
                         cursor: 'pointer',
                       }}
                     >
-                      <Avatar
-                        src={thumb}
-                        alt={`${name} Thumb`}
-                        sx={{ width: '40px', height: '40px' }}
-                      />
-                      <Typography variant='body1' sx={{ ml: 2 }}>
-                        {name}
-                      </Typography>
+                      <Box>
+                        {hasAvatar && (
+                          <Avatar
+                            src={thumb}
+                            alt={`${name} Thumb`}
+                            sx={{ width: '40px', height: '40px' }}
+                          />
+                        )}
+                        <Typography variant='body1' sx={{ ml: 2 }}>
+                          {name}
+                        </Typography>
+                      </Box>
+
+                      <Box>
+                        <IconButton>
+                          <Box className='bi bi-pen'></Box>
+                        </IconButton>
+                        <IconButton>
+                          <Box className='bi bi-trash'></Box>
+                        </IconButton>
+                      </Box>
                     </Stack>
                   )}
                 </Draggable>
