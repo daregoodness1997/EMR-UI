@@ -57,6 +57,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         label={label}
         disabled={readonly}
         errorText={errors[name]?.message}
+        // defaultValue={data[name] || ''}
         defaultValue={value}
         value={value}
       />

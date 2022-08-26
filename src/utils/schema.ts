@@ -1063,15 +1063,15 @@ const ClientFullSchema = {
 };
 
 const AppointmentSchema = [
-  {
-    name: 'S/N',
-    key: 'id',
-    selector: (row: any) => row.id,
-    description: 'SN',
-    sortable: true,
-    inputType: InputType.HIDDEN,
-    omit: true,
-  },
+  // {
+  //   name: 'S/N',
+  //   key: 'id',
+  //   selector: (row: any) => row.id,
+  //   description: 'SN',
+  //   sortable: true,
+  //   inputType: InputType.HIDDEN,
+  //   omit: true,
+  // },
   {
     name: 'Client',
     key: 'clientId',

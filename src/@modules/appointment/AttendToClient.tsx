@@ -2,7 +2,9 @@ import { Box, IconButton, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import UserProfile from '../../@views/UserProfile';
 import { Button } from '../../components';
+import DnD from '../../components/DnD';
 import DynamicInput from '../../components/Inputs/DynamicInput';
+import Modal from '../../components/Modal';
 import TabPanel from '../../components/Tabs/TabPanel';
 import { StyledTab, StyledTabs } from '../../components/Tabs/Tabs';
 import { DashboardPageWrapper } from '../../core-ui/styles';
@@ -21,10 +23,61 @@ const AttendToClient = () => {
   //   return appointment.id === id;
   // });
   const [value, setValue] = useState(0);
+  const [open, setOpen] = useState(false);
   const [document, setDocument] = useState(false);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
+  const renderDocument = () => {
+    <Box
+      sx={{
+        width: '100%',
+        height: '100%',
+        background: 'white',
+        borderRadius: 2,
+        p: 2,
+      }}
+    >
+      <Stack
+        direction='row'
+        alignItems='center'
+        justifyContent='space-between'
+        width='100%'
+        onClick={() => setDocument(false)}
+      >
+        <Typography variant='h4'>Add Document</Typography>
+        <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>x</IconButton>
+      </Stack>
+      <Box sx={{ mt: 4 }}>
+        <DynamicInput
+          inputType='SELECT_LIST'
+          label='Document Type'
+          name='Document Type'
+          options={[
+            'Doctors Note',
+            'Clinical Note',
+            'Lab Result',
+            'Progress Note',
+          ]}
+        />
+        <DynamicInput
+          inputType='SELECT_AUTO_SUGGEST'
+          label='Search'
+          name='Search'
+        />
+        <DynamicInput inputType='TEXT_AREA' label='Notes' name='Notes' />
+        <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>+</IconButton>
+        <DnD />
+      </Box>
+    </Box>;
+  };
+
+  const isMobile = () => {
+    if (window.innerWidth <= 768) return true;
+    return false;
+  };
+
   return (
     <DashboardPageWrapper>
       <Stack
@@ -42,7 +95,7 @@ const AttendToClient = () => {
         </Button>
         <Button background={'#04ed7c'}>Start Telemedicine</Button>
       </Stack>
-      <Stack direction={{ lg: 'row', xs: 'column' }} spacing={2}>
+      <Stack direction={{ lg: 'row', sm: 'row', xs: 'column' }} spacing={2}>
         <Box
           sx={{
             width: { lg: '20%', xs: '100%' },
@@ -107,56 +160,127 @@ const AttendToClient = () => {
                   <Radiology />
                 </TabPanel>
                 <TabPanel value={value} index={4}>
-                  <Documentation onAddDocument={() => setDocument(true)} />
+                  <Documentation
+                    onAddDocument={() => {
+                      setDocument(true);
+                      setOpen(true);
+                    }}
+                  />
                 </TabPanel>
               </Box>
             </Box>
 
             {/* Right */}
             {document && (
-              <Box
-                sx={{
-                  width: '100%',
-                  height: '100%',
-                  background: 'white',
-                  borderRadius: 2,
-                  p: 2,
-                }}
-              >
-                <Stack
-                  direction='row'
-                  alignItems='center'
-                  justifyContent='space-between'
-                  width='100%'
-                  onClick={() => setDocument(false)}
-                >
-                  <Typography variant='h4'>Add Document</Typography>
-                  <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>
-                    x
-                  </IconButton>
-                </Stack>
-                <Box sx={{ mt: 4 }}>
-                  <DynamicInput
-                    inputType='SELECT_LIST'
-                    label='Document Type'
-                    name='Document Type'
-                    options={[
-                      'Doctors Note',
-                      'Clinical Note',
-                      'Lab Result',
-                      'Progress Note',
-                    ]}
-                  />
-                  <DynamicInput
-                    inputType='SELECT_AUTO_SUGGEST'
-                    label='Search'
-                    name='Search'
-                  />
-                  <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>
-                    +
-                  </IconButton>
-                </Box>
-              </Box>
+              <>
+                {!isMobile() ? (
+                  <Box
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      background: 'white',
+                      borderRadius: 2,
+                      p: 2,
+                    }}
+                  >
+                    <Stack
+                      direction='row'
+                      alignItems='center'
+                      justifyContent='space-between'
+                      width='100%'
+                      onClick={() => setDocument(false)}
+                    >
+                      <Typography variant='h4'>Add Document</Typography>
+                      <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>
+                        x
+                      </IconButton>
+                    </Stack>
+                    <Box sx={{ mt: 4 }}>
+                      <DynamicInput
+                        inputType='SELECT_LIST'
+                        label='Document Type'
+                        name='Document Type'
+                        options={[
+                          'Doctors Note',
+                          'Clinical Note',
+                          'Lab Result',
+                          'Progress Note',
+                        ]}
+                      />
+                      <DynamicInput
+                        inputType='SELECT_AUTO_SUGGEST'
+                        label='Search'
+                        name='Search'
+                      />
+                      <DynamicInput
+                        inputType='TEXT_AREA'
+                        label='Notes'
+                        name='Notes'
+                      />
+                      <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>
+                        +
+                      </IconButton>
+                      <DnD />
+                    </Box>
+                  </Box>
+                ) : (
+                  <Modal open={open} onClose={() => setOpen(false)}>
+                    <Box
+                      sx={{
+                        width: '100%',
+                        height: '100%',
+                        background: 'white',
+                        borderRadius: 2,
+                        p: 2,
+                      }}
+                    >
+                      <Stack
+                        direction='row'
+                        alignItems='center'
+                        justifyContent='space-between'
+                        width='100%'
+                        onClick={() => setDocument(false)}
+                      >
+                        <Typography variant='h4'>Add Document</Typography>
+                        <IconButton
+                          sx={{ p: 2, width: '40px', height: '40px' }}
+                        >
+                          x
+                        </IconButton>
+                      </Stack>
+                      <Box sx={{ mt: 4 }}>
+                        <DynamicInput
+                          inputType='SELECT_LIST'
+                          label='Document Type'
+                          name='Document Type'
+                          options={[
+                            'Doctors Note',
+                            'Clinical Note',
+                            'Lab Result',
+                            'Progress Note',
+                          ]}
+                        />
+                        <DynamicInput
+                          inputType='SELECT_AUTO_SUGGEST'
+                          label='Search'
+                          name='Search'
+                        />
+                        <DynamicInput
+                          inputType='TEXT_AREA'
+                          label='Notes'
+                          name='Notes'
+                        />
+                        <IconButton
+                          sx={{ p: 2, width: '40px', height: '40px' }}
+                        >
+                          +
+                        </IconButton>
+                        <DnD />
+                      </Box>
+                    </Box>
+                  </Modal>
+                )}
+              </>
             )}
           </Stack>
         </Box>
