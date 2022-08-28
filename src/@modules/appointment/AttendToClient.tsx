@@ -29,49 +29,7 @@ const AttendToClient = () => {
     setValue(newValue);
   };
 
-  const renderDocument = () => {
-    <Box
-      sx={{
-        width: '100%',
-        height: '100%',
-        background: 'white',
-        borderRadius: 2,
-        p: 2,
-      }}
-    >
-      <Stack
-        direction='row'
-        alignItems='center'
-        justifyContent='space-between'
-        width='100%'
-        onClick={() => setDocument(false)}
-      >
-        <Typography variant='h4'>Add Document</Typography>
-        <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>x</IconButton>
-      </Stack>
-      <Box sx={{ mt: 4 }}>
-        <DynamicInput
-          inputType='SELECT_LIST'
-          label='Document Type'
-          name='Document Type'
-          options={[
-            'Doctors Note',
-            'Clinical Note',
-            'Lab Result',
-            'Progress Note',
-          ]}
-        />
-        <DynamicInput
-          inputType='SELECT_AUTO_SUGGEST'
-          label='Search'
-          name='Search'
-        />
-        <DynamicInput inputType='TEXT_AREA' label='Notes' name='Notes' />
-        <IconButton sx={{ p: 2, width: '40px', height: '40px' }}>+</IconButton>
-        <DnD />
-      </Box>
-    </Box>;
-  };
+
 
   const isMobile = () => {
     if (window.innerWidth <= 768) return true;

@@ -79,7 +79,7 @@ const clientsList = [...Array(100)].map((_, index) => ({
 
   nextofkins: [
     { nextofkin: faker.name.findName() },
-    { nextofkinphone: faker.phone.phoneNumber() },
+    { nextofkinphone: faker.phone.number() },
     { nextofkinemail: faker.internet.exampleEmail() },
     {
       relationship: sample(['Parent(s)', 'Sibling(s)', 'Spouse', 'Friend(s)']),
@@ -87,6 +87,9 @@ const clientsList = [...Array(100)].map((_, index) => ({
   ],
   nonHospitalIndetifiers: [
     { nin: 'NGA' + Math.round(Math.random() * 142553663673700) },
+    {
+      passportnumber: 'NGAPASS' + Math.round(Math.random() * 142553663673700),
+    },
     {
       voterscardnumber: 'NGAVOTE' + Math.round(Math.random() * 142553663673700),
     },
@@ -98,7 +101,14 @@ const clientsList = [...Array(100)].map((_, index) => ({
 
   paymentInformation: [
     { accountname: faker.name.findName() },
+    { bank: faker.name.findName() },
     { accountnumber: `${Math.round(Math.random() * 14263673700)}` },
+    {
+      paymentmethod: sample(['Cash', 'Transfer']),
+    },
+  ],
+
+  medicalData: [
     {
       bloodgroup: sample(['AA', 'AB', 'SS', 'AC', 'CS']),
     },

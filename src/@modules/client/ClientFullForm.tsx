@@ -27,6 +27,13 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
         <DashboardPageWrapper>
           <GrayWrapper>
             <HeadWrapper>
+              <div>
+                <h2>Full Client Registration</h2>
+                <span>
+                  Create a New client by filling out the form below to get
+                  started.
+                </span>
+              </div>
               <Button
                 label='Quick Registration'
                 background='#ECF3FF'
@@ -106,7 +113,7 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
               {/* Next of Kin  */}
               <DetailsWrapper title='Next of Kin'>
                 <GridWrapper>
-                  {ClientFullSchema.nextOfKin.map(
+                  {ClientFullSchema.nextOfKins.map(
                     ({ inputType, key, name, options }) => (
                       <DynamicInput
                         key={key}

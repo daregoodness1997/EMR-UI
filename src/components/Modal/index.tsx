@@ -15,7 +15,7 @@ const style = {
   maxHeight: '100%',
   bgcolor: '#fff',
   boxShadow: 40,
-  p: 4,
+  p: 1.2,
   borderRadius: '6px',
   minWidth: '350px !important',
 };

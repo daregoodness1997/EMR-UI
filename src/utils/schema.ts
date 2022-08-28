@@ -862,7 +862,7 @@ const ClientFullSchema = {
     },
   ],
 
-  nextOfKin: [
+  nextOfKins: [
     {
       name: 'Next of Kin',
       key: 'nextofkin',

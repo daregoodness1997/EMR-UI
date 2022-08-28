@@ -366,8 +366,8 @@ export const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  grid-gap: 2rem;
-  margin-top: 3.2rem;
+  grid-gap: 1.4rem;
+  margin-top: 2rem;
   overflow-y: auto;
   animation: divanimation 0.6s;
   -webkit-animation: divanimation 0.6s;
@@ -462,6 +462,7 @@ export const FlexBox = styled.div`
   -webkit-animation: divanimation 0.6s;
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
+  padding: 1rem;
 
   & img {
     width: 150px;
