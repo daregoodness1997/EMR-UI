@@ -1,4 +1,4 @@
-import { Box, Grid, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Stack, Typography } from '@mui/material';
 import React from 'react';
 import ClientStatCard from '../@sections/ClientStatCard';
 import { DashboardPageWrapper } from '../core-ui/styles';
@@ -11,13 +11,149 @@ const MedicalRecords = () => {
           sx={{
             width: { lg: '26%', xs: '100%' },
             mt: 1.5,
-            p: 1,
-            background: '#ECF3FF',
-            borderRadius: '10px',
             overflowY: 'auto',
-            height: '100vh',
+            height: { lg: '100vh', xs: 'auto' },
           }}
-        ></Box>
+        >
+          <Box
+            sx={{
+              background: '#ECF3FF',
+              p: 4,
+              borderRadius: '10px',
+              display: 'grid',
+              placeItems: 'center',
+            }}
+          >
+            <Avatar
+              src='h
+        ttps://via.placeholder.com/150'
+              alt='AT'
+              sx={{ bgcolor: 'orange', width: '120px', height: '120px' }}
+            />
+            <Typography
+              sx={{
+                fontSize: '20px',
+                width: '100%',
+                textAlign: 'center',
+                fontWeight: 'bold',
+                mt: 2,
+              }}
+            >
+              Bukola Ibirogba
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '16px',
+                width: '100%',
+                textAlign: 'center',
+              }}
+            >
+              Age: 20
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              background: '#ECF3FF',
+              p: 4,
+              pt: 2,
+              borderRadius: '10px',
+              mt: 2,
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: '20px',
+                width: '100%',
+                fontWeight: 'bold',
+                mt: 2,
+                color: '#03045E',
+              }}
+            >
+              Information
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '16px',
+                width: '100%',
+                mt: 1,
+                color: '#03045E',
+              }}
+            >
+              Gender: Male
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '16px',
+                width: '100%',
+                mt: 1,
+                color: '#03045E',
+              }}
+            >
+              Blood Type: O+
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '16px',
+                width: '100%',
+                mt: 1,
+                color: '#03045E',
+              }}
+            >
+              Allergies: Milk, Peninclin
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '16px',
+                width: '100%',
+                mt: 1,
+                color: '#03045E',
+              }}
+            >
+              Diseases: Diabeties
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '16px',
+                width: '100%',
+                mt: 1,
+                color: '#03045E',
+              }}
+            >
+              Height: 176cm / 5.9 inches
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '16px',
+                width: '100%',
+                mt: 1,
+                color: '#03045E',
+              }}
+            >
+              Weight: 70 Kg
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '16px',
+                width: '100%',
+                mt: 1,
+                color: '#03045E',
+              }}
+            >
+              Hospital: Redinting Hospital
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: '16px',
+                width: '100%',
+                mt: 1,
+                color: '#03045E',
+              }}
+            >
+              Last Visit: 25th January 2022
+            </Typography>
+          </Box>
+        </Box>
         <Box
           sx={{
             width: { lg: '72%', xs: '100%' },
