@@ -3,6 +3,7 @@ import React from 'react';
 import AppointmentCard from '../@sections/AppointmentCard';
 import ClientStatCard from '../@sections/ClientStatCard';
 import NewsCard from '../@sections/NewsCard';
+import MiniCalendar from '../components/Calender/MiniCalendar';
 import { DashboardPageWrapper } from '../core-ui/styles';
 
 const ClientHome = () => {
@@ -162,6 +163,7 @@ const ClientHome = () => {
                 overflowY: 'scroll',
               }}
             >
+              <MiniCalendar />
               <Stack
                 direction='row'
                 justifyContent='space-between'
