@@ -163,16 +163,17 @@ const ClientHome = () => {
                 overflowY: 'scroll',
               }}
             >
-              <Stack direction='row'>
+              <Stack direction={{ lg: 'row', xs: 'column' }}>
                 <Box
                   sx={{
-                    minWidth: '160px',
+                    minWidth: { lg: '160px', xs: '100%' },
                     p: 3,
-                    minHeight: '100%',
+                    minHeight: { lg: '100%', xs: '40px' },
                     background: '#0E214D',
                     color: 'white',
                     borderTopLeftRadius: '8px',
-                    borderBottomLeftRadius: '8px',
+                    borderBottomLeftRadius: { lg: '8px', xs: 0 },
+                    borderTopRightRadius: { lg: '0', xs: '8px' },
                     pt: 8,
                   }}
                 >
