@@ -130,6 +130,8 @@ const ClientStatCard: React.FC<StatProps> = ({
         background: background,
         borderRadius: '10px',
         width: '100%',
+        mb: 1,
+        mr: { lg: 2, xs: 0 },
       }}
     >
       <Stack direction='row' alignItems='center'>
