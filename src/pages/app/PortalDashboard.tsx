@@ -24,8 +24,35 @@ export const menuItems = [
       { name: 'Diagnostics Reports', to: '/portal/profile/diagnistics' },
       { name: 'Appointments', to: '/portal/profile/appointments' },
       { name: 'Health Insurance', to: '/portal/profile/insurance' },
-      { name: 'Health Insurance', to: '/portal/profile/insurance' },
+      { name: 'Dependants', to: '/portal/profile/dependants' },
     ],
+  },
+  {
+    name: 'Buy',
+    exact: true,
+    to: '/portal/buy',
+    iconClassName: 'bi bi-bag-fill',
+    subMenus: [
+      { name: 'Wallet', to: '/portal/buy/wallet' },
+      { name: 'Bill', to: '/portal/buy/bill' },
+      { name: 'Health Insurance', to: '/portal/buy/insurance' },
+    ],
+  },
+  {
+    name: 'Chat',
+    exact: true,
+    to: '/portal/chat',
+    iconClassName: 'bi bi-chat-fill',
+    subMenus: [
+      { name: 'Forum', to: '/portal/chat' },
+      { name: 'Healthstack Assistant', to: '/portal/chat/assistant' },
+    ],
+  },
+  {
+    name: 'Read',
+    exact: true,
+    to: '/portal/read',
+    iconClassName: 'bi bi-book-fill',
   },
 
   {

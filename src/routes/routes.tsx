@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import ClientHome from '../@clientportal/ClientHome';
 import AdminDashboard from '../@modules/admin/AdminDashboard';
 import Bands from '../@modules/admin/bands';
 import BandDetails from '../@modules/admin/bands/BandDetails';
@@ -82,7 +83,7 @@ const AppRoutes = () => {
         </Route>
 
         <Route path='/portal' element={<PatientOutlet />}>
-          
+          <Route index element={<ClientHome />} />
         </Route>
       </Routes>
     </>

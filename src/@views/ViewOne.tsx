@@ -1,7 +1,6 @@
 import { Box, TextField, Typography } from '@mui/material';
 import React from 'react';
 import { Button } from '../components';
-import Groups from '../components/Buttons/Groups';
 import FilterMenu from '../components/Menus/FilterMenu';
 import Table from '../components/Table';
 import { DashboardPageWrapper } from '../core-ui/styles';
@@ -17,19 +16,6 @@ interface ViewOneProps {
   hasCreate?: boolean;
   hasGridView?: boolean;
 }
-
-const buttons = [
-  {
-    key: 'list',
-    value: 'list',
-    label: 'List',
-  },
-  {
-    key: 'grid',
-    value: 'grid',
-    label: 'Grid',
-  },
-];
 
 const ViewOne: React.FC<ViewOneProps> = ({
   title,
