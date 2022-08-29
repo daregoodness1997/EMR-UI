@@ -18,8 +18,18 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
   onSubmit,
 }) => {
   const [isFullRegistration, setFullRegistration] = useState(true);
+  const [values, setValues] = useState({
+    names: {},
+    biodata: {},
+    address: {},
+    otherDetails: {},
+    nextOfKins: {},
+    nonHospitalIndetifiers: {},
+  });
 
   const { handleSubmit } = useForm();
+
+  console.log(values);
 
   return (
     <>
@@ -54,6 +64,12 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
                       name={key}
                       inputType={inputType}
                       label={name}
+                      onChange={e =>
+                        setValues({
+                          ...values,
+                          names: { ...values, [e.target.name]: e.target.value },
+                        })
+                      }
                     />
                   ))}
                 </GridWrapper>
@@ -70,6 +86,15 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
                         inputType={inputType}
                         label={name}
                         options={options || []}
+                        onChange={e =>
+                          setValues({
+                            ...values,
+                            biodata: {
+                              ...values,
+                              [e.target.name]: e.target.value,
+                            },
+                          })
+                        }
                       />
                     )
                   )}
@@ -87,6 +112,15 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
                         inputType={inputType}
                         label={name}
                         options={options || []}
+                        onChange={e =>
+                          setValues({
+                            ...values,
+                            address: {
+                              ...values,
+                              [e.target.name]: e.target.value,
+                            },
+                          })
+                        }
                       />
                     )
                   )}
@@ -104,6 +138,15 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
                         inputType={inputType}
                         label={name}
                         options={options || []}
+                        onChange={e =>
+                          setValues({
+                            ...values,
+                            otherDetails: {
+                              ...values,
+                              [e.target.name]: e.target.value,
+                            },
+                          })
+                        }
                       />
                     )
                   )}
@@ -111,7 +154,7 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
               </DetailsWrapper>
 
               {/* Next of Kin  */}
-              <DetailsWrapper title='Next of Kin'>
+              <DetailsWrapper title='Next of Kins'>
                 <GridWrapper>
                   {ClientFullSchema.nextOfKins.map(
                     ({ inputType, key, name, options }) => (
@@ -121,6 +164,15 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
                         inputType={inputType}
                         label={name}
                         options={options || []}
+                        onChange={e =>
+                          setValues({
+                            ...values,
+                            nextOfKins: {
+                              ...values,
+                              [e.target.name]: e.target.value,
+                            },
+                          })
+                        }
                       />
                     )
                   )}
@@ -138,6 +190,15 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
                         name={key}
                         inputType={inputType}
                         label={name}
+                        onChange={e =>
+                          setValues({
+                            ...values,
+                            nonHospitalIndetifiers: {
+                              ...values,
+                              [e.target.name]: e.target.value,
+                            },
+                          })
+                        }
                       />
                     )
                   )}
@@ -154,6 +215,12 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
                         name={key}
                         inputType={inputType}
                         label={name}
+                        onChange={e =>
+                          setValues({
+                            ...values,
+                            [e.target.name]: e.target.value,
+                          })
+                        }
                       />
                     )
                   )}
@@ -170,6 +237,12 @@ const ClientFullForm: React.FC<ClientDetailsProps> = ({
                         name={key}
                         inputType={inputType}
                         label={name}
+                        onChange={e =>
+                          setValues({
+                            ...values,
+                            [e.target.name]: e.target.value,
+                          })
+                        }
                       />
                     )
                   )}

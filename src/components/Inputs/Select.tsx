@@ -13,6 +13,7 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   onChange?: (e: any) => void;
   defaultValue?: string;
   readonly?: boolean;
+  value?: string;
 }
 
 const Select: React.FC<SelectProps> = ({
@@ -23,6 +24,7 @@ const Select: React.FC<SelectProps> = ({
   onChange,
   errorText,
   readonly,
+  value,
 }) => {
   return (
     <FormControl
@@ -35,7 +37,8 @@ const Select: React.FC<SelectProps> = ({
         id='demo-simple-select-autowidth'
         label={label}
         name={name}
-        defaultValue={defaultValue || ''}
+        defaultValue={defaultValue}
+        value={value}
         onChange={onChange}
         sx={{
           background: 'white',

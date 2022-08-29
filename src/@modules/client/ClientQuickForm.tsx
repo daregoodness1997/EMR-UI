@@ -18,6 +18,7 @@ interface ClientDetailsProps {
 
 const ClientQuickForm: React.FC<ClientDetailsProps> = () => {
   const [isFullRegistration, setFullRegistration] = useState(false);
+  const [values, setValues] = useState({});
 
   return (
     <>
@@ -52,6 +53,12 @@ const ClientQuickForm: React.FC<ClientDetailsProps> = () => {
                       inputType={inputType}
                       label={name}
                       options={options}
+                      onChange={e =>
+                        setValues({
+                          ...values,
+                          [e.target.name]: e.target.value,
+                        })
+                      }
                     />
                   ))}
                 </GridWrapper>

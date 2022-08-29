@@ -3,7 +3,7 @@ import { GrayWrapper, HeadWrapper } from '../../@views/styles';
 import { Button } from '../../components';
 import DynamicInput from '../../components/Inputs/DynamicInput';
 import { BottomWrapper, FullDetailsWrapper } from '../../components/styles';
-import { GridWrapper, DashboardPageWrapper } from '../../core-ui/styles';
+import { DashboardPageWrapper } from '../../core-ui/styles';
 import { AppointmentSchema } from '../../utils/schema';
 
 const CreateAppointment = () => {

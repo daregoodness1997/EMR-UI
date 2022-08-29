@@ -19,6 +19,7 @@ interface DynamicInputProps {
   readonly?: boolean;
   defaultValue?: any;
   value?: any;
+  onChange?: (e?: any) => void;
 }
 
 const DynamicInput = (props: DynamicInputProps) => {
@@ -32,6 +33,7 @@ const DynamicInput = (props: DynamicInputProps) => {
     readonly,
     defaultValue,
     value,
+    onChange,
   } = props;
   if (inputType === InputType.HIDDEN && data[name]) {
     return <input type='hidden' defaultValue={defaultValue} />;
@@ -48,6 +50,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         // defaultValue={data[name] || ''}
         defaultValue={value}
         value={value}
+        onChange={onChange}
       />
     );
   }
@@ -60,6 +63,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         // defaultValue={data[name] || ''}
         defaultValue={value}
         value={value}
+        onChange={onChange}
       />
     );
   }
@@ -74,6 +78,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         // defaultValue={data[name]}
         defaultValue={value}
         value={value}
+        onChange={onChange}
       />
     );
   }
@@ -88,6 +93,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         // defaultValue={data[name]}
         defaultValue={value}
         value={value}
+        onChange={onChange}
       />
     );
   }
@@ -101,6 +107,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         // defaultValue={data[name]}
         defaultValue={value}
         value={value}
+        onChange={onChange}
       />
     );
   }
@@ -114,6 +121,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         options={options}
         // defaultValue={data[name]}
         defaultValue={value}
+        onChange={onChange}
       />
     );
   }
@@ -127,6 +135,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         options={options}
         errorText={errors[name]?.message}
         defaultValue={value}
+        onChange={onChange}
       />
     );
   }
@@ -137,8 +146,8 @@ const DynamicInput = (props: DynamicInputProps) => {
         label={label}
         options={options}
         name={label}
-        onChange={() => null}
         disabled={readonly}
+        onChange={onChange}
       />
     );
   }
@@ -155,6 +164,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         disabled={readonly}
         defaultValue={value}
         value={value}
+        onChange={onChange}
       />
     );
   }
@@ -169,6 +179,7 @@ const DynamicInput = (props: DynamicInputProps) => {
         // defaultValue={data[name]}
         defaultValue={value}
         value={value}
+        onChange={onChange}
       />
       // <FormControl disabled={readonly} style={{ width: '100%' }}>
       //   <DateTimePicker
@@ -200,6 +211,7 @@ const DynamicInput = (props: DynamicInputProps) => {
           //   onChange={(value: any) =>
           //     field.onChange({ target: { value: toAPIDate(value) } })
           //   }
+          onChange={onChange}
           inputFormat={DateFormats.CONTROL_DATE}
           renderInput={(params: any) => (
             <TextField

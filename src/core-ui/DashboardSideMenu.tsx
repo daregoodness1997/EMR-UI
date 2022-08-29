@@ -27,7 +27,7 @@ export const menuItems = [
     ],
   },
   {
-    name: 'Client',
+    name: 'Clients',
     exact: true,
     to: '/app/clients',
     iconClassName: 'bi bi-people',

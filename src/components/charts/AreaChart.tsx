@@ -3,6 +3,7 @@ import ChartCard from './ChartCard';
 import { chartoptions } from '../../utils/chartoptions';
 import { areaSeries } from '../../utils/mock_chart_data';
 import ReactApexChart from 'react-apexcharts';
+import { Typography } from '@mui/material';
 
 interface AreaChartProps {
   title?: string;
@@ -23,6 +24,9 @@ const AreaChart: React.FC<AreaChartProps> = ({
   };
   return (
     <ChartCard title={title}>
+      <Typography variant='h4' sx={{ p: 1 }}>
+        {title}
+      </Typography>
       <ReactApexChart
         options={state.options}
         series={state.series}

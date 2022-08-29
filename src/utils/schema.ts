@@ -649,7 +649,8 @@ const ClientFullSchema = {
       selector: (row: any) => row.gender,
       sortable: true,
       required: true,
-      inputType: InputType.TEXT,
+      inputType: InputType.SELECT_LIST,
+      options: ['Male', 'Female'],
     },
 
     {
@@ -681,7 +682,7 @@ const ClientFullSchema = {
       selector: (row: any) => row.medicalRecords,
       sortable: true,
       required: true,
-      inputType: InputType.SELECT_LIST,
+      inputType: InputType.TEXT,
       options: ['Record 1', 'Record 2', 'Record 3'],
     },
 
@@ -693,7 +694,7 @@ const ClientFullSchema = {
       sortable: true,
       required: true,
       inputType: InputType.SELECT_LIST,
-      options: ['Profession 1', 'Profession  2', 'Profession 3'],
+      options: ['Private', 'Public', 'Others'],
     },
 
     {
@@ -1084,7 +1085,7 @@ const AppointmentSchema = [
   {
     name: 'Location',
     description: 'Search Location',
-    key: 'locationId',
+    key: 'location',
     selector: (row: any) => row.location,
     sortable: true,
     required: true,
@@ -1093,7 +1094,7 @@ const AppointmentSchema = [
   {
     name: 'Employee',
     description: 'Search  Employee',
-    key: 'practionerId',
+    key: 'practitionername',
     selector: (row: any) => row.practitionername,
     sortable: true,
     required: true,

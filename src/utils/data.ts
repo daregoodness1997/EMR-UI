@@ -52,7 +52,7 @@ const clientsList = [...Array(100)].map((_, index) => ({
     { dob: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}` },
     { gender: sample(['Male', 'Female']) },
     { maritalstatus: sample(['Single', 'Married', 'Divorced']) },
-    { religion: sample(['Christainity', 'Islam', 'Others']) },
+    { religion: sample(['Christianity', 'Islam', 'Rather not say']) },
     { medicalRecords: ['Record', 'Record 2'] },
     { profession: sample(['Private', 'Public', 'Others']) },
     { phone: faker.phone.phoneNumber() },
@@ -155,7 +155,7 @@ const appointmentList = [...Array(100)].map((_, index) => ({
     'With Nurse',
     'With Doctor',
   ]),
-  appointmentReason: faker.lorem.text(),
+  appointment_reason: faker.lorem.text(),
 }));
 
 const bandList = [...Array(100)].map((_, index) => ({
