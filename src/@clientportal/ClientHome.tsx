@@ -23,7 +23,7 @@ const ClientHome = () => {
         <Stack direction={{ lg: 'row', xs: 'column' }}>
           <Box
             sx={{
-              width: { lg: '68%', xs: '100%' },
+              width: { lg: '62%', xs: '100%' },
               mt: 1.5,
             }}
           >
@@ -145,7 +145,7 @@ const ClientHome = () => {
 
           <Box
             sx={{
-              width: { lg: '32%', xs: '100%' },
+              width: { lg: '38%', xs: '100%' },
               mt: 1.5,
               p: 1,
               background: '#ECF3FF',
@@ -163,7 +163,26 @@ const ClientHome = () => {
                 overflowY: 'scroll',
               }}
             >
-              <MiniCalendar />
+              <Stack direction='row'>
+                <Box
+                  sx={{
+                    minWidth: '160px',
+                    p: 3,
+                    minHeight: '100%',
+                    background: '#0E214D',
+                    color: 'white',
+                    borderTopLeftRadius: '8px',
+                    borderBottomLeftRadius: '8px',
+                    pt: 8,
+                  }}
+                >
+                  <Typography>2022</Typography>
+                  <Typography variant='h1' sx={{ fontWeight: 'bold' }}>
+                    Thurs, Mar. 20
+                  </Typography>
+                </Box>
+                <MiniCalendar />
+              </Stack>
               <Stack
                 direction='row'
                 justifyContent='space-between'
