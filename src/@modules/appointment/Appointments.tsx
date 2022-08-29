@@ -22,6 +22,7 @@ const Appointments = () => {
         tableTitle=''
         handleCreate={handleCreateAppointment}
         onRowClicked={handleRowClicked}
+        hasGridView={true}
       />
     </>
   );

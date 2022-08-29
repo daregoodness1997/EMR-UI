@@ -19,6 +19,7 @@ import ClientQuickForm from '../@modules/client/ClientQuickForm';
 import Clients from '../@modules/client/Clients';
 import ClinicDashboard from '../@modules/clinic/ClinicDashboard';
 import Overview from '../pages/app/Overview';
+import PatientOutlet from '../pages/app/PatientOutlet';
 import PrivateOutlet from '../pages/app/PrivateOutlet';
 import IndividualSignup from '../pages/auth/IndividualSignup';
 import Login from '../pages/auth/Login';
@@ -78,6 +79,10 @@ const AppRoutes = () => {
             path='/app/admin/locations/:id'
             element={<LocationDetails />}
           />
+        </Route>
+
+        <Route path='/portal' element={<PatientOutlet />}>
+          
         </Route>
       </Routes>
     </>
