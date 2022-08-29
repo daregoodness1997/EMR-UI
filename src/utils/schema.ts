@@ -1420,6 +1420,44 @@ const taskSchema = [
   },
 ];
 
+const billSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+    omit: true,
+  },
+  {
+    name: 'Date',
+    key: 'date',
+    description: 'Date',
+    selector: (row: any) => row.date,
+    sortable: true,
+  },
+  {
+    name: 'Description',
+    key: 'description',
+    description: 'Description',
+    selector: (row: any) => row.description,
+    sortable: true,
+  },
+  {
+    name: 'Status',
+    key: 'status',
+    description: 'Status',
+    selector: (row: any) => row.status,
+    sortable: true,
+  },
+  {
+    name: 'Amount',
+    key: 'amount',
+    description: 'Amount',
+    selector: (row: any) => row.amount,
+    sortable: true,
+  },
+];
 export {
   ClientMiniSchema,
   AppointmentSchema,
@@ -1433,4 +1471,5 @@ export {
   medicationSchema,
   problemSchema,
   taskSchema,
+  billSchema,
 };

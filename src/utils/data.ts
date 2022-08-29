@@ -215,6 +215,14 @@ const taskList = [...Array(10)].map((_, index) => ({
   tasks: faker.name.findName(),
 }));
 
+const billList = [...Array(10)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  date: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
+  description: faker.name.findName(),
+  status: sample(['Paid', 'Pending', 'Cancelled']),
+  amount: sample(['20', '85', '250', '200', '100']),
+}));
+
 export {
   clientsList,
   appointmentList,
@@ -226,4 +234,5 @@ export {
   medicationList,
   problemList,
   taskList,
+  billList,
 };

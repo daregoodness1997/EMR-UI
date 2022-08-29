@@ -4,6 +4,7 @@ import AppointmentCard from '../@sections/AppointmentCard';
 import ClientStatCard from '../@sections/ClientStatCard';
 import NewsCard from '../@sections/NewsCard';
 import MiniCalendar from '../components/Calender/MiniCalendar';
+import ClientTable from '../components/Table/ClientTable';
 import { DashboardPageWrapper } from '../core-ui/styles';
 
 const ClientHome = () => {
@@ -137,8 +138,10 @@ const ClientHome = () => {
                 </Grid>
               </Grid>
               <Box sx={{ p: 2, mt: 2, borderRadius: '10px' }}>
-                <Typography variant='h4'>Bills</Typography>
-                <p>Client Table</p>
+                <Typography variant='h4' sx={{ mb: 2 }}>
+                  Bills
+                </Typography>
+                <ClientTable />
               </Box>
             </Box>
           </Box>

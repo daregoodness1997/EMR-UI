@@ -135,6 +135,7 @@ const ClientStatCard: React.FC<StatProps> = ({
       }}
     >
       <Stack direction='row' alignItems='center'>
+        {/* <Box></Box> */}
         <Box
           sx={{
             p: 2,
@@ -155,6 +156,7 @@ const ClientStatCard: React.FC<StatProps> = ({
           {title}
         </Typography>
       </Stack>
+
       <Box>
         <Typography
           sx={{ fontWeight: 'semi-bold', fontSize: 28, mt: 1, mb: 1 }}
