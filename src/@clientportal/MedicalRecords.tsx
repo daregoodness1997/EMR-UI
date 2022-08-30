@@ -1,6 +1,8 @@
 import { Avatar, Box, Stack, Typography } from '@mui/material';
 import React from 'react';
 import ClientStatCard from '../@sections/ClientStatCard';
+import { Button } from '../components';
+import PrescriptionTable from '../components/Table/PrescriptonTable';
 import { DashboardPageWrapper } from '../core-ui/styles';
 
 const MedicalRecords = () => {
@@ -158,6 +160,7 @@ const MedicalRecords = () => {
           sx={{
             width: { lg: '72%', xs: '100%' },
             mt: 1.5,
+            height: { lg: '100vh', overflowY: 'auto' },
           }}
         >
           <Box
@@ -193,6 +196,130 @@ const MedicalRecords = () => {
               background='#FFF6A0'
               chartColor='#936A03'
             />
+          </Box>
+
+          <Box
+            sx={{
+              background: '#ECF3FF',
+              p: 4,
+              pt: 2,
+              borderRadius: '10px',
+              mt: 2,
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: '20px',
+                width: '100%',
+                fontWeight: 'bold',
+                mt: 2,
+                color: '#03045E',
+              }}
+            >
+              Diagnostic Reports
+            </Typography>
+            <Stack
+              direction='row'
+              alignItems='center'
+              justifyContent='space-between'
+              sx={{ mt: 2, mb: 2 }}
+            >
+              <Stack direction='row' alignItems='center'>
+                <Box
+                  sx={{
+                    p: 2,
+                    background: '#fff',
+                    width: { lg: '56px', xs: '100%' },
+                    height: '56px',
+                    borderRadius: '10px',
+                    display: 'grid',
+                    placeItems: 'center',
+                  }}
+                >
+                  <Box className='icon'></Box>
+                </Box>
+                <Box sx={{ ml: 2, color: '#03045E' }}>
+                  <Typography variant='h4' sx={{ fontWeight: 'bold' }}>
+                    CT-Scan Full Body
+                  </Typography>
+                  <Typography variant='body2'>29th January, 2022</Typography>
+                </Box>
+              </Stack>
+              <Stack direction='row' alignItems='center'>
+                <Box
+                  sx={{
+                    p: 2,
+                    background: '#fff',
+                    width: { lg: '56px', xs: '100%' },
+                    height: '56px',
+                    borderRadius: '10px',
+                    display: 'grid',
+                    placeItems: 'center',
+                  }}
+                >
+                  <Box className='icon'></Box>
+                </Box>
+                <Box sx={{ ml: 2, color: '#03045E' }}>
+                  <Typography variant='h4' sx={{ fontWeight: 'bold' }}>
+                    Creatine Kinase T
+                  </Typography>
+                  <Typography variant='body2'>29th January, 2022</Typography>
+                </Box>
+              </Stack>
+              <Stack direction='row' alignItems='center'>
+                <Box
+                  sx={{
+                    p: 2,
+                    background: '#fff',
+                    width: { lg: '56px', xs: '100%' },
+                    height: '56px',
+                    borderRadius: '10px',
+                    display: 'grid',
+                    placeItems: 'center',
+                  }}
+                >
+                  <Box className='icon'></Box>
+                </Box>
+                <Box sx={{ ml: 2, color: '#03045E' }}>
+                  <Typography variant='h4' sx={{ fontWeight: 'bold' }}>
+                    Blood Count
+                  </Typography>
+                  <Typography variant='body2'>29th January, 2022</Typography>
+                </Box>
+              </Stack>
+            </Stack>
+          </Box>
+
+          <Box
+            sx={{
+              background: '#ECF3FF',
+              p: 4,
+              pt: 2,
+              borderRadius: '10px',
+              mt: 2,
+            }}
+          >
+            <Stack
+              direction='row'
+              alignItems='center'
+              justifyContent='space-between'
+              sx={{ mb: 2 }}
+            >
+              <Typography
+                sx={{
+                  fontSize: '20px',
+                  width: '100%',
+                  fontWeight: 'bold',
+                  mt: 2,
+                  color: '#03045E',
+                }}
+              >
+                Prescriptions
+              </Typography>
+
+              <Button>Add Prescriptions</Button>
+            </Stack>
+            <PrescriptionTable />
           </Box>
         </Box>
       </Stack>

@@ -223,6 +223,13 @@ const billList = [...Array(10)].map((_, index) => ({
   amount: sample(['20', '85', '250', '200', '100']),
 }));
 
+const prescriptionList = [...Array(5)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  prescription: faker.name.findName(),
+  date: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
+  duration: sample(['20', '85', '250', '200', '100']),
+}));
+
 export {
   clientsList,
   appointmentList,
@@ -235,4 +242,5 @@ export {
   problemList,
   taskList,
   billList,
+  prescriptionList,
 };
