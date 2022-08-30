@@ -1,7 +1,8 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 import ViewCard from '../../@sections/ViewCard';
+import { Button } from '../../components';
 import AreaChart from '../../components/charts/AreaChart';
 import BarChart from '../../components/charts/BarChart';
 import BubbleChart from '../../components/charts/BubbleChart';
@@ -56,16 +57,16 @@ const ClientDashboard = () => {
               </Typography>
               <Typography variant='body2'>Total Client by Gender</Typography>
 
-              {/* <Stack
+              <Stack
                 direction='row'
                 spacing={0.4}
-                sx={{ mt: 4 }}
+                sx={{ mt: 4, width: '100%' }}
                 justifyContent='center'
               >
                 <Button>Male</Button>
                 <Button>Female</Button>
                 <Button>Others</Button>
-              </Stack> */}
+              </Stack>
               <CircleChart />
             </Box>
           </Box>

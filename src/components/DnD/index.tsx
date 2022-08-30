@@ -2,7 +2,6 @@ import { faker } from '@faker-js/faker';
 import { Avatar, Box, IconButton, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import FilterMenu from '../Menus/FilterMenu';
 
 const finalSpaceCharacters: { id: string; name: string; thumb: string }[] = [
   ...Array(4),

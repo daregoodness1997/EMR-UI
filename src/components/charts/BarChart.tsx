@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 import { barChartSeries } from '../../utils/mock_chart_data';
@@ -79,6 +80,9 @@ const BarChart: React.FC<BarChartProps> = ({
   };
   return (
     <ChartCard title={title}>
+      <Typography variant='h4' sx={{ p: 1 }}>
+        {title}
+      </Typography>
       <ReactApexChart
         options={state.options}
         series={state.series}

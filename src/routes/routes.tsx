@@ -1,4 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
+import ClientHome from '../@clientportal/ClientHome';
+import HealthProfile from '../@clientportal/HealthProfile';
+import MedicalRecords from '../@clientportal/MedicalRecords';
+import Prescriptions from '../@clientportal/Prescriptions';
 import AdminDashboard from '../@modules/admin/AdminDashboard';
 import Bands from '../@modules/admin/bands';
 import BandDetails from '../@modules/admin/bands/BandDetails';
@@ -19,6 +23,7 @@ import ClientQuickForm from '../@modules/client/ClientQuickForm';
 import Clients from '../@modules/client/Clients';
 import ClinicDashboard from '../@modules/clinic/ClinicDashboard';
 import Overview from '../pages/app/Overview';
+import PatientOutlet from '../pages/app/PatientOutlet';
 import PrivateOutlet from '../pages/app/PrivateOutlet';
 import IndividualSignup from '../pages/auth/IndividualSignup';
 import Login from '../pages/auth/Login';
@@ -77,6 +82,16 @@ const AppRoutes = () => {
           <Route
             path='/app/admin/locations/:id'
             element={<LocationDetails />}
+          />
+        </Route>
+
+        <Route path='/portal' element={<PatientOutlet />}>
+          <Route index element={<ClientHome />} />
+          <Route path='/portal/profile/health' element={<HealthProfile />} />
+          <Route path='/portal/profile/records' element={<MedicalRecords />} />
+          <Route
+            path='/portal/profile/prescriptions'
+            element={<Prescriptions />}
           />
         </Route>
       </Routes>

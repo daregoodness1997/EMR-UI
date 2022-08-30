@@ -52,7 +52,7 @@ const clientsList = [...Array(100)].map((_, index) => ({
     { dob: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}` },
     { gender: sample(['Male', 'Female']) },
     { maritalstatus: sample(['Single', 'Married', 'Divorced']) },
-    { religion: sample(['Christainity', 'Islam', 'Others']) },
+    { religion: sample(['Christianity', 'Islam', 'Rather not say']) },
     { medicalRecords: ['Record', 'Record 2'] },
     { profession: sample(['Private', 'Public', 'Others']) },
     { phone: faker.phone.phoneNumber() },
@@ -79,7 +79,7 @@ const clientsList = [...Array(100)].map((_, index) => ({
 
   nextofkins: [
     { nextofkin: faker.name.findName() },
-    { nextofkinphone: faker.phone.phoneNumber() },
+    { nextofkinphone: faker.phone.number() },
     { nextofkinemail: faker.internet.exampleEmail() },
     {
       relationship: sample(['Parent(s)', 'Sibling(s)', 'Spouse', 'Friend(s)']),
@@ -87,6 +87,9 @@ const clientsList = [...Array(100)].map((_, index) => ({
   ],
   nonHospitalIndetifiers: [
     { nin: 'NGA' + Math.round(Math.random() * 142553663673700) },
+    {
+      passportnumber: 'NGAPASS' + Math.round(Math.random() * 142553663673700),
+    },
     {
       voterscardnumber: 'NGAVOTE' + Math.round(Math.random() * 142553663673700),
     },
@@ -98,7 +101,14 @@ const clientsList = [...Array(100)].map((_, index) => ({
 
   paymentInformation: [
     { accountname: faker.name.findName() },
+    { bank: faker.name.findName() },
     { accountnumber: `${Math.round(Math.random() * 14263673700)}` },
+    {
+      paymentmethod: sample(['Cash', 'Transfer']),
+    },
+  ],
+
+  medicalData: [
     {
       bloodgroup: sample(['AA', 'AB', 'SS', 'AC', 'CS']),
     },
@@ -145,7 +155,7 @@ const appointmentList = [...Array(100)].map((_, index) => ({
     'With Nurse',
     'With Doctor',
   ]),
-  appointmentReason: faker.lorem.text(),
+  appointment_reason: faker.lorem.text(),
 }));
 
 const bandList = [...Array(100)].map((_, index) => ({
@@ -205,6 +215,21 @@ const taskList = [...Array(10)].map((_, index) => ({
   tasks: faker.name.findName(),
 }));
 
+const billList = [...Array(10)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  date: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
+  description: faker.name.findName(),
+  status: sample(['Paid', 'Pending', 'Cancelled']),
+  amount: sample(['20', '85', '250', '200', '100']),
+}));
+
+const prescriptionList = [...Array(5)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  prescription: faker.name.findName(),
+  date: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
+  duration: sample(['20', '85', '250', '200', '100']),
+}));
+
 export {
   clientsList,
   appointmentList,
@@ -216,4 +241,6 @@ export {
   medicationList,
   problemList,
   taskList,
+  billList,
+  prescriptionList,
 };

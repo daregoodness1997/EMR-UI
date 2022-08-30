@@ -649,7 +649,8 @@ const ClientFullSchema = {
       selector: (row: any) => row.gender,
       sortable: true,
       required: true,
-      inputType: InputType.TEXT,
+      inputType: InputType.SELECT_LIST,
+      options: ['Male', 'Female'],
     },
 
     {
@@ -681,7 +682,7 @@ const ClientFullSchema = {
       selector: (row: any) => row.medicalRecords,
       sortable: true,
       required: true,
-      inputType: InputType.SELECT_LIST,
+      inputType: InputType.TEXT,
       options: ['Record 1', 'Record 2', 'Record 3'],
     },
 
@@ -693,7 +694,7 @@ const ClientFullSchema = {
       sortable: true,
       required: true,
       inputType: InputType.SELECT_LIST,
-      options: ['Profession 1', 'Profession  2', 'Profession 3'],
+      options: ['Private', 'Public', 'Others'],
     },
 
     {
@@ -862,7 +863,7 @@ const ClientFullSchema = {
     },
   ],
 
-  nextOfKin: [
+  nextOfKins: [
     {
       name: 'Next of Kin',
       key: 'nextofkin',
@@ -1084,7 +1085,7 @@ const AppointmentSchema = [
   {
     name: 'Location',
     description: 'Search Location',
-    key: 'locationId',
+    key: 'location',
     selector: (row: any) => row.location,
     sortable: true,
     required: true,
@@ -1093,7 +1094,7 @@ const AppointmentSchema = [
   {
     name: 'Employee',
     description: 'Search  Employee',
-    key: 'practionerId',
+    key: 'practitionername',
     selector: (row: any) => row.practitionername,
     sortable: true,
     required: true,
@@ -1419,6 +1420,77 @@ const taskSchema = [
   },
 ];
 
+const billSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+    omit: true,
+  },
+  {
+    name: 'Date',
+    key: 'date',
+    description: 'Date',
+    selector: (row: any) => row.date,
+    sortable: true,
+  },
+  {
+    name: 'Description',
+    key: 'description',
+    description: 'Description',
+    selector: (row: any) => row.description,
+    sortable: true,
+  },
+  {
+    name: 'Status',
+    key: 'status',
+    description: 'Status',
+    selector: (row: any) => row.status,
+    sortable: true,
+  },
+  {
+    name: 'Amount',
+    key: 'amount',
+    description: 'Amount',
+    selector: (row: any) => row.amount,
+    sortable: true,
+  },
+];
+
+const prescriptionSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+    omit: true,
+  },
+  {
+    name: 'Prescription',
+    key: 'prescription',
+    description: 'Prescription',
+    selector: (row: any) => row.prescription,
+    sortable: true,
+  },
+  {
+    name: 'Date',
+    key: 'date',
+    description: 'Date',
+    selector: (row: any) => row.date,
+    sortable: true,
+  },
+
+  {
+    name: 'Duration (Days)',
+    key: 'duration',
+    description: 'Duration',
+    selector: (row: any) => row.duration,
+    sortable: true,
+  },
+];
 export {
   ClientMiniSchema,
   AppointmentSchema,
@@ -1432,4 +1504,6 @@ export {
   medicationSchema,
   problemSchema,
   taskSchema,
+  billSchema,
+  prescriptionSchema,
 };

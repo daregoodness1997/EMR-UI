@@ -17,7 +17,7 @@ const ClientDetails = () => {
     return client.id === id;
   });
 
-  console.log(ClientFullSchema.names);
+  console.log(details[0]);
 
   return (
     <DashboardPageWrapper>
@@ -30,6 +30,12 @@ const ClientDetails = () => {
             <Typography>
               Below are your {`${details[0].firstname} ${details[0].lastname}`}{' '}
               details
+            </Typography>
+            <Typography>
+              Client ID:{' '}
+              <span style={{ fontWeight: 'bold', fontSize: '18px' }}>
+                {details[0].id}
+              </span>
             </Typography>
           </Box>
 
@@ -168,32 +174,8 @@ const ClientDetails = () => {
         </DetailsWrapper>
         <DetailsWrapper title='Next of Kin'>
           <GridWrapper>
-            {ClientFullSchema.nextOfKin.map(({ inputType, key, name }, idx) => {
-              return (
-                <>
-                  {isEditing ? (
-                    <DynamicInput
-                      key={key}
-                      label={name}
-                      name={key}
-                      value={details[0][key]}
-                      inputType={inputType}
-                    />
-                  ) : (
-                    <Box key={key}>
-                      <label>{name}</label>
-                      <Typography variant='body2'>{`${details[0][key]}`}</Typography>
-                    </Box>
-                  )}
-                </>
-              );
-            })}
-          </GridWrapper>
-        </DetailsWrapper>
-        <DetailsWrapper title='Non-Hospital Indentifers'>
-          <GridWrapper>
-            {ClientFullSchema.nonHospitalIndetifiers.map(
-              ({ inputType, key, name }) => {
+            {ClientFullSchema.nextOfKins.map(
+              ({ inputType, key, name }, idx) => {
                 return (
                   <>
                     {isEditing ? (
@@ -201,13 +183,45 @@ const ClientDetails = () => {
                         key={key}
                         label={name}
                         name={key}
-                        value={details[0][key]}
+                        value={details[0]['nextofkins'][idx][`${key}`]}
                         inputType={inputType}
                       />
                     ) : (
                       <Box key={key}>
                         <label>{name}</label>
-                        <Typography variant='body2'>{`${details[0][key]}`}</Typography>
+                        <Typography variant='body2'>
+                          {details[0]['nextofkins'][idx][`${key}`]}
+                        </Typography>
+                      </Box>
+                    )}
+                  </>
+                );
+              }
+            )}
+          </GridWrapper>
+        </DetailsWrapper>
+        <DetailsWrapper title='Non-Hospital Indentifers'>
+          <GridWrapper>
+            {ClientFullSchema.nonHospitalIndetifiers.map(
+              ({ inputType, key, name }, idx) => {
+                return (
+                  <>
+                    {isEditing ? (
+                      <DynamicInput
+                        key={key}
+                        label={name}
+                        name={key}
+                        value={
+                          details[0]['nonHospitalIndetifiers'][idx][`${key}`]
+                        }
+                        inputType={inputType}
+                      />
+                    ) : (
+                      <Box key={key}>
+                        <label>{name}</label>
+                        <Typography variant='body2'>
+                          {details[0]['nonHospitalIndetifiers'][idx][`${key}`]}
+                        </Typography>
                       </Box>
                     )}
                   </>
@@ -219,7 +233,7 @@ const ClientDetails = () => {
         <DetailsWrapper title='Payment Information'>
           <GridWrapper>
             {ClientFullSchema.paymentInformation.map(
-              ({ inputType, key, name }) => {
+              ({ inputType, key, name }, idx) => {
                 return (
                   <>
                     {isEditing ? (
@@ -227,13 +241,15 @@ const ClientDetails = () => {
                         key={key}
                         label={name}
                         name={key}
-                        value={details[0][key]}
+                        value={details[0]['paymentInformation'][idx][`${key}`]}
                         inputType={inputType}
                       />
                     ) : (
                       <Box key={key}>
                         <label>{name}</label>
-                        <Typography variant='body2'>{`${details[0][key]}`}</Typography>
+                        <Typography variant='body2'>
+                          {details[0]['paymentInformation'][idx][`${key}`]}
+                        </Typography>
                       </Box>
                     )}
                   </>
@@ -245,26 +261,30 @@ const ClientDetails = () => {
 
         <DetailsWrapper title='Medical Data'>
           <GridWrapper>
-            {ClientFullSchema.medicalData.map(({ inputType, key, name }) => {
-              return (
-                <>
-                  {isEditing ? (
-                    <DynamicInput
-                      key={key}
-                      label={name}
-                      name={key}
-                      value={details[0][key]}
-                      inputType={inputType}
-                    />
-                  ) : (
-                    <Box key={key}>
-                      <label>{name}</label>
-                      <Typography variant='body2'>{`${details[0][key]}`}</Typography>
-                    </Box>
-                  )}
-                </>
-              );
-            })}
+            {ClientFullSchema.medicalData.map(
+              ({ inputType, key, name }, idx) => {
+                return (
+                  <>
+                    {isEditing ? (
+                      <DynamicInput
+                        key={key}
+                        label={name}
+                        name={key}
+                        value={details[0]['medicalData'][idx][`${key}`]}
+                        inputType={inputType}
+                      />
+                    ) : (
+                      <Box key={key}>
+                        <label>{name}</label>
+                        <Typography variant='body2'>
+                          {details[0]['medicalData'][idx][`${key}`]}
+                        </Typography>
+                      </Box>
+                    )}
+                  </>
+                );
+              }
+            )}
           </GridWrapper>
         </DetailsWrapper>
         {isEditing && (

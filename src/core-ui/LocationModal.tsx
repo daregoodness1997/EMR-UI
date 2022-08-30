@@ -1,4 +1,4 @@
-import { Portal } from '@mui/material';
+import { Box, Portal } from '@mui/material';
 import React from 'react';
 import Modal from '../components/Modal';
 import LocationCard from './LocationCard';
@@ -26,18 +26,20 @@ const LocationModal: React.FC<LocationModalProps> = ({
           <h4>Select a location</h4>
         </FlexBox>
 
-        <GridWrapper>
-          {locations.map((location, index) => (
-            <LocationCard
-              key={index}
-              location={location}
-              onClick={() => {
-                closeModal();
-                onSelectLocation(location.location);
-              }}
-            />
-          ))}
-        </GridWrapper>
+        <Box sx={{ p: 1 }}>
+          <GridWrapper>
+            {locations.map((location, index) => (
+              <LocationCard
+                key={index}
+                location={location}
+                onClick={() => {
+                  closeModal();
+                  onSelectLocation(location.location);
+                }}
+              />
+            ))}
+          </GridWrapper>
+        </Box>
       </Modal>
     </Portal>
   );

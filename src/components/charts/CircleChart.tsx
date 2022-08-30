@@ -29,7 +29,7 @@ const CircleChart: React.FC<CircleChartProps> = ({
         series={state.series}
         type='donut'
         height={350}
-        width={320}
+        width={350}
       />
     </ChartCard>
   );

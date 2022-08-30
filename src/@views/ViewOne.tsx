@@ -14,6 +14,7 @@ interface ViewOneProps {
   data: any;
   tableTitle: string;
   hasCreate?: boolean;
+  hasGridView?: boolean;
 }
 
 const ViewOne: React.FC<ViewOneProps> = ({
@@ -25,6 +26,7 @@ const ViewOne: React.FC<ViewOneProps> = ({
   handleCreate,
   handleSearch,
   hasCreate = true,
+  hasGridView = false,
 }) => {
   return (
     <DashboardPageWrapper>
@@ -50,7 +52,7 @@ const ViewOne: React.FC<ViewOneProps> = ({
             variant='outlined'
             size='small'
             sx={{
-              width: { lg: '320px', xs: '60%' },
+              width: { lg: '320px', xs: '40%' },
               // height: '40px',
               borderRadius: '4px',
               marginRight: '10px',
@@ -58,6 +60,9 @@ const ViewOne: React.FC<ViewOneProps> = ({
             }}
           />
           <FilterMenu />
+          {/* {hasGridView && (
+            <Groups buttons={buttons} onClick={() => console.log('clicked')} />
+          )} */}
         </Box>
         {hasCreate && (
           <Button
