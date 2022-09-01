@@ -1491,6 +1491,119 @@ const prescriptionSchema = [
     sortable: true,
   },
 ];
+
+const diagnosticsSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+    omit: true,
+  },
+  {
+    name: 'Date',
+    key: 'date',
+    description: 'Date',
+    selector: (row: any) => row.date,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Description',
+    key: 'description',
+    description: 'Description',
+    selector: (row: any) => row.description,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Status',
+    key: 'status',
+    description: 'Status',
+    selector: (row: any) => row.status,
+    sortable: true,
+  },
+  {
+    name: 'Requesting Physician',
+    key: 'reqphysician',
+    description: 'Requesting Physician',
+    selector: (row: any) => row.reqphysician,
+    sortable: true,
+  },
+  {
+    name: 'Requested Facility',
+    key: 'reqfacility',
+    description: 'Requested Facilty',
+    selector: (row: any) => row.reqfacility,
+    sortable: true,
+  },
+  {
+    name: 'Processing Facility',
+    key: 'processfacility',
+    description: 'Processing Facility',
+    selector: (row: any) => row.processfacility,
+    sortable: true,
+  },
+];
+
+const clientAppointmentSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+    omit: true,
+  },
+  {
+    name: 'Date',
+    key: 'date',
+    description: 'Date',
+    selector: (row: any) => row.date,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Type',
+    key: 'type',
+    description: 'type',
+    selector: (row: any) => row.type,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Facility',
+    key: 'facility',
+    description: 'facility',
+    selector: (row: any) => row.facility,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Reason',
+    key: 'reason',
+    description: 'resaon',
+    selector: (row: any) => row.reason,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Status',
+    key: 'status',
+    description: 'Status',
+    selector: (row: any) => row.status,
+    sortable: true,
+  },
+  {
+    name: 'Consulting Physician',
+    key: 'consultphysician',
+    description: 'Consulting Physician',
+    selector: (row: any) => row.consultphysician,
+    sortable: true,
+  },
+];
+
 export {
   ClientMiniSchema,
   AppointmentSchema,
@@ -1506,4 +1619,6 @@ export {
   taskSchema,
   billSchema,
   prescriptionSchema,
+  diagnosticsSchema,
+  clientAppointmentSchema,
 };

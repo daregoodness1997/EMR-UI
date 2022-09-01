@@ -155,7 +155,7 @@ const appointmentList = [...Array(100)].map((_, index) => ({
     'With Nurse',
     'With Doctor',
   ]),
-  appointment_reason: faker.lorem.text(),
+  appointment_reason: faker.lorem.sentence(),
 }));
 
 const bandList = [...Array(100)].map((_, index) => ({
@@ -230,6 +230,33 @@ const prescriptionList = [...Array(5)].map((_, index) => ({
   duration: sample(['20', '85', '250', '200', '100']),
 }));
 
+const diagnosticList = [...Array(20)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  date: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
+  description: faker.name.findName(),
+  status: sample(['Paid', 'Pending', 'Cancelled']),
+  reqphysician: faker.name.findName(),
+  reqfacility: faker.name.findName(),
+  processfacility: faker.name.findName(),
+}));
+
+const clientAppointmentList = [...Array(100)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  date: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
+  type: sample(['Onsite', 'Video', 'Telemedicne', 'Chat']),
+  facility: faker.address.country(),
+  reason: faker.lorem.sentence(),
+  status: sample([
+    'Scheduled',
+    'Confirmed',
+    'Checked In',
+    'Vitals Taken',
+    'With Nurse',
+    'With Doctor',
+  ]),
+  consultphysician: faker.name.findName(),
+}));
+
 export {
   clientsList,
   appointmentList,
@@ -243,4 +270,6 @@ export {
   taskList,
   billList,
   prescriptionList,
+  diagnosticList,
+  clientAppointmentList,
 };

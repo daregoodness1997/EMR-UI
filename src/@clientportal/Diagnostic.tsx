@@ -1,10 +1,11 @@
 import { Box, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
-import DataTable from 'react-data-table-component';
 import { Button } from '../components';
 import FilterMenu from '../components/Menus/FilterMenu';
-import ClientTable from '../components/Table/ClientTable';
+import BasicTable from '../components/Table/BasicTable';
 import { DashboardPageWrapper } from '../core-ui/styles';
+import { diagnosticList } from '../utils/data';
+import { diagnosticsSchema } from '../utils/schema';
 
 const Diagnostic = () => {
   return (
@@ -46,7 +47,8 @@ const Diagnostic = () => {
       </Box>
 
       {/* <DataTable /> */}
-      <ClientTable />
+      {/* <ClientTable /> */}
+      <BasicTable columns={diagnosticsSchema} data={diagnosticList} />
     </DashboardPageWrapper>
   );
 };

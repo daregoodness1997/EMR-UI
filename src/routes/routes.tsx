@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import ClientAppointments from '../@clientportal/Appointments';
 import ClientHome from '../@clientportal/ClientHome';
 import Diagnostic from '../@clientportal/Diagnostic';
 import HealthProfile from '../@clientportal/HealthProfile';
@@ -95,6 +96,10 @@ const AppRoutes = () => {
             element={<Prescriptions />}
           />
           <Route path='/portal/profile/diagnostic' element={<Diagnostic />} />
+          <Route
+            path='/portal/profile/appointments'
+            element={<ClientAppointments />}
+          />
         </Route>
       </Routes>
     </>
