@@ -6,7 +6,7 @@ const Prescriptions = () => {
   return (
     <DashboardPageWrapper>
       <Box>
-        <Typography variant='h1' sx={{ fontWeight: 'bold' }}>
+        <Typography variant='h1' sx={{ fontWeight: 'bold', color: '#03045E' }}>
           Prescriptions
         </Typography>
 

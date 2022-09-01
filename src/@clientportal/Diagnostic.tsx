@@ -16,7 +16,10 @@ const Diagnostic = () => {
           alignItems='center'
           justifyContent='space-between'
         >
-          <Typography variant='h1' sx={{ fontWeight: 'bold' }}>
+          <Typography
+            variant='h1'
+            sx={{ fontWeight: 'bold', color: '#03045E' }}
+          >
             Diagnostic Report
           </Typography>
 

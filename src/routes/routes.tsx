@@ -3,6 +3,8 @@ import ClientAppointments from '../@clientportal/Appointments';
 import ClientHome from '../@clientportal/ClientHome';
 import Diagnostic from '../@clientportal/Diagnostic';
 import HealthProfile from '../@clientportal/HealthProfile';
+import Insurance from '../@clientportal/Insurance';
+import Marketplace from '../@clientportal/Marketplace';
 import MedicalRecords from '../@clientportal/MedicalRecords';
 import Prescriptions from '../@clientportal/Prescriptions';
 import AdminDashboard from '../@modules/admin/AdminDashboard';
@@ -100,6 +102,8 @@ const AppRoutes = () => {
             path='/portal/profile/appointments'
             element={<ClientAppointments />}
           />
+          <Route path='/portal/profile/insurance' element={<Insurance />} />
+          <Route path='/portal/buy/wallet' element={<Marketplace />} />
         </Route>
       </Routes>
     </>

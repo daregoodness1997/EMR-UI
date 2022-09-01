@@ -1,7 +1,5 @@
 import { Box, TextField, Typography } from '@mui/material';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import ViewOne from '../@views/ViewOne';
 import { Button } from '../components';
 import FilterMenu from '../components/Menus/FilterMenu';
 import BasicTable from '../components/Table/BasicTable';
@@ -10,18 +8,12 @@ import { clientAppointmentList } from '../utils/data';
 import { clientAppointmentSchema } from '../utils/schema';
 
 const ClientAppointments = () => {
-  let navigate = useNavigate();
-
-  const handleCreateAppointment = () => {
-    navigate('/app/clients/appointments/create-appointment');
-  };
-  const handleRowClicked = (row: any, event: any) => {
-    navigate(`/app/clients/appointments/${row.id}`);
-  };
   return (
     <>
       <DashboardPageWrapper>
-        <Typography variant='h2'>Appointment</Typography>
+        <Typography variant='h1' sx={{ fontWeight: 'bold' }}>
+          Appointments
+        </Typography>{' '}
         <Box
           sx={{
             display: 'flex',
@@ -60,7 +52,6 @@ const ClientAppointments = () => {
             Create Appointment
           </Button>
         </Box>
-
         <Box sx={{ height: `calc(100vh - 90px)`, overflowY: 'scroll' }}>
           <BasicTable
             columns={clientAppointmentSchema}
