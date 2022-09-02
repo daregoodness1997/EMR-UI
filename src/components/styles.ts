@@ -64,6 +64,7 @@ export const Button = styled(BaseButton)`
   width: ${props => (props.fullwidth ? '100%' : 'auto')};
   color: ${props => (props.color ? props.color : '#FFF')};
   background: ${props => (props.background ? props.background : '#0364FF')};
+  border: ${props => (props.border ? props.border : 'none')};
   display: flex;
   justify-content: center;
   align-items: center;

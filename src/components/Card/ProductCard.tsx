@@ -4,21 +4,57 @@ import { Button } from '../styles';
 
 const ProductCard = () => {
   return (
-    <Box sx={{ p: 2 }}>
-      <img src='' alt='' />
-      <Typography variant='h2' sx={{ textTransform: 'uppercase' }}>
-        DABUR BRONCORID SYRUP
+    <Box
+      sx={{
+        p: 2,
+        width: { lg: '300px', xs: '100%' },
+        borderRadius: 4,
+        '&:hover': {
+          backgroundColor: '#fcfcfc',
+        },
+      }}
+    >
+      <img
+        src=''
+        alt=''
+        style={{
+          width: '100%',
+          height: '200px',
+          backgroundColor: 'black',
+          borderRadius: '4px',
+        }}
+      />
+      <Typography sx={{ textTransform: 'uppercase', fontSize: '18px' }}>
+        Dabur
       </Typography>
-      <Stack>
-        <Typography variant='h3' sx={{ fontWeight: 'bold' }}>
+      <Stack
+        direction='row'
+        alignItems='center'
+        justifyContent='space-between'
+        sx={{ mt: 4, mb: 2 }}
+      >
+        <Typography variant='h3' sx={{ fontWeight: 'bold', fontSize: '24px' }}>
           ₦49.50
         </Typography>
-        <Box className='bi bi-star' />
-        <Typography>(4.5)</Typography>
+        <Stack direction='row' alignItems='center'>
+          <Box className='bi bi-star' />
+          <Typography>(4.5)</Typography>
+        </Stack>
       </Stack>
-      <Typography>Eligible for Shipping to anywhere within Nigeria</Typography>
-      <Stack direction='row' alignItems='center'>
-        <Button>Add to Cart</Button>
+      <Typography>
+        1258 bids, 359 watchers $5.95 for shipping, Eligible for Shipping to
+        anywhere within Nigeria
+      </Typography>
+      <Stack
+        direction='row'
+        alignItems='center'
+        justifyContent='space-between'
+        sx={{ mt: 2 }}
+        spacing={2}
+      >
+        <Button background='#ECF3FF' color='blue' border='2px solid blue'>
+          Add to Cart
+        </Button>
         <Box className='bi bi-heart' />
       </Stack>
     </Box>

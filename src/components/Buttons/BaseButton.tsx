@@ -7,6 +7,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullwidth?: string;
   showicon?: boolean;
   icon?: string;
+  border?: string;
   sx?: {};
 }
 

@@ -2,7 +2,7 @@ import { Box, Grid, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
 import ProductCard from '../components/Card/ProductCard';
 import Select from '../components/Inputs/Select';
-import { DashboardPageWrapper } from '../core-ui/styles';
+import { DashboardContainer, DashboardPageWrapper } from '../core-ui/styles';
 
 const Marketplace = () => {
   return (
@@ -39,7 +39,8 @@ const Marketplace = () => {
       <Stack
         direction='row'
         justifyContent='space-between'
-        sx={{ width: '60%' }}
+        alignItems='center'
+        sx={{ width: { lg: '60%', xs: '100%' } }}
         spacing={2}
       >
         <Select
@@ -64,9 +65,18 @@ const Marketplace = () => {
         />
       </Stack>
 
-      <Grid>
-        <ProductCard />
-      </Grid>
+      <DashboardContainer>
+        <Grid container spacing={{ lg: 2, xs: 0 }} sx={{ pt: 2 }}>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </Grid>
+      </DashboardContainer>
     </DashboardPageWrapper>
   );
 };
