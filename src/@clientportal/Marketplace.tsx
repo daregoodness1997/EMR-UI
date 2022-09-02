@@ -1,5 +1,7 @@
-import { Box, Stack, TextField, Typography } from '@mui/material';
+import { Box, Grid, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
+import ProductCard from '../components/Card/ProductCard';
+import Select from '../components/Inputs/Select';
 import { DashboardPageWrapper } from '../core-ui/styles';
 
 const Marketplace = () => {
@@ -34,7 +36,37 @@ const Marketplace = () => {
         />
       </Box>
 
-      <Stack></Stack>
+      <Stack
+        direction='row'
+        justifyContent='space-between'
+        sx={{ width: '60%' }}
+        spacing={2}
+      >
+        <Select
+          placeholder='Health Conditions'
+          options={['Diabetics', 'Asthma', 'Health Conditions']}
+          defaultValue='Health Conditions'
+        />
+        <Select
+          placeholder='Popularity'
+          options={['Popularity', 'High Popularity', 'Low Popularity']}
+          defaultValue='Popularity'
+        />
+        <Select
+          placeholder='Delivery Options'
+          options={['Delivery Options', 'Home Delivery']}
+          defaultValue='Delivery Options'
+        />
+        <Select
+          placeholder='Cost'
+          options={['Cost', 'High Cost', 'Low Cost']}
+          defaultValue='Cost'
+        />
+      </Stack>
+
+      <Grid>
+        <ProductCard />
+      </Grid>
     </DashboardPageWrapper>
   );
 };
