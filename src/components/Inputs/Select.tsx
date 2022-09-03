@@ -14,6 +14,7 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   defaultValue?: string;
   readonly?: boolean;
   value?: string;
+  placeholder?: string;
 }
 
 const Select: React.FC<SelectProps> = ({
@@ -25,6 +26,7 @@ const Select: React.FC<SelectProps> = ({
   errorText,
   readonly,
   value,
+  placeholder,
 }) => {
   return (
     <FormControl
@@ -40,6 +42,7 @@ const Select: React.FC<SelectProps> = ({
         defaultValue={defaultValue}
         value={value}
         onChange={onChange}
+        placeholder={placeholder}
         sx={{
           background: 'white',
           border: '1px solid #eee',

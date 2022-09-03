@@ -52,7 +52,7 @@ const ViewOne: React.FC<ViewOneProps> = ({
             variant='outlined'
             size='small'
             sx={{
-              width: { lg: '320px', xs: '40%' },
+              width: { lg: '320px', xs: '70%' },
               // height: '40px',
               borderRadius: '4px',
               marginRight: '10px',

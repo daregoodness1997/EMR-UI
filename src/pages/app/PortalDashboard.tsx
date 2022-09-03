@@ -21,7 +21,7 @@ export const menuItems = [
       { name: 'Health Profile', to: '/portal/profile/health' },
       { name: 'Medical Records', to: '/portal/profile/records' },
       { name: 'Prescriptions', to: '/portal/profile/prescriptions' },
-      { name: 'Diagnostics Reports', to: '/portal/profile/diagnistics' },
+      { name: 'Diagnostics Reports', to: '/portal/profile/diagnostic' },
       { name: 'Appointments', to: '/portal/profile/appointments' },
       { name: 'Health Insurance', to: '/portal/profile/insurance' },
       { name: 'Dependants', to: '/portal/profile/dependants' },
@@ -86,6 +86,8 @@ const PortalDashboard: React.FC<DashboardProps> = ({ children }) => {
         <DashboardTopMenu
           isOpen={isOpen}
           handleClick={() => setIsOpen(!isOpen)}
+          isApp={false}
+          hasBag={true}
         />
         <Box className='layout__content-main'>
           {children}
