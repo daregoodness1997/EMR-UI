@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Chip, Stack, Typography } from '@mui/material';
 import React from 'react';
 
 import ViewCard from '../../@sections/ViewCard';
@@ -17,15 +17,28 @@ const ClinicDashboard = () => {
   return (
     <DashboardPageWrapper>
       <Box>
-        <Box>
-          <Typography variant='h2'>
-            Hello <span>Alex John</span>👋
-          </Typography>
-          <Typography variant='body1'>
-            Welcome to your Client Module <span>@Your Company’s</span> Front
-            Desk
-          </Typography>
-        </Box>
+        <Stack
+          direction={{ lg: 'row', sm: 'row', xs: 'column' }}
+          justifyContent='space-between'
+          alignItems='flex-end'
+        >
+          <Box>
+            <Typography variant='h2'>
+              Hello <span>Alex John</span>👋
+            </Typography>
+            <Typography variant='body1'>
+              Welcome to your Clinic Module <span>@Your Company’s</span> Front
+              Desk
+            </Typography>
+          </Box>
+
+          <Stack direction='row' spacing={1}>
+            <Chip label='Run Report' />
+            <Chip label='Save' />
+            <Chip label='Print' />
+            <Chip label='Refresh' />
+          </Stack>
+        </Stack>
 
         <StartCardWapper>
           <ViewCard count={40} title='Total Clients' />

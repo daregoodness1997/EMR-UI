@@ -219,21 +219,26 @@ const MedicalRecords = () => {
               Diagnostic Reports
             </Typography>
             <Stack
-              direction='row'
+              direction={{ lg: 'row', xs: 'column' }}
               alignItems='center'
               justifyContent='space-between'
               sx={{ mt: 2, mb: 2 }}
             >
-              <Stack direction='row' alignItems='center'>
+              <Stack
+                direction={{ lg: 'row', xs: 'column' }}
+                alignItems='center'
+                sx={{ width: '100%', mb: 2 }}
+              >
                 <Box
                   sx={{
                     p: 2,
                     background: '#fff',
-                    width: { lg: '56px', xs: '100%' },
+                    width: { lg: '56px', xs: '56px' },
                     height: '56px',
                     borderRadius: '10px',
                     display: 'grid',
                     placeItems: 'center',
+                    mb: { lg: 0, xs: 3 },
                   }}
                 >
                   <Box className='icon'></Box>
@@ -245,16 +250,21 @@ const MedicalRecords = () => {
                   <Typography variant='body2'>29th January, 2022</Typography>
                 </Box>
               </Stack>
-              <Stack direction='row' alignItems='center'>
+              <Stack
+                direction={{ lg: 'row', xs: 'column' }}
+                alignItems='center'
+                sx={{ width: '100%', mb: 2 }}
+              >
                 <Box
                   sx={{
                     p: 2,
                     background: '#fff',
-                    width: { lg: '56px', xs: '100%' },
+                    width: { lg: '56px', xs: '56px' },
                     height: '56px',
                     borderRadius: '10px',
                     display: 'grid',
                     placeItems: 'center',
+                    mb: { lg: 0, xs: 3 },
                   }}
                 >
                   <Box className='icon'></Box>
@@ -266,16 +276,21 @@ const MedicalRecords = () => {
                   <Typography variant='body2'>29th January, 2022</Typography>
                 </Box>
               </Stack>
-              <Stack direction='row' alignItems='center'>
+              <Stack
+                direction={{ lg: 'row', xs: 'column' }}
+                alignItems='center'
+                sx={{ width: '100%', mb: 2 }}
+              >
                 <Box
                   sx={{
                     p: 2,
                     background: '#fff',
-                    width: { lg: '56px', xs: '100%' },
+                    width: { lg: '56px', xs: '56px' },
                     height: '56px',
                     borderRadius: '10px',
                     display: 'grid',
                     placeItems: 'center',
+                    mb: { lg: 0, xs: 3 },
                   }}
                 >
                   <Box className='icon'></Box>

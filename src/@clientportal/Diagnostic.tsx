@@ -23,7 +23,7 @@ const Diagnostic = () => {
             Diagnostic Report
           </Typography>
 
-          <Button>Download Report</Button>
+          <Button>Upload Report</Button>
         </Stack>
 
         <Box
