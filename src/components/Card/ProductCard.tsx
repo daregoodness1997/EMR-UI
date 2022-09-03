@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker';
 import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { Button } from '../styles';
@@ -15,7 +16,7 @@ const ProductCard = () => {
       }}
     >
       <img
-        src=''
+        src={faker.image.fashion()}
         alt=''
         style={{
           width: '100%',
@@ -33,11 +34,19 @@ const ProductCard = () => {
         justifyContent='space-between'
         sx={{ mt: 4, mb: 2 }}
       >
-        <Typography variant='h3' sx={{ fontWeight: 'bold', fontSize: '24px' }}>
-          ₦49.50
+        <Typography variant='h3' sx={{ fontWeight: 'bold', fontSize: '22px' }}>
+          ₦4900000.50
         </Typography>
         <Stack direction='row' alignItems='center'>
-          <Box className='bi bi-star' />
+          {[...Array(5)].map((_, index) => (
+            <Box
+              className='bi bi-star'
+              sx={{
+                mr: 0.3,
+              }}
+              key={index}
+            />
+          ))}
           <Typography>(4.5)</Typography>
         </Stack>
       </Stack>

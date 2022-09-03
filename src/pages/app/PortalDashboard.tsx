@@ -86,6 +86,8 @@ const PortalDashboard: React.FC<DashboardProps> = ({ children }) => {
         <DashboardTopMenu
           isOpen={isOpen}
           handleClick={() => setIsOpen(!isOpen)}
+          isApp={false}
+          hasBag={true}
         />
         <Box className='layout__content-main'>
           {children}

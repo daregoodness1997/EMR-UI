@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, IconButton, Stack } from '@mui/material';
 import React, { useState } from 'react';
 import Breadcrumbs from './Breadcrumbs';
 import LocationModal from './LocationModal';
@@ -9,6 +9,8 @@ import { Profile, TopMenuWrapper } from './styles';
 interface DashboardTopMenuProps {
   isOpen?: boolean;
   handleClick?: () => void;
+  isApp?: boolean;
+  hasBag?: boolean;
 }
 
 const defaultList = [
@@ -19,6 +21,8 @@ const defaultList = [
 const DashboardTopMenu: React.FC<DashboardTopMenuProps> = ({
   isOpen,
   handleClick,
+  isApp = true,
+  hasBag = false,
 }) => {
   const [locationOptions, setLocationOptions] = useState(defaultList);
 
@@ -52,27 +56,37 @@ const DashboardTopMenu: React.FC<DashboardTopMenuProps> = ({
         </span>
       </Box>
       <Profile>
-        <div className='location-selector'>
-          <LocationSelect
-            defaultLocationId={selectedLocation?._id || ''}
-            locations={locationOptions}
-            onChange={handleSelectLocation}
-          />
-          {
-            <LocationModal
+        {isApp && (
+          <div className='location-selector'>
+            <LocationSelect
+              defaultLocationId={selectedLocation?._id || ''}
               locations={locationOptions}
-              onSelectLocation={handleSelectLocation}
-              open={open}
-              setOpen={setOpen}
+              onChange={handleSelectLocation}
             />
-          }
-        </div>
+            {
+              <LocationModal
+                locations={locationOptions}
+                onSelectLocation={handleSelectLocation}
+                open={open}
+                setOpen={setOpen}
+              />
+            }
+          </div>
+        )}
 
-        <Box className='profile-item'>
-          <i className='bi bi-bell-fill' />
+        <Stack direction='row' alignItems='center' spacing={2}>
+          {hasBag && (
+            <IconButton sx={{ width: '32px', height: '32px', margin: 0 }}>
+              <Box className='bi bi-bag-fill' />
+            </IconButton>
+          )}
+
+          <IconButton sx={{ width: '32px', height: '32px', margin: 0 }}>
+            <Box className='bi bi-bell-fill' />
+          </IconButton>
           {/* <Avatar src="/img_avatar.png" alt="" /> */}
           <ProfileMenu />
-        </Box>
+        </Stack>
       </Profile>
     </TopMenuWrapper>
   );
