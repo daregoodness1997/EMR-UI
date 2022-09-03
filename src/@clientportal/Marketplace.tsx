@@ -1,9 +1,30 @@
 import { Box, Grid, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
 import ProductCard from '../components/Card/ProductCard';
-import Select from '../components/Inputs/Select';
+import ReactSelect from '../components/ReactSelect/ReactSelect';
 import { DashboardContainer, DashboardPageWrapper } from '../core-ui/styles';
 
+const options = [
+  { value: 'Diabetics', label: 'Diabetics' },
+  { value: 'Asthma', label: 'Asthma' },
+  { value: 'Ulcer', label: 'Ulcer' },
+];
+const options2 = [
+  { value: 'Very Popular', label: 'Very Popular' },
+  { value: 'Low Popularity', label: 'Low Popularity' },
+  { value: 'Medium Popularity', label: 'Medium Popularity' },
+];
+const options3 = [
+  { value: 'Delivery Options', label: 'Delivery Options' },
+  { value: 'Cash', label: 'Cash' },
+  { value: 'Pickup', label: 'Pickup' },
+];
+const options4 = [
+  { value: 'Cost', label: 'Cost' },
+  { value: 'High', label: 'High' },
+  { value: 'Medium', label: 'Medium' },
+  { value: 'Low', label: 'Low' },
+];
 const Marketplace = () => {
   return (
     <DashboardPageWrapper>
@@ -26,7 +47,7 @@ const Marketplace = () => {
           variant='outlined'
           size='small'
           sx={{
-            width: { lg: '320px', xs: '40%' },
+            width: { lg: '320px', xs: '100%' },
             // height: '40px',
             borderRadius: '4px',
             marginRight: '10px',
@@ -40,29 +61,13 @@ const Marketplace = () => {
         direction='row'
         justifyContent='space-between'
         alignItems='center'
-        sx={{ width: { lg: '60%', xs: '100%' } }}
-        spacing={2}
+        sx={{ width: { lg: '36%', xs: '100%' } }}
+        spacing={1}
       >
-        <Select
-          placeholder='Health Conditions'
-          options={['Diabetics', 'Asthma', 'Health Conditions']}
-          defaultValue='Health Conditions'
-        />
-        <Select
-          placeholder='Popularity'
-          options={['Popularity', 'High Popularity', 'Low Popularity']}
-          defaultValue='Popularity'
-        />
-        <Select
-          placeholder='Delivery Options'
-          options={['Delivery Options', 'Home Delivery']}
-          defaultValue='Delivery Options'
-        />
-        <Select
-          placeholder='Cost'
-          options={['Cost', 'High Cost', 'Low Cost']}
-          defaultValue='Cost'
-        />
+        <ReactSelect options={options} />
+        <ReactSelect options={options2} />
+        <ReactSelect options={options3} />
+        <ReactSelect options={options4} />
       </Stack>
 
       <DashboardContainer>
