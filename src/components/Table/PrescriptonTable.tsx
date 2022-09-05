@@ -1,7 +1,9 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
+import { CustomLoader } from '.';
 import { prescriptionList } from '../../utils/data';
 import { prescriptionSchema } from '../../utils/schema';
+import EmptyData from '../Empty/EmptyData';
 const customStyles = {
   rows: {
     style: {
@@ -45,6 +47,8 @@ const PrescriptionTable = () => {
       data={prescriptionList}
       customStyles={customStyles}
       fixedHeader={true}
+      progressComponent={<CustomLoader />}
+      noDataComponent={<EmptyData />}
     />
   );
 };

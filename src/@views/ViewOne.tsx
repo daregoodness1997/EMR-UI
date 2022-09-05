@@ -1,7 +1,10 @@
 import { Box, TextField, Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../components';
+import RadioButton from '../components/Inputs/RadioButton';
+import Switch from '../components/Inputs/Switch';
 import FilterMenu from '../components/Menus/FilterMenu';
+import ScheduleCalendar from '../components/Schedule';
 import Table from '../components/Table';
 import { DashboardPageWrapper } from '../core-ui/styles';
 
@@ -28,6 +31,18 @@ const ViewOne: React.FC<ViewOneProps> = ({
   hasCreate = true,
   hasGridView = false,
 }) => {
+  const [list, setList] = useState(true);
+  const [grid, setGrid] = useState(false);
+  const items = [
+    {
+      label: 'List',
+      selected: true,
+    },
+    {
+      label: 'Grid',
+      selected: false,
+    },
+  ];
   return (
     <DashboardPageWrapper>
       <Typography variant='h2'>{title}</Typography>
@@ -60,9 +75,26 @@ const ViewOne: React.FC<ViewOneProps> = ({
             }}
           />
           <FilterMenu />
-          {/* {hasGridView && (
-            <Groups buttons={buttons} onClick={() => console.log('clicked')} />
-          )} */}
+          {hasGridView && (
+            <Switch>
+              <RadioButton
+                label='list'
+                value={list}
+                onChange={() => {
+                  setList(true);
+                  setGrid(false);
+                }}
+              />
+              <RadioButton
+                label={'Grid'}
+                value={grid}
+                onChange={() => {
+                  setGrid(true);
+                  setList(false);
+                }}
+              />
+            </Switch>
+          )}
         </Box>
         {hasCreate && (
           <Button
@@ -75,7 +107,11 @@ const ViewOne: React.FC<ViewOneProps> = ({
       </Box>
 
       <Box sx={{ height: `calc(100vh - 90px)`, overflowY: 'scroll' }}>
-        <Table columns={columns} data={data} onRowClicked={onRowClicked} />
+        {list && (
+          <Table columns={columns} data={data} onRowClicked={onRowClicked} />
+        )}
+
+        {grid && <ScheduleCalendar />}
       </Box>
     </DashboardPageWrapper>
   );

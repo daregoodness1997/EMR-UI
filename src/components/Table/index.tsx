@@ -1,5 +1,6 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
+import EmptyData from '../Empty/EmptyData';
 import { customStyles } from './styles';
 
 interface TableProps {
@@ -15,6 +16,12 @@ interface TableProps {
   progressPending?: any;
   onSelectedRowsChange?: any;
 }
+
+export const CustomLoader = () => (
+  <div style={{ padding: '24px' }}>
+    <img src='/loading.gif' alt='progress ' width={400} />
+  </div>
+);
 
 const Table: React.FC<TableProps> = ({
   title,
@@ -45,6 +52,8 @@ const Table: React.FC<TableProps> = ({
       fixedHeaderScrollHeight='100%'
       responsive
       dense={dense}
+      progressComponent={<CustomLoader />}
+      noDataComponent={<EmptyData />}
     />
   );
 };
