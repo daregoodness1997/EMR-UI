@@ -6,31 +6,50 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
+import Button from '../Buttons/Button';
+import Input from '../Inputs/Input';
 
-const ProfileCard = () => {
+interface ProfileCardProps {
+  isDependant?: boolean;
+}
+
+const ProfileCard: React.FC<ProfileCardProps> = ({ isDependant = false }) => {
+  const [isEditing, setIsEditing] = useState(false);
+
+  const handleDependant = (isDependant: boolean) => {
+    if (isDependant) return { backgound: 'green', label: 'Dependant' };
+    return { backgound: 'orange', label: 'Primary' };
+  };
   return (
     <Box
       sx={{
-        p: 3,
+        p: 2,
         background: 'white',
         borderRadius: '8px',
         width: { lg: '240px', xs: '100%' },
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        height: '340px',
+        overflowY: 'auto',
         position: 'relative',
       }}
     >
-      <Avatar
-        src=''
-        alt='Profile Card'
-        sx={{ width: '80px', height: '80px' }}
-      />
       <Box
         sx={{
-          background: 'orange',
+          width: '100%',
+          display: 'grid',
+          placeItems: 'center',
+        }}
+      >
+        <Avatar
+          src=''
+          alt='Profile Card'
+          sx={{ width: '80px', height: '80px' }}
+        />
+      </Box>
+
+      <Box
+        sx={{
+          background: handleDependant(isDependant).backgound,
           px: 2,
           py: 0.8,
           borderRadius: '20px',
@@ -38,10 +57,12 @@ const ProfileCard = () => {
           position: 'absolute',
           top: 10,
           left: 10,
+          color: 'white',
         }}
       >
-        Primary
+        {handleDependant(isDependant).label}
       </Box>
+
       <IconButton
         sx={{
           fontSize: '12px',
@@ -50,26 +71,46 @@ const ProfileCard = () => {
           right: 10,
           fontWeight: 'bold',
         }}
+        onClick={() => setIsEditing(!isEditing)}
       >
-        <i className='bi bi-pen'></i>
+        {isEditing ? 'Save' : <i className='bi bi-pen'></i>}
       </IconButton>
 
-      <Box>
-        <Typography sx={{ fontWeight: 'bold', fontSize: '24px', my: 1 }}>
+      <Box sx={{ width: '100%' }}>
+        <Typography
+          sx={{
+            fontWeight: 'bold',
+            fontSize: '16px',
+            my: 1,
+            textAlign: 'center',
+          }}
+        >
           Mr Jon Doe
         </Typography>
-        <Stack direction='row' alignItems='center' spacing={2} sx={{ my: 1 }}>
+        <Stack
+          direction={`${isEditing ? 'column' : 'row'}`}
+          spacing={2}
+          sx={{ my: 1 }}
+        >
           <Box>
             <Typography sx={{ fontSize: '10px', fontWeight: 'bold', mb: 0.6 }}>
               D.O.B
             </Typography>
-            <Chip label=' 22/05/72' />
+            {isEditing ? (
+              <Input value='22/05/72' type='datetime-local' />
+            ) : (
+              <Chip label='22/05/72' />
+            )}
           </Box>
           <Box>
             <Typography sx={{ fontSize: '10px', fontWeight: 'bold', mb: 0.6 }}>
               ID
             </Typography>
-            <Chip label=' 35DFE9902' />
+            {isEditing ? (
+              <Input value='35DFE9902' />
+            ) : (
+              <Chip label='35DFE9902' />
+            )}
           </Box>
         </Stack>
 
@@ -77,14 +118,27 @@ const ProfileCard = () => {
           <Typography sx={{ fontSize: '10px', fontWeight: 'bold', mb: 0.6 }}>
             CIN
           </Typography>
-          <Chip label='53637DGGD' />
+          {isEditing ? <Input value='35DFE9902' /> : <Chip label='35DFE9902' />}
         </Box>
         <Box>
           <Typography sx={{ fontSize: '10px', fontWeight: 'bold', mb: 0.6 }}>
             Tel
           </Typography>
-          <Chip label='+23481930003' />
+          {isEditing ? (
+            <Input value='+23481930003' type='tel' />
+          ) : (
+            <Chip label='+23481930003' />
+          )}
         </Box>
+
+        {isEditing && (
+          <Stack direction='row' justifyContent='space-between'>
+            <Button background='#fcfcfc' color='#000'>
+              Discard
+            </Button>
+            <Button>Save</Button>
+          </Stack>
+        )}
       </Box>
     </Box>
   );
