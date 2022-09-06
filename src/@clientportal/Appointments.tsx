@@ -40,7 +40,7 @@ const ClientAppointments = () => {
               variant='outlined'
               size='small'
               sx={{
-                width: { lg: '320px', xs: '40%' },
+                width: { lg: '320px', xs: '36%' },
                 // height: '40px',
                 borderRadius: '4px',
                 marginRight: '10px',
@@ -66,7 +66,10 @@ const ClientAppointments = () => {
             </Switch>
           </Box>
 
-          <Button sx={{ width: { xs: '100%', lg: 'auto' } }}>
+          <Button
+            background='#03045E'
+            sx={{ width: { xs: '100%', lg: 'auto' } }}
+          >
             Create Appointment
           </Button>
         </Box>

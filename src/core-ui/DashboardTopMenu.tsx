@@ -1,5 +1,6 @@
 import { Box, IconButton, Stack } from '@mui/material';
 import React, { useState } from 'react';
+import ReactSelect from '../components/ReactSelect/ReactSelect';
 import Breadcrumbs from './Breadcrumbs';
 import LocationModal from './LocationModal';
 import LocationSelect from './LocationSelect';
@@ -14,8 +15,8 @@ interface DashboardTopMenuProps {
 }
 
 const defaultList = [
-  { code: 'NG', label: 'Agege', location: 'Agege' },
-  { code: 'NG', label: 'Ikeja', location: 'Agege' },
+  { code: 'NG', label: 'Agege', location: 'Agege', value: 'NG/AG' },
+  { code: 'NG', label: 'Ikeja', location: 'Agege', value: 'NG/IK' },
 ];
 
 const DashboardTopMenu: React.FC<DashboardTopMenuProps> = ({
@@ -35,60 +36,64 @@ const DashboardTopMenu: React.FC<DashboardTopMenuProps> = ({
   };
 
   return (
-    <TopMenuWrapper>
-      <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'nowrap' }}>
-        <span
-          onClick={handleClick}
-          style={{
-            fontSize: '1.2rem',
-            marginRight: '1rem',
-            fontWeight: 'bold',
-          }}
-        >
-          {!isOpen ? (
-            <i className='bi bi-list'></i>
-          ) : (
-            <i className='bi bi-list' />
-          )}
-        </span>
-        <span className='breadcrumb'>
-          <Breadcrumbs />
-        </span>
-      </Box>
-      <Profile>
-        {isApp && (
-          <div className='location-selector'>
-            <LocationSelect
-              defaultLocationId={selectedLocation?._id || ''}
-              locations={locationOptions}
-              onChange={handleSelectLocation}
-            />
-            {
-              <LocationModal
+    <>
+      {isApp && (
+        <LocationModal
+          locations={locationOptions}
+          onSelectLocation={handleSelectLocation}
+          open={open}
+          setOpen={setOpen}
+        />
+      )}
+
+      <TopMenuWrapper>
+        <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'nowrap' }}>
+          <span
+            onClick={handleClick}
+            style={{
+              fontSize: '1.2rem',
+              marginRight: '1rem',
+              fontWeight: 'bold',
+            }}
+          >
+            {!isOpen ? (
+              <i className='bi bi-list'></i>
+            ) : (
+              <i className='bi bi-list' />
+            )}
+          </span>
+          <span className='breadcrumb'>
+            <Breadcrumbs />
+          </span>
+        </Box>
+        <Profile>
+          {isApp && (
+            <div className='location-selector'>
+              {/* <LocationSelect
+                defaultLocationId={selectedLocation?._id || ''}
                 locations={locationOptions}
-                onSelectLocation={handleSelectLocation}
-                open={open}
-                setOpen={setOpen}
-              />
-            }
-          </div>
-        )}
-
-        <Stack direction='row' alignItems='center' spacing={2}>
-          {hasBag && (
-            <IconButton sx={{ width: '32px', height: '32px', margin: 0 }}>
-              <Box className='bi bi-bag-fill' />
-            </IconButton>
+                onChange={handleSelectLocation}
+              /> */}
+              <ReactSelect options={defaultList} />
+            </div>
           )}
 
-          <IconButton sx={{ width: '32px', height: '32px', margin: 0 }}>
-            <Box className='bi bi-bell-fill' />
-          </IconButton>
-          {/* <Avatar src="/img_avatar.png" alt="" /> */}
-          <ProfileMenu />
-        </Stack>
-      </Profile>
-    </TopMenuWrapper>
+          <Stack direction='row' alignItems='center' spacing={2}>
+            {hasBag && (
+              <IconButton sx={{ width: '32px', height: '32px', margin: 0 }}>
+                <Box className='bi bi-bag-fill' />
+              </IconButton>
+            )}
+
+            <IconButton sx={{ width: '32px', height: '32px', margin: 0 }}>
+              <Box className='bi bi-bell-fill' />
+            </IconButton>
+            {/* <Avatar src="/img_avatar.png" alt="" /> */}
+            <ProfileMenu />
+          </Stack>
+        </Profile>
+      </TopMenuWrapper>
+    </>
   );
 };
 

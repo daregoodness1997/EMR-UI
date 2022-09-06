@@ -15,7 +15,7 @@ const Prescriptions = () => {
           variant='outlined'
           size='small'
           sx={{
-            width: { lg: '320px', xs: '40%' },
+            width: { lg: '320px', xs: '100%' },
             // height: '40px',
             borderRadius: '4px',
             marginRight: '10px',
@@ -52,7 +52,7 @@ const Prescriptions = () => {
                 Prescriptions
               </Typography>
 
-              <Button>Add Prescriptions</Button>
+              <Button background='#03045E'>Add Prescriptions</Button>
             </Stack>
             <PrescriptionTable />
           </Box>

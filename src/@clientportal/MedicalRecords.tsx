@@ -332,7 +332,7 @@ const MedicalRecords = () => {
                 Prescriptions
               </Typography>
 
-              <Button>Add Prescriptions</Button>
+              <Button background='#03045E'>Add Prescriptions</Button>
             </Stack>
             <PrescriptionTable />
           </Box>
