@@ -1242,7 +1242,7 @@
   "resolved" "https://registry.npmjs.org/@devexpress/dx-core/-/dx-core-3.0.4.tgz"
   "version" "3.0.4"
 
-"@devexpress/dx-react-core@^3.0.4", "@devexpress/dx-react-core@3.0.4":
+"@devexpress/dx-react-core@^3.0.1", "@devexpress/dx-react-core@3.0.4":
   "integrity" "sha512-uHKkt123ee3W1uBFLHK6z3h2f0qCfEyrr/9/Y39uh6RAtey9melI38bpXChG763CJBZwr6c9AFs9HWnJ4veMFg=="
   "resolved" "https://registry.npmjs.org/@devexpress/dx-react-core/-/dx-react-core-3.0.4.tgz"
   "version" "3.0.4"
@@ -1250,7 +1250,7 @@
     "@devexpress/dx-core" "3.0.4"
     "prop-types" "^15.7.2"
 
-"@devexpress/dx-react-scheduler-material-ui@^3.0.4":
+"@devexpress/dx-react-scheduler-material-ui@^3.0.1":
   "integrity" "sha512-XTmrPVXNFngupX9qyOwIcOySs093AtbYkKmkT361RKbX1wFeik8ZXYgPJoUoU87P7431uZdqSAtO+8dKAETJGg=="
   "resolved" "https://registry.npmjs.org/@devexpress/dx-react-scheduler-material-ui/-/dx-react-scheduler-material-ui-3.0.4.tgz"
   "version" "3.0.4"
@@ -1259,7 +1259,7 @@
     "clsx" "^1.0.4"
     "prop-types" "^15.7.2"
 
-"@devexpress/dx-react-scheduler@^3.0.4", "@devexpress/dx-react-scheduler@3.0.4":
+"@devexpress/dx-react-scheduler@^3.0.1", "@devexpress/dx-react-scheduler@3.0.4":
   "integrity" "sha512-mvzW/Q05mGw/py540lMNp2PsXlbvZIteU6XG2SKj501kfuXBSfBx7rk6A0UURhoj+ZMzaKxevis2ucuKHOiCqQ=="
   "resolved" "https://registry.npmjs.org/@devexpress/dx-react-scheduler/-/dx-react-scheduler-3.0.4.tgz"
   "version" "3.0.4"
