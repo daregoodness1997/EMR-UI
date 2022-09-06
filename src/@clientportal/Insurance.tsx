@@ -58,11 +58,39 @@ const Insurance = () => {
               <Chip label=' 22/05/22' sx={{ background: '#fff' }} />
             </Typography>
           </Box>
-          <Stack direction='row' spacing={2}>
-            <ProfileCard />
-            <ProfileCard />
-            <ProfileCard />
-            <ProfileCard />
+
+          <Stack
+            direction={{ lg: 'row', xs: 'column' }}
+            justifyContent='space-between'
+            sx={{ mt: 3 }}
+          >
+            <Box
+              sx={{
+                width: { lg: '68%', xs: '100%' },
+                display: 'grid',
+                gridTemplateColumns: { lg: 'repeat(4, 1fr)', xs: '1fr' },
+                gridGap: { lg: 10, xs: 18 },
+              }}
+            >
+              {/* <ProfileCard /> */}
+              <ProfileCard />
+              <ProfileCard />
+              <ProfileCard />
+              <ProfileCard />
+              <ProfileCard />
+              <ProfileCard />
+            </Box>
+            <Box
+              sx={{
+                width: { lg: '31%', xs: '100%' },
+                background: 'white',
+                borderRadius: '8px',
+                p: 2,
+                mt: { lg: 0, xs: 4 },
+              }}
+            >
+              <Typography variant='h4'>Other Information</Typography>
+            </Box>
           </Stack>
         </TabPanel>
       </Box>

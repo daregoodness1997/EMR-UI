@@ -1,4 +1,11 @@
-import { Avatar, Box, Chip, Stack, Typography } from '@mui/material';
+import {
+  Avatar,
+  Box,
+  Chip,
+  IconButton,
+  Stack,
+  Typography,
+} from '@mui/material';
 import React from 'react';
 
 const ProfileCard = () => {
@@ -30,11 +37,22 @@ const ProfileCard = () => {
           fontSize: '12px',
           position: 'absolute',
           top: 10,
-          right: 10,
+          left: 10,
         }}
       >
         Primary
       </Box>
+      <IconButton
+        sx={{
+          fontSize: '12px',
+          position: 'absolute',
+          top: 10,
+          right: 10,
+          fontWeight: 'bold',
+        }}
+      >
+        <i className='bi bi-pen'></i>
+      </IconButton>
 
       <Box>
         <Typography sx={{ fontWeight: 'bold', fontSize: '24px', my: 1 }}>
