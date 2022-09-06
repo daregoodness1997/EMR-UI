@@ -1,7 +1,9 @@
-import { Box, Chip, IconButton, Stack, Typography } from '@mui/material';
+import { Box, Chip, Stack, Typography } from '@mui/material';
 import React, { useState } from 'react';
+import { Button } from '../components';
 import InsuranceCard from '../components/Card/InsuranceCard';
 import ProfileCard from '../components/Card/ProfileCard';
+import EmptyData from '../components/Empty/EmptyData';
 import BasicTable from '../components/Table/BasicTable';
 import TabPanel from '../components/Tabs/TabPanel';
 import { StyledTab, StyledTabs } from '../components/Tabs/Tabs';
@@ -18,6 +20,7 @@ export const a11yProps = (index: number) => {
 
 const Insurance = () => {
   const [value, setValue] = useState(0);
+  const [empty, setEmpty] = useState(false);
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
@@ -69,29 +72,69 @@ const Insurance = () => {
               justifyContent='space-between'
               sx={{ mt: 3, overflowY: 'auto' }}
             >
-              <Box
-                sx={{
-                  width: { lg: '68%', xs: '100%' },
-                  display: 'grid',
-                  gridTemplateColumns: { lg: 'repeat(4, 1fr)', xs: '1fr' },
-                  gridGap: { lg: 10, xs: 18 },
-                  pb: { lg: 24, xs: 0 },
-                }}
-              >
-                {/* <ProfileCard /> */}
-                <ProfileCard />
-                <ProfileCard isDependant={true} />
-                <ProfileCard isDependant={true} />
-                <ProfileCard isDependant={true} />
-                <ProfileCard isDependant={true} />
-                <ProfileCard isDependant={true} />
+              {empty ? (
+                <EmptyData
+                  sx={{ width: { lg: '68%', xs: '100%' }, textAlign: 'center' }}
+                >
+                  <Box
+                    sx={{
+                      width: '100%',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      p: 2,
+                    }}
+                  >
+                    <Button
+                      sx={{
+                        width: '52px',
+                        height: '52px',
+                        margin: 0,
+                        background: '#fcfcfc',
+                      }}
+                    >
+                      + Add Person
+                    </Button>
+                  </Box>
+                </EmptyData>
+              ) : (
+                <Box
+                  sx={{
+                    width: { lg: '68%', xs: '100%' },
+                    display: 'grid',
+                    gridTemplateColumns: { lg: 'repeat(4, 1fr)', xs: '1fr' },
+                    gridGap: { lg: 10, xs: 18 },
+                    pb: { lg: 24, xs: 0 },
+                  }}
+                >
+                  {/* <ProfileCard /> */}
+                  <ProfileCard />
+                  <ProfileCard isDependant={true} />
+                  <ProfileCard isDependant={true} />
+                  <ProfileCard isDependant={true} />
+                  <ProfileCard isDependant={true} />
+                  <ProfileCard isDependant={true} />
 
-                <Box sx={{ p: 10, width: { lg: 'auto', xs: '100%' } }}>
-                  <IconButton sx={{ width: '52px', height: '52px', margin: 0 }}>
-                    +
-                  </IconButton>
+                  <Box
+                    sx={{
+                      p: { lg: 10, xs: 4 },
+                      width: { lg: '240px', xs: '100%' },
+                      height: '100%',
+                    }}
+                  >
+                    <Button
+                      sx={{
+                        width: '52px',
+                        height: '52px',
+                        margin: 0,
+                        background: '#fcfcfc',
+                      }}
+                    >
+                      + Add Person
+                    </Button>
+                  </Box>
                 </Box>
-              </Box>
+              )}
+
               <Box
                 sx={{
                   width: { lg: '31%', xs: '100%' },
@@ -110,13 +153,19 @@ const Insurance = () => {
           </Box>
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <BasicTable columns={paymentSchema} data={paymentList} />
+          <Box sx={{ py: 2 }}>
+            <BasicTable columns={paymentSchema} data={paymentList} />
+          </Box>
         </TabPanel>
         <TabPanel value={value} index={2}>
-          <BasicTable columns={claimSchema} data={paymentList} />
+          <Box sx={{ py: 2 }}>
+            <BasicTable columns={claimSchema} data={paymentList} />
+          </Box>
         </TabPanel>
         <TabPanel value={value} index={3}>
-          <BasicTable columns={referralSchema} data={paymentList} />
+          <Box sx={{ py: 2 }}>
+            <BasicTable columns={referralSchema} data={paymentList} />
+          </Box>
         </TabPanel>
       </Box>
     </DashboardPageWrapper>

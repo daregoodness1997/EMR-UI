@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import ClientAppointments from '../@clientportal/Appointments';
 import ClientHome from '../@clientportal/ClientHome';
+import Dependants from '../@clientportal/Dependants';
 import Diagnostic from '../@clientportal/Diagnostic';
 import HealthProfile from '../@clientportal/HealthProfile';
 import Insurance from '../@clientportal/Insurance';
@@ -103,6 +104,7 @@ const AppRoutes = () => {
             element={<ClientAppointments />}
           />
           <Route path='/portal/profile/insurance' element={<Insurance />} />
+          <Route path='/portal/profile/dependants' element={<Dependants />} />
           <Route path='/portal/buy/wallet' element={<Marketplace />} />
         </Route>
       </Routes>

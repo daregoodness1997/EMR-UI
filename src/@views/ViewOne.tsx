@@ -31,18 +31,8 @@ const ViewOne: React.FC<ViewOneProps> = ({
   hasCreate = true,
   hasGridView = false,
 }) => {
-  const [list, setList] = useState(true);
-  const [grid, setGrid] = useState(false);
-  const items = [
-    {
-      label: 'List',
-      selected: true,
-    },
-    {
-      label: 'Grid',
-      selected: false,
-    },
-  ];
+  const [value, setValue] = useState({ list: true, grid: false });
+
   return (
     <DashboardPageWrapper>
       <Typography variant='h2'>{title}</Typography>
@@ -79,18 +69,16 @@ const ViewOne: React.FC<ViewOneProps> = ({
             <Switch>
               <RadioButton
                 label='list'
-                value={list}
+                value={value.list}
                 onChange={() => {
-                  setList(true);
-                  setGrid(false);
+                  setValue({ list: true, grid: false });
                 }}
               />
               <RadioButton
                 label={'Grid'}
-                value={grid}
+                value={value.grid}
                 onChange={() => {
-                  setGrid(true);
-                  setList(false);
+                  setValue({ list: false, grid: true });
                 }}
               />
             </Switch>
@@ -107,11 +95,11 @@ const ViewOne: React.FC<ViewOneProps> = ({
       </Box>
 
       <Box sx={{ height: `calc(100vh - 90px)`, overflowY: 'scroll' }}>
-        {list && (
+        {value.list ? (
           <Table columns={columns} data={data} onRowClicked={onRowClicked} />
+        ) : (
+          <ScheduleCalendar />
         )}
-
-        {grid && <ScheduleCalendar />}
       </Box>
     </DashboardPageWrapper>
   );

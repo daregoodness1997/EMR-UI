@@ -3,16 +3,16 @@ import React from 'react';
 
 interface RadioButtonProps {
   label: string;
-  value: any;
+  value?: any;
   onChange: (e?: any) => void;
-//   defaultValue: any;
+  //   defaultValue: any;
 }
 
 const RadioButton: React.FC<RadioButtonProps> = ({
   label,
   value,
   onChange,
-//   defaultValue,
+  //   defaultValue,
 }) => {
   const isChecked = (checked: boolean) => {
     if (checked)

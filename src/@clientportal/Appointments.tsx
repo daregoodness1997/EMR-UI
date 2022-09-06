@@ -1,13 +1,18 @@
 import { Box, TextField, Typography } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../components';
+import RadioButton from '../components/Inputs/RadioButton';
+import Switch from '../components/Inputs/Switch';
 import FilterMenu from '../components/Menus/FilterMenu';
+import ScheduleCalendar from '../components/Schedule';
 import BasicTable from '../components/Table/BasicTable';
 import { DashboardPageWrapper } from '../core-ui/styles';
 import { clientAppointmentList } from '../utils/data';
 import { clientAppointmentSchema } from '../utils/schema';
 
 const ClientAppointments = () => {
+  const [value, setValue] = useState({ list: true, grid: false });
+
   return (
     <>
       <DashboardPageWrapper>
@@ -43,9 +48,22 @@ const ClientAppointments = () => {
               }}
             />
             <FilterMenu />
-            {/* {hasGridView && (
-            <Groups buttons={buttons} onClick={() => console.log('clicked')} />
-          )} */}
+            <Switch>
+              <RadioButton
+                label='list'
+                value={value.list}
+                onChange={() => {
+                  setValue({ list: true, grid: false });
+                }}
+              />
+              <RadioButton
+                label={'Grid'}
+                value={value.grid}
+                onChange={() => {
+                  setValue({ list: false, grid: true });
+                }}
+              />
+            </Switch>
           </Box>
 
           <Button sx={{ width: { xs: '100%', lg: 'auto' } }}>
@@ -53,10 +71,14 @@ const ClientAppointments = () => {
           </Button>
         </Box>
         <Box sx={{ height: `calc(100vh - 90px)`, overflowY: 'scroll' }}>
-          <BasicTable
-            columns={clientAppointmentSchema}
-            data={clientAppointmentList}
-          />
+          {value.list ? (
+            <BasicTable
+              columns={clientAppointmentSchema}
+              data={clientAppointmentList}
+            />
+          ) : (
+            <ScheduleCalendar />
+          )}
         </Box>
       </DashboardPageWrapper>
     </>
