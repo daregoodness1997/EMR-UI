@@ -21,7 +21,7 @@ const Diagnostic = () => {
             variant='h1'
             sx={{ fontWeight: 'bold', color: '#03045E' }}
           >
-            Diagnostic Report
+            Diagnostic Reports
           </Typography>
 
           <Button background='#03045E'>Upload Report</Button>

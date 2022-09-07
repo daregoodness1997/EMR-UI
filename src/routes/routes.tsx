@@ -1,5 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import ClientAppointments from '../@clientportal/Appointments';
+import Articles from '../@clientportal/Articles';
+import Bills from '../@clientportal/Bills';
+import BuyInsurance from '../@clientportal/BuyInsurance';
 import ClientHome from '../@clientportal/ClientHome';
 import Dependants from '../@clientportal/Dependants';
 import Diagnostic from '../@clientportal/Diagnostic';
@@ -92,7 +95,7 @@ const AppRoutes = () => {
 
         <Route path='/portal' element={<PatientOutlet />}>
           <Route index element={<ClientHome />} />
-          <Route path='/portal/profile/health' element={<HealthProfile />} />
+          <Route path='/portal/profile' element={<HealthProfile />} />
           <Route path='/portal/profile/records' element={<MedicalRecords />} />
           <Route
             path='/portal/profile/prescriptions'
@@ -105,7 +108,13 @@ const AppRoutes = () => {
           />
           <Route path='/portal/profile/insurance' element={<Insurance />} />
           <Route path='/portal/profile/dependants' element={<Dependants />} />
-          <Route path='/portal/buy/wallet' element={<Marketplace />} />
+          <Route path='/portal/marketplace' element={<Marketplace />} />
+          <Route path='/portal/marketplace/bills' element={<Bills />} />
+          <Route
+            path='/portal/marketplace/insurances'
+            element={<BuyInsurance />}
+          />
+          <Route path='/portal/read' element={<Articles />} />
         </Route>
       </Routes>
     </>
