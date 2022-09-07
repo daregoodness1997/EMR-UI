@@ -25,7 +25,12 @@ const BuyInsurance = () => {
         placeholder='Search for medications, doctors, etc...'
       />
       <Box sx={{ height: '100vh', overflowY: 'auto' }}>
-        <Grid container spacing={{ lg: 2, xs: 0 }} sx={{ pt: 2 }}>
+        <Grid
+          container
+          justifyContent='space-between'
+          spacing={{ lg: 2, xs: 0 }}
+          sx={{ pt: 2 }}
+        >
           {[...Array(20)].map((_, index) => (
             <ProductCard key={index} />
           ))}
