@@ -137,7 +137,14 @@ const ClientHome = () => {
                   </Box>
                 </Grid>
               </Grid>
-              <Box sx={{ p: 2, mt: 2, borderRadius: '10px' }}>
+              <Box
+                sx={{
+                  py: 2,
+                  pr: { lg: 2, xs: 0 },
+                  mt: 2,
+                  borderRadius: '10px',
+                }}
+              >
                 <Typography variant='h4' sx={{ mb: 2 }}>
                   Bills
                 </Typography>
