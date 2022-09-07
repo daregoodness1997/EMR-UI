@@ -31,6 +31,21 @@ const Login = () => {
           </FormGroup>
         </FormControl>
         <Button type='submit' label='Login' fullwidth='true' />
+        <p>
+          Forgot password?
+          <Link
+            className='nav-link'
+            style={{
+              padding: '0',
+              background: 'transparent',
+              color: 'blue',
+              marginLeft: '0.6rem',
+            }}
+            to='/forgot-password'
+          >
+            Click here
+          </Link>
+        </p>
       </form>
       <div className='bottom-center'>
         <p>or continue with</p>

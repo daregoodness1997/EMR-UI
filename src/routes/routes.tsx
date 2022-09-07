@@ -33,6 +33,8 @@ import ClinicDashboard from '../@modules/clinic/ClinicDashboard';
 import Overview from '../pages/app/Overview';
 import PatientOutlet from '../pages/app/PatientOutlet';
 import PrivateOutlet from '../pages/app/PrivateOutlet';
+import CreatePassword from '../pages/auth/CreatePassword';
+import ForgotPassword from '../pages/auth/ForgotPassword';
 import IndividualSignup from '../pages/auth/IndividualSignup';
 import Login from '../pages/auth/Login';
 import OrganizationSignup from '../pages/auth/OrganizationSignup';
@@ -44,6 +46,8 @@ const AppRoutes = () => {
         <Route path='/' element={<Login />} />
         <Route path='/signup' element={<IndividualSignup />} />
         <Route path='/organization-signup' element={<OrganizationSignup />} />
+        <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route path='/create-password' element={<CreatePassword />} />
         <Route path='/app' element={<PrivateOutlet />}>
           <Route index element={<Overview />} />
           <Route path='/app/clients' element={<Clients />} />
