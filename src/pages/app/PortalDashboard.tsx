@@ -18,7 +18,7 @@ export const menuItems = [
     to: '/portal/profile',
     iconClassName: 'bi bi-person',
     subMenus: [
-      { name: 'Health Profile', to: '/portal/profile/health' },
+      { name: 'Health Profile', to: '/portal/profile' },
       { name: 'Medical Records', to: '/portal/profile/records' },
       { name: 'Prescriptions', to: '/portal/profile/prescriptions' },
       { name: 'Diagnostics Reports', to: '/portal/profile/diagnostic' },
@@ -28,14 +28,14 @@ export const menuItems = [
     ],
   },
   {
-    name: 'Buy',
+    name: 'Marketplace',
     exact: true,
-    to: '/portal/buy',
+    to: '/portal/marketplace',
     iconClassName: 'bi bi-bag-fill',
     subMenus: [
-      { name: 'Wallet', to: '/portal/buy/wallet' },
-      { name: 'Bill', to: '/portal/buy/bill' },
-      { name: 'Health Insurance', to: '/portal/buy/insurance' },
+      { name: 'Marketplace', to: '/portal/marketplace' },
+      { name: 'Bills', to: '/portal/marketplace/bills' },
+      { name: 'Health Insurances', to: '/portal/marketplace/insurances' },
     ],
   },
   {

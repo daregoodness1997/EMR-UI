@@ -12,18 +12,19 @@ const Diagnostic = () => {
     <DashboardPageWrapper>
       <Box sx={{ mb: 4 }}>
         <Stack
-          direction='row'
+          direction={{ lg: 'row', xs: 'column' }}
           alignItems='center'
           justifyContent='space-between'
+          spacing={2}
         >
           <Typography
             variant='h1'
             sx={{ fontWeight: 'bold', color: '#03045E' }}
           >
-            Diagnostic Report
+            Diagnostic Reports
           </Typography>
 
-          <Button>Download Report</Button>
+          <Button background='#03045E'>Upload Report</Button>
         </Stack>
 
         <Box
@@ -38,7 +39,7 @@ const Diagnostic = () => {
             variant='outlined'
             size='small'
             sx={{
-              width: { lg: '320px', xs: '40%' },
+              width: { lg: '320px', xs: '70%' },
               // height: '40px',
               borderRadius: '4px',
               marginRight: '10px',

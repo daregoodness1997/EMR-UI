@@ -71,7 +71,12 @@ const Marketplace = () => {
       </Stack>
 
       <DashboardContainer>
-        <Grid container spacing={{ lg: 2, xs: 0 }} sx={{ pt: 2 }}>
+        <Grid
+          container
+          spacing={{ lg: 2, xs: 0 }}
+          justifyContent='space-between'
+          sx={{ pt: 2, width: '100%' }}
+        >
           {[...Array(20)].map((_, index) => (
             <ProductCard key={index} />
           ))}

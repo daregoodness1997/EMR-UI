@@ -1,4 +1,4 @@
-import { Box, Portal } from '@mui/material';
+import { Box, Portal, TextField } from '@mui/material';
 import React from 'react';
 import Modal from '../components/Modal';
 import LocationCard from './LocationCard';
@@ -27,6 +27,19 @@ const LocationModal: React.FC<LocationModalProps> = ({
         </FlexBox>
 
         <Box sx={{ p: 1 }}>
+          <TextField
+            variant='outlined'
+            size='small'
+            placeholder='Select a location'
+            sx={{
+              width: { lg: '320px', xs: '100%' },
+              // height: '40px',
+              borderRadius: '4px',
+              marginRight: '10px',
+              mb: { xs: 1 },
+              mt: 1,
+            }}
+          />
           <GridWrapper>
             {locations.map((location, index) => (
               <LocationCard

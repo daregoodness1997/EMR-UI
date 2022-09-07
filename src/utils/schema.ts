@@ -1604,6 +1604,107 @@ const clientAppointmentSchema = [
   },
 ];
 
+const paymentSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+    omit: true,
+  },
+  {
+    name: 'Date',
+    key: 'date',
+    description: 'Date',
+    selector: (row: any) => row.date,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Payment Description',
+    key: 'description',
+    description: 'Description',
+    selector: (row: any) => row.description,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Status',
+    key: 'status',
+    description: 'Status',
+    selector: (row: any) => row.status,
+    sortable: true,
+  },
+];
+
+const claimSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+    omit: true,
+  },
+  {
+    name: 'Date',
+    key: 'date',
+    description: 'Date',
+    selector: (row: any) => row.date,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Claim Description',
+    key: 'description',
+    description: 'Description',
+    selector: (row: any) => row.description,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Status',
+    key: 'status',
+    description: 'Status',
+    selector: (row: any) => row.status,
+    sortable: true,
+  },
+];
+const referralSchema = [
+  {
+    name: 'S/N',
+    key: 'id',
+    description: 'History Id',
+    selector: (row: any) => row.id,
+    sortable: true,
+    omit: true,
+  },
+  {
+    name: 'Date',
+    key: 'date',
+    description: 'Date',
+    selector: (row: any) => row.date,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Referral Description',
+    key: 'description',
+    description: 'Description',
+    selector: (row: any) => row.description,
+    sortable: true,
+    style: { color: 'blue', fontWeight: 'medium' },
+  },
+  {
+    name: 'Status',
+    key: 'status',
+    description: 'Status',
+    selector: (row: any) => row.status,
+    sortable: true,
+  },
+];
+
 export {
   ClientMiniSchema,
   AppointmentSchema,
@@ -1621,4 +1722,7 @@ export {
   prescriptionSchema,
   diagnosticsSchema,
   clientAppointmentSchema,
+  paymentSchema,
+  claimSchema,
+  referralSchema,
 };

@@ -1,7 +1,9 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
+import { CustomLoader } from '.';
 import { billList } from '../../utils/data';
 import { billSchema } from '../../utils/schema';
+import EmptyData from '../Empty/EmptyData';
 const customStyles = {
   rows: {
     style: {
@@ -47,6 +49,8 @@ const ClientTable = () => {
       data={billList}
       customStyles={customStyles}
       fixedHeader={true}
+      progressComponent={<CustomLoader />}
+      noDataComponent={<EmptyData />}
     />
   );
 };

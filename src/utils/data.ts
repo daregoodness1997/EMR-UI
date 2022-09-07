@@ -256,7 +256,12 @@ const clientAppointmentList = [...Array(100)].map((_, index) => ({
   ]),
   consultphysician: faker.name.findName(),
 }));
-
+const paymentList = [...Array(20)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  date: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
+  description: faker.name.findName(),
+  status: sample(['Paid', 'Pending', 'Cancelled']),
+}));
 export {
   clientsList,
   appointmentList,
@@ -272,4 +277,5 @@ export {
   prescriptionList,
   diagnosticList,
   clientAppointmentList,
+  paymentList,
 };

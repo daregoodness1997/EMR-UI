@@ -81,6 +81,10 @@ a{
 
 
 
+ .filter-switch-item{
+  color: #333;
+ }
+
 
 /* text editor*/
 .rs-picker-default .rs-picker-toggle.rs-btn {
