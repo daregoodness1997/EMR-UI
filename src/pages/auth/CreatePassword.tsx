@@ -25,7 +25,7 @@ const CreatePassword = () => {
               color: 'blue',
               marginLeft: '0.6rem',
             }}
-            to='/login'
+            to='/'
           >
             Login
           </Link>

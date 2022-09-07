@@ -68,6 +68,21 @@ const IndividualSignup = () => {
           <PasswordInput />
         </div>
         <Button type='submit' label='Signup' fullwidth='true' />
+        <p>
+          Do you want to login?
+          <Link
+            className='nav-link'
+            style={{
+              padding: '0',
+              background: 'transparent',
+              color: 'blue',
+              marginLeft: '0.6rem',
+            }}
+            to='/'
+          >
+            Click here
+          </Link>
+        </p>
       </form>
 
       <div className='bottom-center'>
