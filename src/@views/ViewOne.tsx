@@ -4,6 +4,7 @@ import { Button } from '../components';
 import RadioButton from '../components/Inputs/RadioButton';
 import Switch from '../components/Inputs/Switch';
 import FilterMenu from '../components/Menus/FilterMenu';
+import DownloadButton from '../components/ReactPDF/DownloadButton';
 import ScheduleCalendar from '../components/Schedule';
 import Table from '../components/Table';
 import { DashboardPageWrapper } from '../core-ui/styles';
@@ -18,6 +19,7 @@ interface ViewOneProps {
   tableTitle: string;
   hasCreate?: boolean;
   hasGridView?: boolean;
+  printData?: any[];
 }
 
 const ViewOne: React.FC<ViewOneProps> = ({
@@ -30,6 +32,7 @@ const ViewOne: React.FC<ViewOneProps> = ({
   handleSearch,
   hasCreate = true,
   hasGridView = false,
+  printData,
 }) => {
   const [value, setValue] = useState({ list: true, grid: false });
 
@@ -83,6 +86,8 @@ const ViewOne: React.FC<ViewOneProps> = ({
               />
             </Switch>
           )}
+
+          <DownloadButton printData={printData} />
         </Box>
         {hasCreate && (
           <Button
