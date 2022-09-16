@@ -1,5 +1,5 @@
 import React from 'react';
-import { PDFDownloadLink, usePDF } from '@react-pdf/renderer';
+import { usePDF } from '@react-pdf/renderer';
 import { DocumentPDF } from '.';
 
 interface DownloadButtonProps {

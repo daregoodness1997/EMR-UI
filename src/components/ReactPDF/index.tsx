@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import {
   Document,
   Page,
@@ -22,11 +21,16 @@ export const DocumentPDF: React.FC<DocumentProps> = ({ title, printData }) => (
   <Document>
     <Page size='A4' style={styles.body}>
       <Text style={styles.header} fixed>
-        <Text style={styles.subtitle}>HCI Healthcare Limited</Text>
+        <Text style={styles.subtitle}>{title}</Text>
       </Text>
       <View style={styles.flex}>
-        <Text style={styles.subtitle}>HCI Healthcare Limited</Text>
-        <Text>Lagos, Nigeria</Text>
+        <View style={styles.logo}>
+          <Image style={styles.image} src='/Healthstack.png' />
+          <Text style={styles.subtitle}>HCI Healthcare Limited</Text>
+        </View>
+        <View>
+          <Text>Lagos, Nigeria</Text>
+        </View>
       </View>
 
       <View>
@@ -80,4 +84,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'grey',
   },
+  image: {
+    width: 32,
+    marginLeft: 2,
+  },
+  logo: { display: 'flex', flexDirection: 'row', alignItems: 'center' },
 });
