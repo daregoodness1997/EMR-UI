@@ -6,7 +6,12 @@ import {
 } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Input, PasswordInput } from '../../components';
+import { DocumentPDF } from '../../components/ReactPDF';
 import { AuthWrapper } from '../../core-ui';
+import { PDFViewer } from '@react-pdf/renderer';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+
+// https://codesandbox.io/s/i1ted?file=/src/Movie.jsx
 
 const Login = () => {
   let navigate = useNavigate();
@@ -16,6 +21,26 @@ const Login = () => {
   };
   return (
     <AuthWrapper paragraph='Login here as an organization'>
+      <PDFDownloadLink
+        document={<DocumentPDF />}
+        fileName='document.pdf'
+        style={{
+          textDecoration: 'none',
+          padding: '10px',
+          color: '#4a4a4a',
+          backgroundColor: '#f2f2f2',
+          border: '1px solid #4a4a4a',
+        }}
+      >
+        Download PDF
+        {/* {({ blob, url, loading, error }) =>
+          loading ? 'Loading document...' : 'Download Pdf'
+        } */}
+      </PDFDownloadLink>
+      {/* View Document */}
+      {/* <PDFViewer>
+        <DocumentPDF />
+      </PDFViewer> */}
       <form onSubmit={handleSubmit}>
         <Input label='Email' placeholder='Enter your email address' />
         <PasswordInput />
