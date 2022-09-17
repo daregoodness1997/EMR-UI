@@ -6,7 +6,13 @@ import {
 } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Input, PasswordInput } from '../../components';
+import { DocumentPDF } from '../../components/ReactPDF';
 import { AuthWrapper } from '../../core-ui';
+import { PDFViewer } from '@react-pdf/renderer';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import ViewDocument from '../../components/ReactPDF/ViewDocument';
+
+// https://codesandbox.io/s/i1ted?file=/src/Movie.jsx
 
 const Login = () => {
   let navigate = useNavigate();

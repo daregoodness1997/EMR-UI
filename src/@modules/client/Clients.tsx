@@ -27,6 +27,7 @@ const Clients: React.FC<ClientsProps> = ({ title }) => {
         tableTitle='Clients'
         handleCreate={handleCreateClient}
         onRowClicked={handleRowClicked}
+        printData={[]}
       />
     </>
   );

@@ -262,6 +262,18 @@ const paymentList = [...Array(20)].map((_, index) => ({
   description: faker.name.findName(),
   status: sample(['Paid', 'Pending', 'Cancelled']),
 }));
+
+const reportList = [...Array(4)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  firstName: faker.name.firstName(),
+  lastName: faker.name.lastName(),
+  startDate: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
+  endDate: `${faker.date.birthdate({ min: 18, max: 65, mode: 'age' })}`,
+  description: faker.name.findName(),
+  days: sample(['10', '20', '30']),
+  maximumDays: sample(['10', '20', '30']),
+  info: faker.name.lastName(),
+}));
 export {
   clientsList,
   appointmentList,
@@ -278,4 +290,5 @@ export {
   diagnosticList,
   clientAppointmentList,
   paymentList,
+  reportList,
 };
