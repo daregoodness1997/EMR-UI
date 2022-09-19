@@ -8,7 +8,7 @@ interface DownloadButtonProps {
 
 const DownloadButton: React.FC<DownloadButtonProps> = ({ printData }) => {
   const [instance, updateInstance] = usePDF({
-    document: <DocumentPDF title='Sample Download' printData={printData} />,
+    document: <DocumentPDF title='Sample Invoice' printData={printData} />,
   });
   return (
     <>
