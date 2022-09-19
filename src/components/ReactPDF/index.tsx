@@ -24,13 +24,23 @@ export const DocumentPDF: React.FC<DocumentProps> = ({ title, printData }) => (
       <Text style={styles.header} fixed>
         <Text style={styles.subtitle}>{title}</Text>
       </Text>
-      <View style={styles.address}>
-        <Image style={styles.image} src='/Healthstack.png' />
-        <View style={styles.addressBox}>
-          <Text style={styles.headerText}>Healthstack Technologies</Text>
-          <Text style={styles.headerText}>101 E. Agege Avenue</Text>
-          <Text style={styles.headerText}>Yaba, Lagos</Text>
-          <Text style={styles.headerText}>(234) 892 973 2345</Text>
+      <View style={styles.flex}>
+        <View style={styles.address}>
+          <Image style={styles.image} src='/Healthstack.png' />
+          <View style={styles.addressBox}>
+            <Text style={styles.headerText}>Healthstack Technologies</Text>
+            <Text style={styles.headerText}>101 E. Agege Avenue</Text>
+            <Text style={styles.headerText}>Yaba, Lagos</Text>
+            <Text style={styles.headerText}>(234) 892 973 2345</Text>
+          </View>
+        </View>
+        <View style={styles.address}>
+          <View style={styles.addressBox}>
+            <Text style={styles.headerText}>John Doe</Text>
+            <Text style={styles.headerText}>101 E. Agege Avenue</Text>
+            <Text style={styles.headerText}>Yaba, Lagos</Text>
+            <Text style={styles.headerText}>(234) 892 973 2345</Text>
+          </View>
         </View>
       </View>
 
@@ -120,6 +130,7 @@ const styles = StyleSheet.create({
   logo: { display: 'flex', flexDirection: 'row', alignItems: 'center' },
   table: {
     marginTop: 24,
+    padding: 12,
   },
   footer: {
     width: '100%',
