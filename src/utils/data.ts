@@ -274,6 +274,25 @@ const reportList = [...Array(4)].map((_, index) => ({
   maximumDays: sample(['10', '20', '30']),
   info: faker.name.lastName(),
 }));
+
+const invoiceList = [...Array(10)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  name: faker.name.firstName(),
+  category: sample(['Prescription', 'Medication', 'Lab Test']),
+  type: sample(['Full', 'Part']),
+  description: faker.name.lastName(),
+  amountDue: sample(['1000', '2500', '3100']),
+  paidUp: sample(['1000', '2500', '3100']),
+  amount: sample(['1000', '2500', '3100']),
+}));
+const labList = [...Array(6)].map((_, index) => ({
+  id: faker.datatype.uuid(),
+  name: faker.name.firstName(),
+  result: sample(['023.45', '1000.02', '19,34']),
+  range: sample(['20 - 400', '90 - 540', '19-34']),
+  units: sample(['mmHg', 'mg/ml']),
+  flag: sample(['High', 'Low']),
+}));
 export {
   clientsList,
   appointmentList,
@@ -291,4 +310,6 @@ export {
   clientAppointmentList,
   paymentList,
   reportList,
+  invoiceList,
+  labList,
 };

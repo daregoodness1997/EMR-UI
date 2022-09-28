@@ -1,6 +1,7 @@
 import React from 'react';
 import { usePDF } from '@react-pdf/renderer';
 import { DocumentPDF } from '.';
+import { LabResultPDF } from './LabResult';
 
 interface DownloadButtonProps {
   printData?: any[];
@@ -8,7 +9,8 @@ interface DownloadButtonProps {
 
 const DownloadButton: React.FC<DownloadButtonProps> = ({ printData }) => {
   const [instance, updateInstance] = usePDF({
-    document: <DocumentPDF title='Sample Download' printData={printData} />,
+    // document: <DocumentPDF title='Sample Invoice' printData={printData} />,
+    document: <LabResultPDF title='Sample Lab' printData={printData} />,
   });
   return (
     <>
