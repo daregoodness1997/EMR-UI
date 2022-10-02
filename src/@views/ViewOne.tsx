@@ -87,7 +87,7 @@ const ViewOne: React.FC<ViewOneProps> = ({
             </Switch>
           )}
 
-          <DownloadButton printData={printData} />
+          {/* <DownloadButton printData={printData} /> */}
         </Box>
         {hasCreate && (
           <Button

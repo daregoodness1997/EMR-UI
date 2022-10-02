@@ -10,7 +10,7 @@ function Breadcrumbs() {
   return (
     <MUIBreadcrumbs
       aria-label='breadcrumb'
-      sx={{ display: 'flex', flexWrap: 'nowrap' }}
+      sx={{ display: 'flex', flexWrap: 'nowrap', color: '#000' }}
     >
       {pathnames.map((name, index) => {
         const last = index === pathnames.length - 1;
@@ -25,7 +25,7 @@ function Breadcrumbs() {
             style={{
               textDecoration: 'none',
               textTransform: 'capitalize',
-              fontWeight: 'medium',
+              fontWeight: 'semi-bold',
               whiteSpace: 'nowrap',
             }}
           >
@@ -39,7 +39,7 @@ function Breadcrumbs() {
             style={{
               textDecoration: 'none',
               textTransform: 'capitalize',
-              fontWeight: 'medium',
+              fontWeight: 'semi-bold',
               whiteSpace: 'nowrap',
             }}
           >

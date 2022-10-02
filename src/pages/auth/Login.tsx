@@ -23,7 +23,7 @@ const Login = () => {
   return (
     <AuthWrapper paragraph='Login here as an organization'>
       <form onSubmit={handleSubmit}>
-        <Input label='Email' placeholder='Enter your email address' />
+        <Input label='Email' />
         <PasswordInput />
         <FormControl
           component='fieldset'
@@ -66,7 +66,7 @@ const Login = () => {
         </a>
 
         <p>
-          Want to create organization?
+          Want to create an organization?
           <Link
             className='nav-link'
             style={{
