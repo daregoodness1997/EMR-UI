@@ -30,7 +30,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
           className='form__input'
           onChange={onChange}
           type={showPassword ? 'text' : 'password'}
-          placeholder='Password'
+          // placeholder='Password'
           name={name}
         />
         <InputLabel className='form__label' htmlFor={label}>
