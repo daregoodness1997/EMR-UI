@@ -2,7 +2,11 @@ import { Box, Typography } from '@mui/material';
 import React from 'react';
 import { Button } from '../components';
 import { BottomWrapper } from '../components/styles';
-import { DashboardPageWrapper, GridWrapper } from '../core-ui/styles';
+import {
+  DashboardPageWrapper,
+  GridWrapper,
+  ModalWrapper,
+} from '../core-ui/styles';
 import { ButtonGroup, GrayWrapper, HeadWrapper } from './styles';
 
 interface DetailViewProps {
@@ -27,8 +31,8 @@ const DetailView: React.FC<DetailViewProps> = ({
   bottomNavChildren,
 }) => {
   return (
-    <DashboardPageWrapper>
-      <GrayWrapper>
+    <ModalWrapper>
+      <Box>
         <HeadWrapper>
           <Box>
             <Typography variant='h2'>{title} Details</Typography>
@@ -36,12 +40,12 @@ const DetailView: React.FC<DetailViewProps> = ({
           </Box>
 
           <ButtonGroup>
-            <Button
+            {/* <Button
               label='Back to List'
               background='#fdfdfd'
               color='#333'
               onClick={backClick}
-            />
+            /> */}
             <Button
               label={'Delete'}
               background='#FFE9E9'
@@ -67,8 +71,8 @@ const DetailView: React.FC<DetailViewProps> = ({
             <ButtonGroup>{bottomNavChildren}</ButtonGroup>
           </BottomWrapper>
         )}
-      </GrayWrapper>
-    </DashboardPageWrapper>
+      </Box>
+    </ModalWrapper>
   );
 };
 

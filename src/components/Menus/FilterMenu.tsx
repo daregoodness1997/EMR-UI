@@ -61,7 +61,7 @@ const FilterMenu = () => {
           width: { xs: '100%' },
         }}
       >
-        <Typography variant='body1'>Filter by</Typography>
+        <Typography variant='body1'>Filter </Typography>
         <i className='bi bi-chevron-down'></i>
       </IconButton>
       <Popper
