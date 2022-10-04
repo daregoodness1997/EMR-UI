@@ -158,6 +158,10 @@ export const MenuList = styled.div`
     font-weight: 600;
     cursor: pointer;
     padding: 0.8rem;
+    transition: all 0.02s ease-in;
+  }
+  &.menu-item:hover {
+    background: rgb(0, 45, 92);
   }
   &.menu-item.active {
     background: rgb(0, 45, 92);
@@ -202,7 +206,7 @@ export const MainMenu = styled.div`
   &.main-menu .menu-item {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
     display: block;
     font-weight: 600;
     cursor: pointer;
@@ -264,6 +268,8 @@ export const TopSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1.95rem;
+  margin-bottom: 3rem;
   & h1 {
     color: rgb(51, 51, 51);
     font-size: 20px;

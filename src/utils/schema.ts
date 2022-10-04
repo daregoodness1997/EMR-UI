@@ -9,7 +9,7 @@ const ClientMiniSchema = [
     sortable: true,
     required: true,
     inputType: null,
-    omit: true,
+    // omit: true,
   },
 
   {
@@ -20,6 +20,9 @@ const ClientMiniSchema = [
     sortable: true,
     required: true,
     inputType: InputType.TEXT,
+    style: {
+      color: '#0364FF',
+    },
   },
 
   {
@@ -30,6 +33,9 @@ const ClientMiniSchema = [
     sortable: true,
     required: true,
     inputType: InputType.TEXT,
+    style: {
+      color: '#0364FF',
+    },
   },
 
   {
@@ -40,6 +46,9 @@ const ClientMiniSchema = [
     sortable: true,
     required: true,
     inputType: InputType.TEXT,
+    style: {
+      color: '#0364FF',
+    },
   },
 
   {
@@ -1090,6 +1099,9 @@ const AppointmentSchema = [
     sortable: true,
     required: true,
     inputType: InputType.SELECT_AUTO_SUGGEST,
+    style: {
+      color: '#0364FF',
+    },
   },
   {
     name: 'Employee',
@@ -1099,6 +1111,9 @@ const AppointmentSchema = [
     sortable: true,
     required: true,
     inputType: InputType.SELECT_AUTO_SUGGEST,
+    style: {
+      color: '#0364FF',
+    },
   },
 
   {
@@ -1180,7 +1195,7 @@ const BandSchema = [
     selector: (row: any) => row.id,
     sortable: true,
     inputType: InputType.HIDDEN,
-    omit: true,
+    // omit: true,
   },
   {
     name: 'Name of Band',
@@ -1190,6 +1205,9 @@ const BandSchema = [
     sortable: true,
     required: true,
     inputType: InputType.TEXT,
+    style: {
+      color: '#0364FF',
+    },
   },
   {
     name: 'Band Type',
@@ -1200,6 +1218,9 @@ const BandSchema = [
     required: true,
     inputType: InputType.SELECT_LIST,
     options: ['Provider', 'Company', 'Patient', 'Plan'],
+    style: {
+      color: '#0364FF',
+    },
   },
   {
     name: 'Description of Band',
@@ -1220,7 +1241,7 @@ const EmployeeSchema = [
     selector: (row: any) => row.id,
     sortable: true,
     inputType: InputType.HIDDEN,
-    omit: true,
+    // omit: true,
   },
   {
     name: 'Firstname',
@@ -1230,6 +1251,9 @@ const EmployeeSchema = [
     sortable: true,
     required: true,
     inputType: InputType.TEXT,
+    style: {
+      color: '#0364FF',
+    },
   },
   {
     name: 'Last Name',
@@ -1239,6 +1263,9 @@ const EmployeeSchema = [
     sortable: true,
     required: true,
     inputType: InputType.TEXT,
+    style: {
+      color: '#0364FF',
+    },
   },
   {
     name: 'Profession',
@@ -1311,7 +1338,7 @@ const LocationSchema = [
     sortable: true,
     selector: (row: any) => row.id,
     inputType: InputType.HIDDEN,
-    omit: true,
+    // omit: true,
   },
   {
     name: 'Name of Location',
@@ -1321,6 +1348,9 @@ const LocationSchema = [
     sortable: true,
     required: true,
     inputType: InputType.TEXT,
+    style: {
+      color: '#0364FF',
+    },
   },
   {
     name: 'Location Type',
@@ -1331,6 +1361,9 @@ const LocationSchema = [
     required: true,
     inputType: InputType.SELECT_LIST,
     options: ['Front Desk', 'Clinic', 'Store', 'Laboratory', 'Finance'],
+    style: {
+      color: '#0364FF',
+    },
   },
 ];
 

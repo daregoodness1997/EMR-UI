@@ -71,14 +71,14 @@ const ViewOne: React.FC<ViewOneProps> = ({
           {hasGridView && (
             <Switch>
               <RadioButton
-                label='list'
+                label={<i className='bi bi-list-ul' />}
                 value={value.list}
                 onChange={() => {
                   setValue({ list: true, grid: false });
                 }}
               />
               <RadioButton
-                label={'Grid'}
+                label={<i className='bi bi-grid-1x2-fill' />}
                 value={value.grid}
                 onChange={() => {
                   setValue({ list: false, grid: true });
@@ -94,7 +94,7 @@ const ViewOne: React.FC<ViewOneProps> = ({
             sx={{ width: { xs: '100%', lg: 'auto' } }}
             onClick={handleCreate}
           >
-            Add {title}
+            <i className='bi bi-plus-circle'> </i> Add {title}
           </Button>
         )}
       </Box>
