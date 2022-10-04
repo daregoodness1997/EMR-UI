@@ -56,7 +56,8 @@ const FilterMenu = () => {
         sx={{
           padding: '0.5rem 1.2rem',
           borderRadius: 2,
-          border: '1px solid #CDD2D7',
+          color: '#000',
+          fontWeight: 'bold',
           width: { xs: '100%' },
         }}
       >

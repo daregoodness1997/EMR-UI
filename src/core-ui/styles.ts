@@ -158,6 +158,10 @@ export const MenuList = styled.div`
     font-weight: 600;
     cursor: pointer;
     padding: 0.8rem;
+    transition: all 0.02s ease-in;
+  }
+  &.menu-item:hover {
+    background: rgb(0, 45, 92);
   }
   &.menu-item.active {
     background: rgb(0, 45, 92);
@@ -202,7 +206,7 @@ export const MainMenu = styled.div`
   &.main-menu .menu-item {
     color: rgb(255, 255, 255);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
     display: block;
     font-weight: 600;
     cursor: pointer;
@@ -215,7 +219,7 @@ export const MainMenu = styled.div`
 `;
 
 export const Sidemenu = styled.div`
-  zoom: 70%;
+  /* zoom: 70%; */
   @media (max-width: 768px) {
     zoom: 90%;
 
@@ -244,7 +248,7 @@ export const Sidemenu = styled.div`
   width: 300px;
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 2rem 1.5rem ;
+  padding: 1.5rem 1.5rem 3rem ;
   transition: width 0.2s ease-in;
 
   @media (max-width: 768px) {
@@ -264,6 +268,8 @@ export const TopSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1.95rem;
+  margin-bottom: 1.8rem;
   & h1 {
     color: rgb(51, 51, 51);
     font-size: 20px;
@@ -281,7 +287,7 @@ export const DashboardPageWrapper = styled.div`
   -webkit-animation: divanimation 0.6s;
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards; */
-  zoom: 85%;
+  /* zoom: 85%; */
 
   @media (max-width: 400px) {
     overflow-y: auto;
@@ -325,7 +331,7 @@ export const TopMenuWrapper = styled.div`
   padding: 0 1.4rem;
   backdrop-filter: blur(60px);
   webkit-backdrop-filter: blur(60px);
-  zoom: 85%;
+  /* zoom: 85%; */
 
   & .breadcrumb {
     @media (max-width: 400px) {

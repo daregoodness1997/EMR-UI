@@ -2,8 +2,9 @@ import { Box, InputLabel, Typography } from '@mui/material';
 import React from 'react';
 
 interface RadioButtonProps {
-  label: string;
+  label: string | React.ReactNode;
   value?: any;
+  name?: string;
   onChange: (e?: any) => void;
   //   defaultValue: any;
 }
@@ -11,6 +12,7 @@ interface RadioButtonProps {
 const RadioButton: React.FC<RadioButtonProps> = ({
   label,
   value,
+  name,
   onChange,
   //   defaultValue,
 }) => {
@@ -18,8 +20,8 @@ const RadioButton: React.FC<RadioButtonProps> = ({
     if (checked)
       return {
         boxShadow: '4px 4px 20px rgba(0,0,0,0.08)',
-        background: 'white',
-        border: '1px solid blue',
+        background: 'rgba(0, 100, 204, 0.16)',
+        border: '1px solid rgba(0, 100, 204, 0.16)',
       };
     return;
   };
@@ -27,7 +29,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
     <InputLabel className='filter-switch-item' onChange={onChange}>
       <input
         type='radio'
-        name={label}
+        name={name}
         id='filter1-0'
         checked={value}
         // defaultValue={defaultValue}

@@ -26,7 +26,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
             <div className='menu-icon'>
               <i className={iconClassName} />
             </div>
-            <span style={{ fontSize: '0.75rem' }}>{name}</span>
+            <span style={{}}>{name}</span>
           </div>
 
           {subMenus.length ? <i className='bi bi-chevron-down' /> : ''}

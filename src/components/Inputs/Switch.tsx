@@ -30,10 +30,11 @@ const Switch: React.FC<SwitchProps> = ({ children }) => {
         p: 0,
         px: 0.6,
         background: '#f8f8f8',
-        borderRadius: '4px',
+        border: '1px solid blue',
         color: 'blue',
         ml: 1,
         height: '42px',
+        borderRadius: '4px',
       }}
       className='filter-switch'
       spacing={1}
