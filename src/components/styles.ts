@@ -223,7 +223,7 @@ export const FullDetailsWrapper = styled.div`
   padding: 0.55rem;
   border-radius: 4px;
   margin-top: 1rem;
-  transition: width 2s, height 4s;
+  /* transition: width 2s, height 4s; */
   overflow-y: scroll;
   animation: divanimation 0.6s;
   -webkit-animation: divanimation 0.6s;

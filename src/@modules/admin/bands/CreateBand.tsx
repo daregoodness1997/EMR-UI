@@ -1,15 +1,20 @@
+import { Box } from '@mui/material';
 import React from 'react';
 import { GrayWrapper, HeadWrapper } from '../../../@views/styles';
 import { Button } from '../../../components';
 import DynamicInput from '../../../components/Inputs/DynamicInput';
 import { BottomWrapper, FullDetailsWrapper } from '../../../components/styles';
-import { DashboardPageWrapper, GridWrapper } from '../../../core-ui/styles';
+import {
+  DashboardPageWrapper,
+  GridWrapper,
+  ModalWrapper,
+} from '../../../core-ui/styles';
 import { BandSchema } from '../../../utils/schema';
 
 const CreateBand = () => {
   return (
-    <DashboardPageWrapper>
-      <GrayWrapper>
+    <ModalWrapper>
+      <Box>
         <HeadWrapper>
           <div>
             <h2>Create Band</h2>
@@ -37,8 +42,8 @@ const CreateBand = () => {
             <Button label='Save Form' type='submit' />
           </BottomWrapper>
         </form>
-      </GrayWrapper>
-    </DashboardPageWrapper>
+      </Box>
+    </ModalWrapper>
   );
 };
 

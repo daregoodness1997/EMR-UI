@@ -277,6 +277,14 @@ export const TopSection = styled.div`
 `;
 
 // PageWrapper
+export const ModalWrapper = styled.div`
+  width: 100%;
+  padding: 2.2rem 0;
+  @media (max-width: 400px) {
+    flex-direction: column;
+  }
+`;
+
 export const DashboardPageWrapper = styled.div`
   width: 100%;
   height: calc(100vh - 0.01px);
@@ -337,6 +345,9 @@ export const TopMenuWrapper = styled.div`
     @media (max-width: 400px) {
       display: none;
     }
+  }
+  @media (max-width: 400px) {
+    zoom: 85%;
   }
 `;
 
