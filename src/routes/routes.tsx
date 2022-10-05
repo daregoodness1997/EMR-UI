@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import ClientAppointments from '../@clientportal/Appointments';
-import Articles from '../@clientportal/Articles';
+import { lazy, Suspense } from 'react';
 import Bills from '../@clientportal/Bills';
 import BuyInsurance from '../@clientportal/BuyInsurance';
 import ClientHome from '../@clientportal/ClientHome';
@@ -18,37 +17,101 @@ import CreateBand from '../@modules/admin/bands/CreateBand';
 import Employees from '../@modules/admin/employees';
 import CreateEmployee from '../@modules/admin/employees/CreateEmployee';
 import EmployeeDetails from '../@modules/admin/employees/EmployeeDetails';
-import Locations from '../@modules/admin/locations';
-import CreateLocation from '../@modules/admin/locations/CreateLocation';
-import LocationDetails from '../@modules/admin/locations/LocationDetails';
-import AppointmentDetail from '../@modules/appointment/AppointmentDetail';
-import Appointments from '../@modules/appointment/Appointments';
-import AttendToClient from '../@modules/appointment/AttendToClient';
-import CreateAppointment from '../@modules/appointment/CreateAppointment';
-import ClientDashboard from '../@modules/client/ClientDashboard';
-import ClientDetails from '../@modules/client/ClientDetails';
-import ClientQuickForm from '../@modules/client/ClientQuickForm';
-import Clients from '../@modules/client/Clients';
-import ClinicDashboard from '../@modules/clinic/ClinicDashboard';
-import Overview from '../pages/app/Overview';
-import PatientOutlet from '../pages/app/PatientOutlet';
-import PrivateOutlet from '../pages/app/PrivateOutlet';
-import CreatePassword from '../pages/auth/CreatePassword';
-import ForgotPassword from '../pages/auth/ForgotPassword';
-import IndividualSignup from '../pages/auth/IndividualSignup';
-import Login from '../pages/auth/Login';
-import OrganizationSignup from '../pages/auth/OrganizationSignup';
+
+const ClientAppointments = lazy(() => import('../@clientportal/Appointments'));
+const Articles = lazy(() => import('../@clientportal/Articles'));
+
+// Auth Components
+const Login = lazy(() => import('../pages/auth/Login'));
+const OrganizationSignup = lazy(
+  () => import('../pages/auth/OrganizationSignup')
+);
+const IndividualSignup = lazy(() => import('../pages/auth/IndividualSignup'));
+const ForgotPassword = lazy(() => import('../pages/auth/ForgotPassword'));
+const CreatePassword = lazy(() => import('../pages/auth/CreatePassword'));
+
+// App Components
+const PrivateOutlet = lazy(() => import('../pages/app/PrivateOutlet'));
+const PatientOutlet = lazy(() => import('../pages/app/PatientOutlet'));
+const Overview = lazy(() => import('../pages/app/Overview'));
+const ClinicDashboard = lazy(
+  () => import('../@modules/clinic/ClinicDashboard')
+);
+const Clients = lazy(() => import('../@modules/client/Clients'));
+const ClientQuickForm = lazy(
+  () => import('../@modules/client/ClientQuickForm')
+);
+const ClientDetails = lazy(() => import('../@modules/client/ClientDetails'));
+const ClientDashboard = lazy(
+  () => import('../@modules/client/ClientDashboard')
+);
+const CreateAppointment = lazy(
+  () => import('../@modules/appointment/CreateAppointment')
+);
+const AttendToClient = lazy(
+  () => import('../@modules/appointment/AttendToClient')
+);
+const Appointments = lazy(() => import('../@modules/appointment/Appointments'));
+const AppointmentDetail = lazy(
+  () => import('../@modules/appointment/AppointmentDetail')
+);
+const LocationDetails = lazy(
+  () => import('../@modules/admin/locations/LocationDetails')
+);
+const CreateLocation = lazy(
+  () => import('../@modules/admin/locations/CreateLocation')
+);
+const Locations = lazy(() => import('../@modules/admin/locations'));
 
 const AppRoutes = () => {
   return (
     <>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/signup' element={<IndividualSignup />} />
-        <Route path='/organization-signup' element={<OrganizationSignup />} />
-        <Route path='/forgot-password' element={<ForgotPassword />} />
+        <Route
+          path='/'
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <Login />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path='/signup'
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <IndividualSignup />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path='/organization-signup'
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <OrganizationSignup />{' '}
+            </Suspense>
+          }
+        />
+
+        <Route
+          path='/forgot-password'
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <ForgotPassword />
+            </Suspense>
+          }
+        />
         <Route path='/create-password' element={<CreatePassword />} />
-        <Route path='/app' element={<PrivateOutlet />}>
+
+        <Route
+          path='/app'
+          element={
+            <Suspense>
+              <PrivateOutlet />
+            </Suspense>
+          }
+        >
           <Route index element={<Overview />} />
           <Route path='/app/clients' element={<Clients />} />
           <Route path='/app/clients/appointments' element={<Appointments />} />

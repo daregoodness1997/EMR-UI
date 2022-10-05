@@ -75,7 +75,7 @@ const Login = () => {
               color: 'blue',
               marginLeft: '0.6rem',
             }}
-            to='/signup'
+            to='/organization-signup'
           >
             Click here
           </Link>
